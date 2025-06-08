@@ -55,9 +55,9 @@ const ContactPage: React.FC = () => {
               </div>
               <h3 className="text-xl font-bold text-stone-800 mb-2">Visit Us</h3>
               <p className="text-stone-600">
-                123 Green Street<br />
-                Amsterdam, 1012 AB<br />
-                Netherlands
+                Langstraße 19<br />
+                68169 Mannheim<br />
+                Deutschland
               </p>
             </div>
 
@@ -116,14 +116,14 @@ const ContactPage: React.FC = () => {
             {/* Map */}
             <div className="rounded-lg overflow-hidden shadow-md h-96 lg:h-auto">
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2436.5525997270247!2d4.891269!3d52.3702157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTLCsDIyJzEyLjkiTiA0wrA1MycyOC42IkU!5e0!3m2!1sen!2snl!4v1621436431244!5m2!1sen!2snl" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2594.8942842833634!2d8.462524515744345!3d49.48486917935169!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4797cc1c84f3c965%3A0x123456789!2sLangstra%C3%9Fe%2019%2C%2068169%20Mannheim%2C%20Germany!5e0!3m2!1sen!2sde!4v1645123456789!5m2!1sen!2sde" 
                 width="100%" 
                 height="100%" 
                 style={{ border: 0 }} 
                 allowFullScreen={false} 
                 loading="lazy" 
                 className="w-full h-full"
-                title="CannaBrewCafé Location"
+                title="Blue Bird Café Location - Langstraße 19, Mannheim"
               ></iframe>
             </div>
 
