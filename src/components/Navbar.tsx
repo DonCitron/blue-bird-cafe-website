@@ -43,7 +43,13 @@ const Navbar: React.FC = () => {
                 style={{filter: 'drop-shadow(0 1px 2px rgba(0,0,0,0.1))'}}
               />
             </div>
-            <span className="text-2xl font-bold" style={{color: '#3d3629', textShadow: '0 1px 2px rgba(0,0,0,0.1)'}}>Blue Bird</span>
+            <span className="text-5xl font-bold font-script" style={{
+              color: '#3d3629',
+              textShadow: '1px 1px 3px rgba(0,0,0,0.15)',
+              letterSpacing: '0.05em',
+              lineHeight: '1',
+              transform: 'translateY(2px)'
+            }}>Blue Bird</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -100,8 +106,8 @@ const NavLink: React.FC<NavLinkProps> = ({ to, label, currentPath }) => {
         color: isActive ? '#3d3629' : '#5a4f42',
         textShadow: '0 1px 2px rgba(0,0,0,0.1)'
       }}
-      onMouseEnter={(e) => e.target.style.color = '#3d3629'}
-      onMouseLeave={(e) => e.target.style.color = isActive ? '#3d3629' : '#5a4f42'}
+      onMouseEnter={(e) => (e.target as HTMLElement).style.color = '#3d3629'}
+      onMouseLeave={(e) => (e.target as HTMLElement).style.color = isActive ? '#3d3629' : '#5a4f42'}
     >
       {label}
     </Link>
@@ -119,8 +125,8 @@ const MobileNavLink: React.FC<MobileNavLinkProps> = ({ to, label }) => {
       to={to} 
       className="text-base font-medium py-2 block transition-colors"
       style={{color: '#3d3629'}}
-      onMouseEnter={(e) => e.target.style.color = '#5a4f42'}
-      onMouseLeave={(e) => e.target.style.color = '#3d3629'}
+      onMouseEnter={(e) => (e.target as HTMLElement).style.color = '#5a4f42'}
+      onMouseLeave={(e) => (e.target as HTMLElement).style.color = '#3d3629'}
     >
       {label}
     </Link>

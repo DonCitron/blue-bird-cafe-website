@@ -53,14 +53,12 @@ const HomePage: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold mb-6" style={{color: '#3d3629'}}>Ein einladendes Café-Erlebnis</h2>
-              <p className="text-lg mb-6" style={{color: '#5a4f42'}}>
-                Blue Bird bietet die perfekte Mischung aus Premium-Kaffee und Spezialitäten in einer warmen, 
-                holzbetonten Umgebung voller natürlichem Grün und Boho-Charme.
+              <h2 className="text-3xl font-bold mb-6" style={{color: '#3d3629'}}>Willkommen im BlueBird Café</h2>
+              <p className="text-xl font-medium mb-6" style={{color: '#4a4238'}}>
+                Dein Wohlfühlort für Kaffee, Genuss & Community – mit einem Hauch Freiheit.
               </p>
               <p className="text-lg mb-8" style={{color: '#5a4f42'}}>
-                Unser Raum ist darauf ausgelegt, Ihnen beim Entspannen, Geselligkeit oder Konzentration zu helfen, 
-                während Sie meisterhaft zubereitete Getränke und köstliches Essen genießen.
+                Mitten im Herzen der Neckarstadt, nicht weit von der Alten Feuerwache findest du unser Café: ein Ort zum Ankommen, Durchatmen und Sein. Inspiriert von der entspannten Kultur Amsterdams und den sonnigen Vibes Spaniens, verbinden wir gemütliches Scandi-Boho-Ambiente mit liebevoll zubereiteten Drinks, süßen & herzhaften Kleinigkeiten – und einem diskreten Augenzwinkern Richtung Cannabis-Genuss.
               </p>
               <Link 
                 to="/about" 

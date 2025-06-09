@@ -150,20 +150,20 @@ const AboutPage: React.FC = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Team Member 1 */}
+            {/* Team Member 1 - Lars Fieber */}
             <div className="rounded-lg overflow-hidden shadow-md" style={{backgroundColor: '#f5f2e8'}}>
               <div className="h-64 overflow-hidden">
                 <img 
-                  src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg" 
-                  alt="Pascal Hintermaier" 
+                  src="https://images.pexels.com/photos/3771835/pexels-photo-3771835.jpeg" 
+                  alt="Lars Fieber" 
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-1" style={{color: '#3d3629'}}>Pascal Hintermaier</h3>
-                <p className="font-medium mb-3" style={{color: '#b09e7e'}}>Webdesign & IT</p>
+                <h3 className="text-xl font-bold mb-1" style={{color: '#3d3629'}}>Lars Fieber</h3>
+                <p className="font-medium mb-3" style={{color: '#b09e7e'}}>CEO</p>
                 <p style={{color: '#5a4f42'}}>
-                  IT-Experte und Webdesigner, verantwortlich für die digitale Präsenz des Blue Bird.
+                  Als CEO des Blue Bird verantwortet Lars Fieber die strategische Ausrichtung und das operative Tagesgeschäft. Mit einem scharfen Blick für Marktentwicklungen und einem klaren Fokus auf nachhaltiges Wachstum führt er das Unternehmen in eine erfolgreiche Zukunft. Seine umfassende Erfahrung im Management und seine Leidenschaft für außergewöhnliche Gastfreundschaft machen ihn zu einem inspirierenden Führungskraft. Unter seiner Leitung entwickelt sich Blue Bird kontinuierlich weiter, ohne dabei die ursprüngliche Vision aus den Augen zu verlieren.
                 </p>
               </div>
             </div>
@@ -181,25 +181,25 @@ const AboutPage: React.FC = () => {
                 <h3 className="text-xl font-bold mb-1" style={{color: '#3d3629'}}>Jose Dah</h3>
                 <p className="font-medium mb-3" style={{color: '#b09e7e'}}>Gründer</p>
                 <p style={{color: '#5a4f42'}}>
-                  Visionsgeber und Gründer des Blue Bird, mit Leidenschaft für exzellenten Kaffee und Gastfreundschaft.
+                  Jose Dah ist nicht nur der visionäre Gründer des Blue Bird, sondern auch die treibende Kraft hinter der einzigartigen Atmosphäre, die unsere Gäste schätzen. Mit jahrzehntelanger Erfahrung in der Kaffeebranche hat er ein tiefes Verständnis für Qualitätskaffee entwickelt. Seine Reisen zu Kaffeeplantagen weltweit und sein Engagement für faire Handelsbeziehungen spiegeln sich in jedem Schluck wider. Sein Motto 'Jede Tasse erzählt eine Geschichte' prägt die Philosophie des Hauses und schafft eine Verbindung zwischen Kaffeebauern und Gästen.
                 </p>
               </div>
             </div>
 
-            {/* Team Member 3 */}
+            {/* Team Member 3 - Pascal Hintermaier */}
             <div className="rounded-lg overflow-hidden shadow-md" style={{backgroundColor: '#f5f2e8'}}>
               <div className="h-64 overflow-hidden">
                 <img 
-                  src="https://images.pexels.com/photos/3771835/pexels-photo-3771835.jpeg" 
-                  alt="Lisa Schmidt" 
+                  src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg" 
+                  alt="Pascal Hintermaier" 
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-1" style={{color: '#3d3629'}}>Lisa Schmidt</h3>
-                <p className="font-medium mb-3" style={{color: '#b09e7e'}}>Küchenchefin</p>
+                <h3 className="text-xl font-bold mb-1" style={{color: '#3d3629'}}>Pascal Hintermaier</h3>
+                <p className="font-medium mb-3" style={{color: '#b09e7e'}}>Webdesign & IT</p>
                 <p style={{color: '#5a4f42'}}>
-                  Kulinarische Künstlerin, spezialisiert auf gesunde Gourmet-Kreationen.
+                  Verantwortlich für die digitale Präsenz von Blue Bird. Mit langjähriger Erfahrung in der Gastronomie und als Experte für Webdesign und IT-Infrastruktur sorgt er nicht nur für ein nahtloses digitales Erlebnis unserer Gäste, sondern berät auch bei der Optimierung von Arbeitsprozessen und Logistik. Sein umfassendes Know-how macht ihn zu einem wertvollen Allrounder im Team.
                 </p>
               </div>
             </div>
@@ -273,6 +273,33 @@ const AboutPage: React.FC = () => {
         </div>
       </section>
 
+      {/* Café Experience */}
+      <section className="py-16" style={{backgroundColor: '#f5f2e8'}}>
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-sm">
+            <p className="text-lg mb-6" style={{color: '#5a4f42'}}>
+              🌱 Vegane Alternativen, 💧 CBD-Infusionen, samtige Matchas und aromatische Kaffee-Kreationen warten auf dich – genauso wie unsere handverlesenen Snacks, hausgemachten Kuchen und immer wieder neue Tagesempfehlungen.
+            </p>
+            
+            <p className="text-lg mb-6" style={{color: '#5a4f42'}}>
+              Ob du alleine entspannst, dich mit Freund:innen triffst oder neue Leute aus der Community kennenlernst – bei uns zählt der Moment. Und dein gutes Gefühl.
+            </p>
+            
+            <div className="border-l-4 border-amber-600 pl-4 my-8">
+              <p className="text-lg italic" style={{color: '#5a4f42'}}>
+                Hinweis: Unser Zugang ist ausschließlich für Erwachsene (ab 18 Jahren) – für deine Sicherheit und ein entspanntes Miteinander sorgen wir mit einem dezenten Klingelsystem am Eingang.
+              </p>
+            </div>
+            
+            <p className="text-xl font-medium text-center mt-10" style={{color: '#3d3629'}}>
+              Wir freuen uns auf deinen Besuch!
+              <br />
+              <span className="text-amber-700">Stay grounded, feel lifted – im Café BlueBird</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Visit Us CTA */}
       <section className="py-16" style={{backgroundColor: '#b09e7e'}}>
         <div className="container mx-auto px-4 text-center">
@@ -285,8 +312,8 @@ const AboutPage: React.FC = () => {
               href="/contact" 
               className="font-medium py-3 px-8 rounded-full transition-colors duration-300"
               style={{backgroundColor: '#3d3629', color: '#f9f7f4'}}
-              onMouseEnter={(e) => e.target.style.backgroundColor = '#2d251b'}
-              onMouseLeave={(e) => e.target.style.backgroundColor = '#3d3629'}
+              onMouseEnter={(e) => (e.target as HTMLAnchorElement).style.backgroundColor = '#2d251b'}
+              onMouseLeave={(e) => (e.target as HTMLAnchorElement).style.backgroundColor = '#3d3629'}
             >
               Unseren Standort finden
             </a>
@@ -294,8 +321,16 @@ const AboutPage: React.FC = () => {
               href="/menu" 
               className="border-2 font-medium py-3 px-8 rounded-full transition-colors duration-300"
               style={{backgroundColor: 'transparent', borderColor: '#3d3629', color: '#3d3629'}}
-              onMouseEnter={(e) => {e.target.style.backgroundColor = '#3d3629'; e.target.style.color = '#f9f7f4'}}
-              onMouseLeave={(e) => {e.target.style.backgroundColor = 'transparent'; e.target.style.color = '#3d3629'}}
+              onMouseEnter={(e) => {
+                const target = e.target as HTMLAnchorElement;
+                target.style.backgroundColor = '#3d3629';
+                target.style.color = '#f9f7f4';
+              }}
+              onMouseLeave={(e) => {
+                const target = e.target as HTMLAnchorElement;
+                target.style.backgroundColor = 'transparent';
+                target.style.color = '#3d3629';
+              }}
             >
               Unser Menü ansehen
             </a>
