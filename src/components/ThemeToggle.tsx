@@ -1,5 +1,5 @@
 import React from 'react';
-import { Palette, Leaf, Gem } from 'lucide-react';
+import { Palette, Leaf, Gem, Waves } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
 
 const ThemeToggle: React.FC = () => {
@@ -16,9 +16,16 @@ const ThemeToggle: React.FC = () => {
         };
       case 'peridot':
         return {
+          icon: <Waves className="h-6 w-6" />,
+          bgColor: '#6E9E4B',
+          hoverColor: '#4D843D',
+          nextTheme: 'Ocean Dreams'
+        };
+      case 'ocean':
+        return {
           icon: <Palette className="h-6 w-6" />,
-          bgColor: '#3d3629',
-          hoverColor: '#2d251b',
+          bgColor: '#3E8ECC',
+          hoverColor: '#1E6FA9',
           nextTheme: 'Default'
         };
       default:
