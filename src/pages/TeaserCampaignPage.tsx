@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Calendar, Eye, Share2, Video, Download, Clock, Zap, Target } from 'lucide-react';
 
 const TeaserCampaignPage: React.FC = () => {
   const [countdown, setCountdown] = useState({
@@ -51,108 +50,102 @@ const TeaserCampaignPage: React.FC = () => {
         </div>
         
         <div className="container mx-auto px-4 text-center relative z-10">
-          {/* Large Blue Bird Logo */}
-          <div className="mb-12">
-            <img 
-              src="/blue_bird_clean_transparent.png" 
-              alt="Blue Bird" 
-              className="w-48 h-48 md:w-64 md:h-64 mx-auto opacity-90 filter drop-shadow-2xl animate-pulse"
-              style={{
-                filter: 'drop-shadow(0 8px 32px rgba(197, 174, 145, 0.3))',
-                animation: 'pulse 3s ease-in-out infinite'
-              }}
-            />
+          {/* Centered Logo with Timer Overlay */}
+          <div className="relative flex items-center justify-center">
+            {/* Large Blue Bird Logo - Centered */}
+            <div className="relative">
+              <img 
+                src="/blue_bird_clean_transparent.png" 
+                alt="Blue Bird" 
+                className="w-80 h-80 md:w-96 md:h-96 opacity-90 filter drop-shadow-2xl animate-pulse"
+                style={{
+                  filter: 'drop-shadow(0 8px 32px rgba(197, 174, 145, 0.3))',
+                  animation: 'pulse 3s ease-in-out infinite'
+                }}
+              />
+              
+              {/* Timer Overlay - Positioned over the logo */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="relative z-20">
+                  {!isCountdownFinished ? (
+                    <div className="text-center">
+                      {/* Large Timer Display */}
+                      <div 
+                        className="text-4xl md:text-6xl lg:text-7xl font-bold mb-2 tracking-wider font-mono"
+                        style={{
+                          color: '#c5ae91',
+                          textShadow: '0 0 30px rgba(197, 174, 145, 0.8), 0 0 60px rgba(197, 174, 145, 0.4)',
+                          background: 'rgba(61, 54, 41, 0.8)',
+                          padding: '20px 30px',
+                          borderRadius: '20px',
+                          backdropFilter: 'blur(10px)',
+                          border: '2px solid rgba(197, 174, 145, 0.3)'
+                        }}
+                      >
+                        {countdown.days.toString().padStart(2, '0')}:
+                        {countdown.hours.toString().padStart(2, '0')}:
+                        {countdown.minutes.toString().padStart(2, '0')}:
+                        {countdown.seconds.toString().padStart(2, '0')}
+                      </div>
+                      
+                      {/* Timer Labels */}
+                      <div 
+                        className="text-sm md:text-base lg:text-lg tracking-widest opacity-80"
+                        style={{
+                          color: '#b09e7e',
+                          textShadow: '0 2px 8px rgba(0,0,0,0.5)'
+                        }}
+                      >
+                        TAGE : STUNDEN : MINUTEN : SEKUNDEN
+                      </div>
+                    </div>
+                  ) : (
+                    /* When countdown finishes */
+                    <div 
+                      className="text-4xl md:text-6xl font-bold animate-pulse"
+                      style={{
+                        color: '#c5ae91',
+                        textShadow: '0 0 40px rgba(197, 174, 145, 0.8)',
+                        background: 'rgba(61, 54, 41, 0.9)',
+                        padding: '20px 40px',
+                        borderRadius: '20px',
+                        backdropFilter: 'blur(10px)'
+                      }}
+                    >
+                      Es ist Zeit...
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
           </div>
           
-          {/* Mysterious Date */}
-          <div className="mb-16">
+          {/* Mysterious Date - Below the logo */}
+          <div className="mt-12">
             <div 
-              className="text-6xl md:text-8xl font-bold mb-4 tracking-wider"
+              className="text-3xl md:text-5xl font-bold tracking-wider opacity-70"
               style={{
                 color: '#c5ae91',
-                textShadow: '0 0 30px rgba(197, 174, 145, 0.5)',
+                textShadow: '0 0 20px rgba(197, 174, 145, 0.3)',
                 fontFamily: 'serif'
               }}
             >
               01.08.25
             </div>
           </div>
-          
-          {/* Countdown Timer */}
-          <div className="max-w-2xl mx-auto">
-            {!isCountdownFinished ? (
-              <>
-                <div className="grid grid-cols-4 gap-4 md:gap-8 mb-8">
-                  {Object.entries(countdown).map(([unit, value]) => (
-                    <div key={unit} className="relative">
-                      <div 
-                        className="rounded-lg p-4 md:p-6 border-2 backdrop-blur-sm"
-                        style={{
-                          backgroundColor: 'rgba(197, 174, 145, 0.1)',
-                          borderColor: '#c5ae91',
-                          boxShadow: '0 8px 32px rgba(197, 174, 145, 0.2)'
-                        }}
-                      >
-                        <div 
-                          className="text-3xl md:text-5xl font-bold mb-2"
-                          style={{color: '#c5ae91'}}
-                        >
-                          {value.toString().padStart(2, '0')}
-                        </div>
-                        <div 
-                          className="text-sm md:text-base capitalize tracking-wider"
-                          style={{color: '#b09e7e'}}
-                        >
-                          {unit === 'days' ? 'Tage' : 
-                           unit === 'hours' ? 'Stunden' : 
-                           unit === 'minutes' ? 'Minuten' : 'Sekunden'}
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                
-                {/* Subtle hint */}
-                <div className="text-center">
-                  <div 
-                    className="text-lg md:text-xl tracking-widest opacity-70"
-                    style={{
-                      color: '#b09e7e',
-                      textShadow: '0 2px 8px rgba(0,0,0,0.3)'
-                    }}
-                  >
-                    . . .
-                  </div>
-                </div>
-              </>
-            ) : (
-              /* When countdown finishes */
-              <div className="text-center">
-                <div 
-                  className="text-4xl md:text-6xl font-bold mb-8 animate-pulse"
-                  style={{
-                    color: '#c5ae91',
-                    textShadow: '0 0 40px rgba(197, 174, 145, 0.8)'
-                  }}
-                >
-                  Es ist Zeit...
-                </div>
-              </div>
-            )}
-          </div>
         </div>
         
         {/* Floating particles effect */}
         <div className="absolute inset-0 pointer-events-none">
-          {[...Array(20)].map((_, i) => (
+          {[...Array(15)].map((_, i) => (
             <div
               key={i}
-              className="absolute w-1 h-1 rounded-full opacity-30"
+              className="absolute w-1 h-1 rounded-full opacity-20"
               style={{
                 backgroundColor: '#c5ae91',
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
-                animation: `float ${3 + Math.random() * 4}s ease-in-out infinite`,
+                animation: `float ${4 + Math.random() * 3}s ease-in-out infinite`,
                 animationDelay: `${Math.random() * 2}s`
               }}
             />
@@ -174,22 +167,24 @@ const TeaserCampaignPage: React.FC = () => {
                 <div className="bg-black bg-opacity-50 p-6 rounded-lg">
                   <h3 className="text-lg font-semibold mb-4 text-blue-400">Campaign Strategy</h3>
                   <ul className="space-y-2 text-gray-300 text-sm">
-                    <li>• Minimal design maintains mystery</li>
-                    <li>• Classic Blue Bird colors for brand recognition</li>
-                    <li>• Real-time countdown creates urgency</li>
-                    <li>• No explanatory text keeps speculation alive</li>
-                    <li>• Large logo ensures brand visibility</li>
+                    <li>• Centered logo with timer overlay</li>
+                    <li>• Large countdown format: DD:HH:MM:SS</li>
+                    <li>• Classic Blue Bird colors for recognition</li>
+                    <li>• Mysterious date below logo</li>
+                    <li>• No explanatory text maintains mystery</li>
+                    <li>• Perfect for social media sharing</li>
                   </ul>
                 </div>
                 
                 <div className="bg-black bg-opacity-50 p-6 rounded-lg">
-                  <h3 className="text-lg font-semibold mb-4 text-blue-400">Technical Details</h3>
+                  <h3 className="text-lg font-semibold mb-4 text-blue-400">Visual Design</h3>
                   <ul className="space-y-2 text-gray-300 text-sm">
-                    <li>• Countdown updates every second</li>
+                    <li>• Large logo (320x320 to 384x384px)</li>
+                    <li>• Timer positioned over center of logo</li>
+                    <li>• Glowing text effects with shadows</li>
+                    <li>• Semi-transparent background for timer</li>
+                    <li>• Floating particles for mystique</li>
                     <li>• Responsive design for all devices</li>
-                    <li>• Subtle animations and effects</li>
-                    <li>• Classic color palette (#3d3629, #c5ae91)</li>
-                    <li>• Optimized for social sharing</li>
                   </ul>
                 </div>
               </div>
@@ -200,13 +195,13 @@ const TeaserCampaignPage: React.FC = () => {
 
       <style jsx>{`
         @keyframes float {
-          0%, 100% { transform: translateY(0px) rotate(0deg); }
-          50% { transform: translateY(-20px) rotate(180deg); }
+          0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.2; }
+          50% { transform: translateY(-30px) rotate(180deg); opacity: 0.4; }
         }
         
         @keyframes pulse {
           0%, 100% { opacity: 0.9; transform: scale(1); }
-          50% { opacity: 1; transform: scale(1.05); }
+          50% { opacity: 1; transform: scale(1.02); }
         }
       `}</style>
     </>
