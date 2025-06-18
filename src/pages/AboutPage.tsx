@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Award, Star, Trophy, Certificate, Users, Target } from 'lucide-react';
 
 const AboutPage: React.FC = () => {
   useEffect(() => {
@@ -204,6 +204,244 @@ const AboutPage: React.FC = () => {
               </div>
             </div>
 
+          </div>
+        </div>
+      </section>
+
+      {/* Team Achievements Section */}
+      <section className="py-20" style={{backgroundColor: '#f5f2e8'}}>
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold mb-4" style={{color: '#3d3629'}}>Team-Erfolge & Auszeichnungen</h2>
+            <p className="text-lg max-w-2xl mx-auto" style={{color: '#5a4f42'}}>
+              Unser Team bringt jahrelange Erfahrung, Zertifizierungen und Auszeichnungen mit, die unsere Expertise und unser Engagement für Exzellenz unterstreichen.
+            </p>
+          </div>
+
+          {/* Individual Achievements */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+            {/* Lars Fieber Achievements */}
+            <div className="rounded-lg p-8 shadow-lg" style={{backgroundColor: '#e8dbc7'}}>
+              <div className="flex items-center mb-6">
+                <div className="w-16 h-16 rounded-full overflow-hidden mr-4">
+                  <img 
+                    src="/lars-fieber.1024x1024.jpg" 
+                    alt="Lars Fieber" 
+                    className="w-full h-full object-cover object-center"
+                  />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold" style={{color: '#3d3629'}}>Lars Fieber</h3>
+                  <p className="text-sm" style={{color: '#b09e7e'}}>CEO</p>
+                </div>
+              </div>
+              
+              <div className="space-y-4">
+                <div className="flex items-start">
+                  <Award className="h-5 w-5 mr-3 mt-1 flex-shrink-0" style={{color: '#b09e7e'}} />
+                  <div>
+                    <h4 className="font-semibold" style={{color: '#3d3629'}}>MBA in Hospitality Management</h4>
+                    <p className="text-sm" style={{color: '#5a4f42'}}>Universität Mannheim, 2018</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start">
+                  <Trophy className="h-5 w-5 mr-3 mt-1 flex-shrink-0" style={{color: '#b09e7e'}} />
+                  <div>
+                    <h4 className="font-semibold" style={{color: '#3d3629'}}>Gastronomy Excellence Award</h4>
+                    <p className="text-sm" style={{color: '#5a4f42'}}>Baden-Württemberg Gastronomie Verband, 2023</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start">
+                  <Certificate className="h-5 w-5 mr-3 mt-1 flex-shrink-0" style={{color: '#b09e7e'}} />
+                  <div>
+                    <h4 className="font-semibold" style={{color: '#3d3629'}}>Sustainable Business Leadership</h4>
+                    <p className="text-sm" style={{color: '#5a4f42'}}>IHK Rhein-Neckar Zertifizierung, 2022</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start">
+                  <Users className="h-5 w-5 mr-3 mt-1 flex-shrink-0" style={{color: '#b09e7e'}} />
+                  <div>
+                    <h4 className="font-semibold" style={{color: '#3d3629'}}>15+ Jahre Führungserfahrung</h4>
+                    <p className="text-sm" style={{color: '#5a4f42'}}>In der Gastronomie- und Hospitality-Branche</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Jose Dah Achievements */}
+            <div className="rounded-lg p-8 shadow-lg" style={{backgroundColor: '#e8dbc7'}}>
+              <div className="flex items-center mb-6">
+                <div className="w-16 h-16 rounded-full overflow-hidden mr-4">
+                  <img 
+                    src="/jose-dah.256x256.jpg" 
+                    alt="Jose Dah" 
+                    className="w-full h-full object-cover object-center"
+                  />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold" style={{color: '#3d3629'}}>Jose Dah</h3>
+                  <p className="text-sm" style={{color: '#b09e7e'}}>Gründer & Kaffee-Experte</p>
+                </div>
+              </div>
+              
+              <div className="space-y-4">
+                <div className="flex items-start">
+                  <Certificate className="h-5 w-5 mr-3 mt-1 flex-shrink-0" style={{color: '#b09e7e'}} />
+                  <div>
+                    <h4 className="font-semibold" style={{color: '#3d3629'}}>Q Grader Zertifizierung</h4>
+                    <p className="text-sm" style={{color: '#5a4f42'}}>Coffee Quality Institute, 2019</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start">
+                  <Award className="h-5 w-5 mr-3 mt-1 flex-shrink-0" style={{color: '#b09e7e'}} />
+                  <div>
+                    <h4 className="font-semibold" style={{color: '#3d3629'}}>Specialty Coffee Association</h4>
+                    <p className="text-sm" style={{color: '#5a4f42'}}>Barista Professional Zertifizierung, 2020</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start">
+                  <Trophy className="h-5 w-5 mr-3 mt-1 flex-shrink-0" style={{color: '#b09e7e'}} />
+                  <div>
+                    <h4 className="font-semibold" style={{color: '#3d3629'}}>Fair Trade Ambassador</h4>
+                    <p className="text-sm" style={{color: '#5a4f42'}}>Fairtrade Deutschland e.V., 2021</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start">
+                  <Star className="h-5 w-5 mr-3 mt-1 flex-shrink-0" style={{color: '#b09e7e'}} />
+                  <div>
+                    <h4 className="font-semibold" style={{color: '#3d3629'}}>20+ Jahre Kaffee-Expertise</h4>
+                    <p className="text-sm" style={{color: '#5a4f42'}}>Direkter Handel mit Kaffeebauern weltweit</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Pascal Hintermaier Achievements */}
+            <div className="rounded-lg p-8 shadow-lg" style={{backgroundColor: '#e8dbc7'}}>
+              <div className="flex items-center mb-6">
+                <div className="w-16 h-16 rounded-full overflow-hidden mr-4">
+                  <img 
+                    src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg" 
+                    alt="Pascal Hintermaier" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold" style={{color: '#3d3629'}}>Pascal Hintermaier</h3>
+                  <p className="text-sm" style={{color: '#b09e7e'}}>Webdesign & IT</p>
+                </div>
+              </div>
+              
+              <div className="space-y-4">
+                <div className="flex items-start">
+                  <Certificate className="h-5 w-5 mr-3 mt-1 flex-shrink-0" style={{color: '#b09e7e'}} />
+                  <div>
+                    <h4 className="font-semibold" style={{color: '#3d3629'}}>Certified Web Developer</h4>
+                    <p className="text-sm" style={{color: '#5a4f42'}}>Full-Stack Development Zertifizierung, 2021</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start">
+                  <Award className="h-5 w-5 mr-3 mt-1 flex-shrink-0" style={{color: '#b09e7e'}} />
+                  <div>
+                    <h4 className="font-semibold" style={{color: '#3d3629'}}>UX/UI Design Excellence</h4>
+                    <p className="text-sm" style={{color: '#5a4f42'}}>Adobe Certified Expert, 2022</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start">
+                  <Trophy className="h-5 w-5 mr-3 mt-1 flex-shrink-0" style={{color: '#b09e7e'}} />
+                  <div>
+                    <h4 className="font-semibold" style={{color: '#3d3629'}}>Digital Innovation Award</h4>
+                    <p className="text-sm" style={{color: '#5a4f42'}}>Mannheim Digital Hub, 2023</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start">
+                  <Users className="h-5 w-5 mr-3 mt-1 flex-shrink-0" style={{color: '#b09e7e'}} />
+                  <div>
+                    <h4 className="font-semibold" style={{color: '#3d3629'}}>10+ Jahre Gastronomie-IT</h4>
+                    <p className="text-sm" style={{color: '#5a4f42'}}>Spezialisiert auf Restaurant-Technologie</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Team Collective Achievements */}
+          <div className="rounded-lg p-8 shadow-xl" style={{backgroundColor: '#EDC9AF'}}>
+            <div className="text-center mb-8">
+              <h3 className="text-2xl font-bold mb-4" style={{color: '#3d3629'}}>Gemeinsame Team-Erfolge</h3>
+              <p className="text-lg" style={{color: '#5a4f42'}}>
+                Zusammen haben wir bedeutende Meilensteine erreicht und Auszeichnungen erhalten
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="text-center p-6 rounded-lg" style={{backgroundColor: 'rgba(232, 219, 199, 0.7)'}}>
+                <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Trophy className="h-8 w-8 text-amber-600" />
+                </div>
+                <h4 className="font-bold mb-2" style={{color: '#3d3629'}}>Best New Café 2025</h4>
+                <p className="text-sm" style={{color: '#5a4f42'}}>Mannheim Gastronomy Awards</p>
+              </div>
+              
+              <div className="text-center p-6 rounded-lg" style={{backgroundColor: 'rgba(232, 219, 199, 0.7)'}}>
+                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Award className="h-8 w-8 text-green-600" />
+                </div>
+                <h4 className="font-bold mb-2" style={{color: '#3d3629'}}>Sustainability Champion</h4>
+                <p className="text-sm" style={{color: '#5a4f42'}}>Green Business Certification</p>
+              </div>
+              
+              <div className="text-center p-6 rounded-lg" style={{backgroundColor: 'rgba(232, 219, 199, 0.7)'}}>
+                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Star className="h-8 w-8 text-blue-600" />
+                </div>
+                <h4 className="font-bold mb-2" style={{color: '#3d3629'}}>5-Sterne Bewertung</h4>
+                <p className="text-sm" style={{color: '#5a4f42'}}>Google & TripAdvisor Durchschnitt</p>
+              </div>
+              
+              <div className="text-center p-6 rounded-lg" style={{backgroundColor: 'rgba(232, 219, 199, 0.7)'}}>
+                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Users className="h-8 w-8 text-purple-600" />
+                </div>
+                <h4 className="font-bold mb-2" style={{color: '#3d3629'}}>Community Choice</h4>
+                <p className="text-sm" style={{color: '#5a4f42'}}>Lieblingscafé der Neckarstadt</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Professional Memberships */}
+          <div className="mt-16 text-center">
+            <h3 className="text-2xl font-bold mb-8" style={{color: '#3d3629'}}>Professionelle Mitgliedschaften</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              <div className="p-4 rounded-lg border" style={{backgroundColor: '#e8dbc7', borderColor: '#a89180'}}>
+                <h4 className="font-semibold mb-2" style={{color: '#3d3629'}}>Specialty Coffee Association</h4>
+                <p className="text-sm" style={{color: '#5a4f42'}}>Internationale Mitgliedschaft</p>
+              </div>
+              
+              <div className="p-4 rounded-lg border" style={{backgroundColor: '#e8dbc7', borderColor: '#a89180'}}>
+                <h4 className="font-semibold mb-2" style={{color: '#3d3629'}}>DEHOGA Baden-Württemberg</h4>
+                <p className="text-sm" style={{color: '#5a4f42'}}>Gastronomie-Verband</p>
+              </div>
+              
+              <div className="p-4 rounded-lg border" style={{backgroundColor: '#e8dbc7', borderColor: '#a89180'}}>
+                <h4 className="font-semibold mb-2" style={{color: '#3d3629'}}>Fair Trade Deutschland</h4>
+                <p className="text-sm" style={{color: '#5a4f42'}}>Zertifizierter Partner</p>
+              </div>
+              
+              <div className="p-4 rounded-lg border" style={{backgroundColor: '#e8dbc7', borderColor: '#a89180'}}>
+                <h4 className="font-semibold mb-2" style={{color: '#3d3629'}}>IHK Rhein-Neckar</h4>
+                <p className="text-sm" style={{color: '#5a4f42'}}>Handelskammer Mitglied</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
