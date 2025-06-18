@@ -154,27 +154,27 @@ const AboutPage: React.FC = () => {
             <div className="rounded-lg overflow-hidden shadow-md" style={{backgroundColor: '#f5f2e8'}}>
               <div className="h-64 overflow-hidden">
                 <img 
-                  src="https://images.pexels.com/photos/3771835/pexels-photo-3771835.jpeg" 
-                  alt="Lars Fieber" 
-                  className="w-full h-full object-cover"
+                  src="/lars-fieber.1024x1024.jpg" 
+                  alt="Lars Fieber - CEO" 
+                  className="w-full h-full object-cover object-center"
                 />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-1" style={{color: '#3d3629'}}>Lars Fieber</h3>
                 <p className="font-medium mb-3" style={{color: '#b09e7e'}}>CEO</p>
                 <p style={{color: '#5a4f42'}}>
-                  Als CEO des Blue Bird verantwortet Lars Fieber die strategische Ausrichtung und das operative Tagesgeschäft. Mit einem scharfen Blick für Marktentwicklungen und einem klaren Fokus auf nachhaltiges Wachstum führt er das Unternehmen in eine erfolgreiche Zukunft. Seine umfassende Erfahrung im Management und seine Leidenschaft für außergewöhnliche Gastfreundschaft machen ihn zu einem inspirierenden Führungskraft. Unter seiner Leitung entwickelt sich Blue Bird kontinuierlich weiter, ohne dabei die ursprüngliche Vision aus den Augen zu verlieren.
+                  Als CEO des Blue Bird verantwortet Lars Fieber die strategische Ausrichtung und das operative Tagesgeschäft. Mit einem scharfen Blick für Marktentwicklungen und einem klaren Fokus auf nachhaltiges Wachstum führt er das Unternehmen in eine erfolgreiche Zukunft. Seine umfassende Erfahrung im Management und seine Leidenschaft für außergewöhnliche Gastfreundschaft machen ihn zu einer inspirierenden Führungskraft. Unter seiner Leitung entwickelt sich Blue Bird kontinuierlich weiter, ohne dabei die ursprüngliche Vision aus den Augen zu verlieren.
                 </p>
               </div>
             </div>
 
-            {/* Team Member 2 */}
+            {/* Team Member 2 - Jose Dah */}
             <div className="rounded-lg overflow-hidden shadow-md" style={{backgroundColor: '#f5f2e8'}}>
               <div className="h-64 overflow-hidden">
                 <img 
-                  src="https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg" 
-                  alt="Jose Dah" 
-                  className="w-full h-full object-cover"
+                  src="/jose-dah.256x256.jpg" 
+                  alt="Jose Dah - Gründer" 
+                  className="w-full h-full object-cover object-center"
                 />
               </div>
               <div className="p-6">
