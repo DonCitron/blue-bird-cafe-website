@@ -17,6 +17,27 @@
   --vanilla-cream: #f8f5eb;
 }
 
+/* Peridot Dreams Theme Variables */
+.peridot-theme {
+  --color-1: #A8D98B;  /* Light Peridot Green */
+  --color-2: #6E9E4B;  /* Medium Sage Green */
+  --color-3: #4D843D;  /* Deep Forest Green */
+  --color-4: #2A3B1D;  /* Dark Forest Green */
+  --color-5: #D8C4A0;  /* Warm Cream */
+  
+  /* Theme mapping */
+  --bg-primary: #D8C4A0;      /* Warm Cream as primary background */
+  --bg-secondary: #A8D98B;    /* Light Peridot as secondary */
+  --bg-tertiary: #f8f6f0;     /* Very light cream */
+  --bg-accent: #6E9E4B;       /* Medium Sage as accent */
+  --text-primary: #2A3B1D;    /* Dark Forest for primary text */
+  --text-secondary: #4D843D;  /* Deep Forest for secondary text */
+  --text-light: #f8f6f0;      /* Light cream for text on dark backgrounds */
+  --border-color: #6E9E4B;    /* Medium Sage for borders */
+  --vanilla-white: #f8f6f0;   /* Light cream */
+  --vanilla-cream: #D8C4A0;   /* Warm cream */
+}
+
 /* Fresh Green Theme Variables - Saftigeres, frischeres Grün */
 .sage-theme {
   --bg-primary: #4ade80;
@@ -303,6 +324,84 @@ select:focus {
 .theme-border {
   border-color: var(--border-color);
   transition: border-color 0.3s ease;
+}
+
+/* Peridot Dreams theme specific adjustments */
+.peridot-theme .animate-pulse-glow {
+  animation: peridot-pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes peridot-pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(110, 158, 75, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(110, 158, 75, 0.7);
+  }
+}
+
+/* Peridot Dreams theme wood texture effect */
+.peridot-theme {
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(168, 217, 139, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(110, 158, 75, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(216, 196, 160, 0.1) 0%, transparent 70%);
+}
+
+/* Enhanced Peridot Dreams button styles */
+.peridot-theme .bg-emerald-600,
+.peridot-theme button[style*="background"] {
+  background-color: #6E9E4B !important;
+  background-image: linear-gradient(135deg, #6E9E4B 0%, #4D843D 100%) !important;
+  box-shadow: 0 4px 15px rgba(110, 158, 75, 0.3) !important;
+}
+
+.peridot-theme .hover\:bg-emerald-700:hover,
+.peridot-theme button:hover {
+  background-color: #4D843D !important;
+  background-image: linear-gradient(135deg, #4D843D 0%, #2A3B1D 100%) !important;
+  box-shadow: 0 6px 20px rgba(77, 132, 61, 0.4) !important;
+  transform: translateY(-2px) scale(1.02) !important;
+}
+
+.peridot-theme .border-emerald-600 {
+  border-color: #6E9E4B !important;
+}
+
+.peridot-theme .text-emerald-600 {
+  color: #6E9E4B !important;
+}
+
+.peridot-theme .hover\:bg-emerald-600:hover {
+  background-color: #6E9E4B !important;
+  background-image: linear-gradient(135deg, #6E9E4B 0%, #4D843D 100%) !important;
+}
+
+/* Spezielle Button-Effekte für das Peridot Dreams Theme */
+.peridot-theme button {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.peridot-theme button:hover {
+  transform: translateY(-2px) scale(1.02) !important;
+}
+
+/* Verbesserte Schatten für das Peridot Dreams Theme */
+.peridot-theme .shadow-lg {
+  box-shadow: 0 10px 25px rgba(110, 158, 75, 0.15), 0 4px 10px rgba(0, 0, 0, 0.1) !important;
+}
+
+.peridot-theme .shadow-xl {
+  box-shadow: 0 20px 40px rgba(110, 158, 75, 0.2), 0 8px 16px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Peridot Dreams Akzente für Cards und Bereiche */
+.peridot-theme .rounded-lg {
+  border: 1px solid rgba(110, 158, 75, 0.1);
+}
+
+.peridot-theme .rounded-2xl {
+  border: 1px solid rgba(110, 158, 75, 0.15);
 }
 
 /* Fresh Green theme specific adjustments */
