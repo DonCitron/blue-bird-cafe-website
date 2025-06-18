@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Coffee, Clock, MapPin, ArrowRight, Users, Award, Heart } from 'lucide-react';
+import { Coffee, Clock, MapPin, ArrowRight, Users, Award, Heart, Leaf, Star, Target } from 'lucide-react';
 import NewsletterSignup from '../components/NewsletterSignup';
 import AnimatedCounter from '../components/AnimatedCounter';
 import ImageWithFallback from '../components/ImageWithFallback';
@@ -60,29 +60,29 @@ const HomePage: React.FC = () => {
                 <Coffee className="h-8 w-8" style={{color: '#f9f7f4'}} />
               </div>
               <div className="text-3xl font-bold mb-2" style={{color: '#3d3629'}}>
-                <AnimatedCounter end={50} suffix="+" />
+                <AnimatedCounter end={15} suffix="+" />
               </div>
               <p style={{color: '#5a4f42'}}>Verschiedene Kaffeesorten</p>
             </div>
             
             <div className="p-6">
               <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{backgroundColor: '#b09e7e'}}>
-                <Users className="h-8 w-8" style={{color: '#f9f7f4'}} />
+                <Star className="h-8 w-8" style={{color: '#f9f7f4'}} />
               </div>
               <div className="text-3xl font-bold mb-2" style={{color: '#3d3629'}}>
-                <AnimatedCounter end={1000} suffix="+" />
+                <AnimatedCounter end={100} suffix="%" />
               </div>
-              <p style={{color: '#5a4f42'}}>Zufriedene Kunden</p>
+              <p style={{color: '#5a4f42'}}>Leidenschaft für Qualität</p>
             </div>
             
             <div className="p-6">
               <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{backgroundColor: '#b09e7e'}}>
-                <Award className="h-8 w-8" style={{color: '#f9f7f4'}} />
+                <Target className="h-8 w-8" style={{color: '#f9f7f4'}} />
               </div>
               <div className="text-3xl font-bold mb-2" style={{color: '#3d3629'}}>
-                <AnimatedCounter end={3} />
+                <AnimatedCounter end={2025} />
               </div>
-              <p style={{color: '#5a4f42'}}>Jahre Erfahrung</p>
+              <p style={{color: '#5a4f42'}}>Unser Gründungsjahr</p>
             </div>
           </div>
         </div>
