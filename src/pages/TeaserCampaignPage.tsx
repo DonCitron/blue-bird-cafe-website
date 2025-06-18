@@ -47,9 +47,9 @@ const TeaserCampaignPage: React.FC = () => {
           <div className="absolute bottom-1/4 right-1/4 w-64 h-64 rounded-full" style={{backgroundColor: '#c5ae91', filter: 'blur(80px)'}}></div>
         </div>
         
-        <div className="container mx-auto px-4 text-center relative z-10">
-          {/* Blue Bird Logo - Normal proportions like in navbar */}
-          <div className="mb-12">
+        <div className="container mx-auto px-4 text-center relative z-10 flex flex-col items-center justify-center min-h-screen">
+          {/* Blue Bird Logo - Centered in middle of header */}
+          <div className="mb-8">
             <img 
               src="/blue_bird_clean_transparent.png" 
               alt="Blue Bird" 
@@ -61,30 +61,16 @@ const TeaserCampaignPage: React.FC = () => {
             />
           </div>
           
-          {/* Big Countdown Timer */}
-          <div className="mb-12">
+          {/* Big Countdown Timer - Slightly under the logo */}
+          <div>
             <div 
-              className="text-4xl md:text-6xl lg:text-8xl font-bold mb-6 tracking-wider font-mono"
+              className="text-2xl md:text-4xl lg:text-6xl font-bold tracking-wider font-mono"
               style={{
                 color: '#c5ae91',
                 textShadow: '0 0 30px rgba(197, 174, 145, 0.8), 0 0 60px rgba(197, 174, 145, 0.4)'
               }}
             >
               {countdown.days} Days {countdown.hours} Hours {countdown.minutes} Minutes {countdown.seconds} Seconds Left
-            </div>
-          </div>
-          
-          {/* Opening Date */}
-          <div>
-            <div 
-              className="text-2xl md:text-4xl font-bold tracking-wider opacity-80"
-              style={{
-                color: '#c5ae91',
-                textShadow: '0 0 20px rgba(197, 174, 145, 0.3)',
-                fontFamily: 'serif'
-              }}
-            >
-              Opening Date: 01.08.2025
             </div>
           </div>
         </div>
