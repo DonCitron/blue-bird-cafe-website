@@ -17,18 +17,18 @@
   --vanilla-cream: #f8f5eb;
 }
 
-/* Sage Green Theme Variables */
+/* Fresh Green Theme Variables */
 .sage-theme {
-  --bg-primary: #a8b5a0;
-  --bg-secondary: #c4d1bc;
-  --bg-tertiary: #e8f0e6;
-  --bg-accent: #8b9077;
-  --text-primary: #2d3629;
-  --text-secondary: #4a5442;
-  --text-light: #5a6552;
-  --border-color: #7a8570;
-  --vanilla-white: #e8f0e6;
-  --vanilla-cream: #eef5ec;
+  --bg-primary: #7fb069;
+  --bg-secondary: #a8d5a0;
+  --bg-tertiary: #e8f5e8;
+  --bg-accent: #5a8a47;
+  --text-primary: #2d4a22;
+  --text-secondary: #3d5a32;
+  --text-light: #e8f5e8;
+  --border-color: #6b9c5b;
+  --vanilla-white: #f0f8f0;
+  --vanilla-cream: #f5faf5;
 }
 
 body {
@@ -305,16 +305,44 @@ select:focus {
   transition: border-color 0.3s ease;
 }
 
-/* Sage theme specific adjustments */
+/* Fresh Green theme specific adjustments */
 .sage-theme .animate-pulse-glow {
-  animation: sage-pulse-glow 2s ease-in-out infinite;
+  animation: fresh-green-pulse-glow 2s ease-in-out infinite;
 }
 
-@keyframes sage-pulse-glow {
+@keyframes fresh-green-pulse-glow {
   0%, 100% {
-    box-shadow: 0 0 5px rgba(139, 144, 119, 0.3);
+    box-shadow: 0 0 5px rgba(90, 138, 71, 0.4);
   }
   50% {
-    box-shadow: 0 0 20px rgba(139, 144, 119, 0.6);
+    box-shadow: 0 0 20px rgba(90, 138, 71, 0.7);
   }
+}
+
+/* Fresh Green theme wood texture effect */
+.sage-theme {
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(168, 213, 160, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(90, 138, 71, 0.1) 0%, transparent 50%);
+}
+
+/* Enhanced green button styles */
+.sage-theme .bg-emerald-600 {
+  background-color: #22c55e !important;
+}
+
+.sage-theme .hover\:bg-emerald-700:hover {
+  background-color: #16a34a !important;
+}
+
+.sage-theme .border-emerald-600 {
+  border-color: #22c55e !important;
+}
+
+.sage-theme .text-emerald-600 {
+  color: #22c55e !important;
+}
+
+.sage-theme .hover\:bg-emerald-600:hover {
+  background-color: #22c55e !important;
 }

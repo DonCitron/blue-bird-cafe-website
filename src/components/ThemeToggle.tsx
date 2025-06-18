@@ -10,19 +10,19 @@ const ThemeToggle: React.FC = () => {
       onClick={toggleTheme}
       className="fixed top-20 right-4 z-50 p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
       style={{
-        backgroundColor: theme === 'sage' ? '#8b9077' : '#3d3629',
+        backgroundColor: theme === 'sage' ? '#5a8a47' : '#3d3629',
         color: '#f9f7f4'
       }}
       onMouseEnter={(e) => {
         const target = e.target as HTMLButtonElement;
-        target.style.backgroundColor = theme === 'sage' ? '#6b7059' : '#2d251b';
+        target.style.backgroundColor = theme === 'sage' ? '#4a7a37' : '#2d251b';
       }}
       onMouseLeave={(e) => {
         const target = e.target as HTMLButtonElement;
-        target.style.backgroundColor = theme === 'sage' ? '#8b9077' : '#3d3629';
+        target.style.backgroundColor = theme === 'sage' ? '#5a8a47' : '#3d3629';
       }}
-      aria-label={`Switch to ${theme === 'sage' ? 'default' : 'sage green'} theme`}
-      title={`Switch to ${theme === 'sage' ? 'Default' : 'Sage Green'} Theme`}
+      aria-label={`Switch to ${theme === 'sage' ? 'default' : 'fresh green'} theme`}
+      title={`Switch to ${theme === 'sage' ? 'Default' : 'Fresh Green'} Theme`}
     >
       {theme === 'sage' ? (
         <Palette className="h-6 w-6" />

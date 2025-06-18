@@ -25,11 +25,11 @@ const Navbar: React.FC = () => {
   const getThemeColors = () => {
     if (theme === 'sage') {
       return {
-        navbarBg: scrolled ? 'rgba(196, 209, 188, 0.95)' : 'rgba(196, 209, 188, 0.85)',
-        borderColor: scrolled ? 'rgba(139, 144, 119, 0.3)' : 'rgba(139, 144, 119, 0.2)',
-        textPrimary: '#2d3629',
-        textSecondary: '#4a5442',
-        mobileBg: '#c4d1bc'
+        navbarBg: scrolled ? 'rgba(168, 213, 160, 0.95)' : 'rgba(168, 213, 160, 0.85)',
+        borderColor: scrolled ? 'rgba(90, 138, 71, 0.3)' : 'rgba(90, 138, 71, 0.2)',
+        textPrimary: '#2d4a22',
+        textSecondary: '#3d5a32',
+        mobileBg: '#a8d5a0'
       };
     }
     return {

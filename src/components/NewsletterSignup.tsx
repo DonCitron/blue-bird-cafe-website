@@ -26,13 +26,13 @@ const NewsletterSignup: React.FC = () => {
   const getThemeColors = () => {
     if (theme === 'sage') {
       return {
-        sectionBg: '#8b9077',
-        textLight: '#e8f0e6',
-        textSubtle: '#eef5ec',
-        buttonBg: '#2d3629',
-        buttonHover: '#1d251b',
-        inputBg: '#e8f0e6',
-        inputText: '#2d3629'
+        sectionBg: '#5a8a47',
+        textLight: '#e8f5e8',
+        textSubtle: '#f5faf5',
+        buttonBg: '#2d4a22',
+        buttonHover: '#1d3317',
+        inputBg: '#e8f5e8',
+        inputText: '#2d4a22'
       };
     }
     return {

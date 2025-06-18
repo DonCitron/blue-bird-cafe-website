@@ -16,15 +16,15 @@ const HomePage: React.FC = () => {
   const getThemeColors = () => {
     if (theme === 'sage') {
       return {
-        primary: '#a8b5a0',
-        secondary: '#c4d1bc', 
-        tertiary: '#e8f0e6',
-        accent: '#8b9077',
-        textPrimary: '#2d3629',
-        textSecondary: '#4a5442',
-        textLight: '#e8f0e6',
-        textSubtle: '#eef5ec',
-        border: '#7a8570'
+        primary: '#7fb069',
+        secondary: '#a8d5a0', 
+        tertiary: '#e8f5e8',
+        accent: '#5a8a47',
+        textPrimary: '#2d4a22',
+        textSecondary: '#3d5a32',
+        textLight: '#e8f5e8',
+        textSubtle: '#f5faf5',
+        border: '#6b9c5b'
       };
     }
     return {
@@ -65,7 +65,7 @@ const HomePage: React.FC = () => {
               to="/menu" 
               className="font-medium py-3 px-8 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg"
               style={{backgroundColor: colors.textPrimary, color: colors.textLight}}
-              onMouseEnter={(e) => (e.target as HTMLAnchorElement).style.backgroundColor = '#2d251b'}
+              onMouseEnter={(e) => (e.target as HTMLAnchorElement).style.backgroundColor = theme === 'sage' ? '#1d3317' : '#2d251b'}
               onMouseLeave={(e) => (e.target as HTMLAnchorElement).style.backgroundColor = colors.textPrimary}
             >
               Menü entdecken
@@ -257,8 +257,8 @@ const HomePage: React.FC = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Event 1 */}
-            <div className="rounded-lg p-6 transition-all duration-300 hover:scale-105 hover:shadow-xl" style={{backgroundColor: `rgba(${theme === 'sage' ? '139, 144, 119' : '176, 158, 126'}, 0.8)`}}>
-              <div className="font-bold text-center py-2 px-4 rounded mb-4" style={{backgroundColor: `rgba(${theme === 'sage' ? '45, 54, 41' : '61, 54, 41'}, 0.2)`, color: colors.textLight}}>
+            <div className="rounded-lg p-6 transition-all duration-300 hover:scale-105 hover:shadow-xl" style={{backgroundColor: `rgba(${theme === 'sage' ? '90, 138, 71' : '176, 158, 126'}, 0.8)`}}>
+              <div className="font-bold text-center py-2 px-4 rounded mb-4" style={{backgroundColor: `rgba(${theme === 'sage' ? '45, 74, 34' : '61, 54, 41'}, 0.3)`, color: colors.textLight}}>
                 <span className="block text-2xl">15</span>
                 <span>June</span>
               </div>
@@ -277,8 +277,8 @@ const HomePage: React.FC = () => {
             </div>
 
             {/* Event 2 */}
-            <div className="rounded-lg p-6 transition-all duration-300 hover:scale-105 hover:shadow-xl" style={{backgroundColor: `rgba(${theme === 'sage' ? '139, 144, 119' : '176, 158, 126'}, 0.8)`}}>
-              <div className="font-bold text-center py-2 px-4 rounded mb-4" style={{backgroundColor: `rgba(${theme === 'sage' ? '45, 54, 41' : '61, 54, 41'}, 0.2)`, color: colors.textLight}}>
+            <div className="rounded-lg p-6 transition-all duration-300 hover:scale-105 hover:shadow-xl" style={{backgroundColor: `rgba(${theme === 'sage' ? '90, 138, 71' : '176, 158, 126'}, 0.8)`}}>
+              <div className="font-bold text-center py-2 px-4 rounded mb-4" style={{backgroundColor: `rgba(${theme === 'sage' ? '45, 74, 34' : '61, 54, 41'}, 0.3)`, color: colors.textLight}}>
                 <span className="block text-2xl">22</span>
                 <span>June</span>
               </div>
@@ -297,8 +297,8 @@ const HomePage: React.FC = () => {
             </div>
 
             {/* Event 3 */}
-            <div className="rounded-lg p-6 transition-all duration-300 hover:scale-105 hover:shadow-xl" style={{backgroundColor: `rgba(${theme === 'sage' ? '139, 144, 119' : '176, 158, 126'}, 0.8)`}}>
-              <div className="font-bold text-center py-2 px-4 rounded mb-4" style={{backgroundColor: `rgba(${theme === 'sage' ? '45, 54, 41' : '61, 54, 41'}, 0.2)`, color: colors.textLight}}>
+            <div className="rounded-lg p-6 transition-all duration-300 hover:scale-105 hover:shadow-xl" style={{backgroundColor: `rgba(${theme === 'sage' ? '90, 138, 71' : '176, 158, 126'}, 0.8)`}}>
+              <div className="font-bold text-center py-2 px-4 rounded mb-4" style={{backgroundColor: `rgba(${theme === 'sage' ? '45, 74, 34' : '61, 54, 41'}, 0.3)`, color: colors.textLight}}>
                 <span className="block text-2xl">29</span>
                 <span>June</span>
               </div>
@@ -434,7 +434,7 @@ const HomePage: React.FC = () => {
                 className="aspect-square rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 group hover:scale-105"
                 style={{
                   background: theme === 'sage' 
-                    ? 'linear-gradient(135deg, #c4d1bc 0%, #8b9077 100%)'
+                    ? 'linear-gradient(135deg, #a8d5a0 0%, #5a8a47 100%)'
                     : 'linear-gradient(135deg, #d4c1a6 0%, #b09e7e 100%)'
                 }}
               >
@@ -458,7 +458,14 @@ const HomePage: React.FC = () => {
           <div className="max-w-4xl mx-auto text-center">
             <div className="rounded-2xl shadow-xl p-8 md:p-12 transition-all duration-300 hover:shadow-2xl" style={{backgroundColor: colors.tertiary}}>
               <div className="flex justify-center mb-6">
-                <div className="w-20 h-20 bg-gradient-to-br from-emerald-600 to-emerald-800 rounded-2xl flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300">
+                <div 
+                  className="w-20 h-20 rounded-2xl flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300"
+                  style={{
+                    background: theme === 'sage' 
+                      ? 'linear-gradient(135deg, #22c55e, #16a34a)' 
+                      : 'linear-gradient(135deg, #059669, #047857)'
+                  }}
+                >
                   <img 
                     src="/blue_bird_clean_transparent.png" 
                     alt="Blue Bird Logo" 
@@ -474,8 +481,17 @@ const HomePage: React.FC = () => {
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                 <div className="text-center group">
-                  <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div 
+                    className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300"
+                    style={{backgroundColor: theme === 'sage' ? '#dcfce7' : '#d1fae5'}}
+                  >
+                    <svg 
+                      className="w-8 h-8" 
+                      style={{color: theme === 'sage' ? '#16a34a' : '#059669'}}
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24"
+                    >
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
                     </svg>
                   </div>
@@ -484,8 +500,17 @@ const HomePage: React.FC = () => {
                 </div>
                 
                 <div className="text-center group">
-                  <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div 
+                    className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300"
+                    style={{backgroundColor: theme === 'sage' ? '#dcfce7' : '#d1fae5'}}
+                  >
+                    <svg 
+                      className="w-8 h-8" 
+                      style={{color: theme === 'sage' ? '#16a34a' : '#059669'}}
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24"
+                    >
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                     </svg>
                   </div>
@@ -494,8 +519,14 @@ const HomePage: React.FC = () => {
                 </div>
                 
                 <div className="text-center group">
-                  <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <Heart className="w-8 h-8 text-emerald-600" />
+                  <div 
+                    className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300"
+                    style={{backgroundColor: theme === 'sage' ? '#dcfce7' : '#d1fae5'}}
+                  >
+                    <Heart 
+                      className="w-8 h-8" 
+                      style={{color: theme === 'sage' ? '#16a34a' : '#059669'}}
+                    />
                   </div>
                   <h3 className="text-lg font-semibold mb-2" style={{color: colors.textPrimary}}>Geburtstagstorte</h3>
                   <p style={{color: colors.textSecondary}}>Kostenloser Kaffee an Ihrem Geburtstag</p>
@@ -512,10 +543,37 @@ const HomePage: React.FC = () => {
               </div>
               
               <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <button className="bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-3 px-8 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                <button 
+                  className="bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-3 px-8 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                  style={{
+                    backgroundColor: theme === 'sage' ? '#22c55e' : '#059669'
+                  }}
+                  onMouseEnter={(e) => {
+                    (e.target as HTMLButtonElement).style.backgroundColor = theme === 'sage' ? '#16a34a' : '#047857';
+                  }}
+                  onMouseLeave={(e) => {
+                    (e.target as HTMLButtonElement).style.backgroundColor = theme === 'sage' ? '#22c55e' : '#059669';
+                  }}
+                >
                   Jetzt anmelden
                 </button>
-                <button className="bg-transparent border-2 border-emerald-600 text-emerald-600 hover:bg-emerald-600 hover:text-white font-medium py-3 px-8 rounded-full transition-all duration-300 hover:scale-105">
+                <button 
+                  className="bg-transparent border-2 font-medium py-3 px-8 rounded-full transition-all duration-300 hover:scale-105"
+                  style={{
+                    borderColor: theme === 'sage' ? '#22c55e' : '#059669',
+                    color: theme === 'sage' ? '#22c55e' : '#059669'
+                  }}
+                  onMouseEnter={(e) => {
+                    const target = e.target as HTMLButtonElement;
+                    target.style.backgroundColor = theme === 'sage' ? '#22c55e' : '#059669';
+                    target.style.color = 'white';
+                  }}
+                  onMouseLeave={(e) => {
+                    const target = e.target as HTMLButtonElement;
+                    target.style.backgroundColor = 'transparent';
+                    target.style.color = theme === 'sage' ? '#22c55e' : '#059669';
+                  }}
+                >
                   Mehr erfahren
                 </button>
               </div>
@@ -539,7 +597,7 @@ const HomePage: React.FC = () => {
               to="/contact" 
               className="font-medium py-3 px-8 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg"
               style={{backgroundColor: colors.textPrimary, color: colors.textLight}}
-              onMouseEnter={(e) => (e.target as HTMLAnchorElement).style.backgroundColor = '#2d251b'}
+              onMouseEnter={(e) => (e.target as HTMLAnchorElement).style.backgroundColor = theme === 'sage' ? '#1d3317' : '#2d251b'}
               onMouseLeave={(e) => (e.target as HTMLAnchorElement).style.backgroundColor = colors.textPrimary}
             >
               Unseren Standort finden
