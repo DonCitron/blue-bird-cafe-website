@@ -44,78 +44,76 @@ const Navbar: React.FC = () => {
   const colors = getThemeColors();
 
   return (
-    <>
-      <header 
-        className="fixed w-full z-50 transition-all duration-300"
-        style={{
-          backgroundColor: colors.navbarBg,
-          backdropFilter: 'blur(10px)',
-          boxShadow: scrolled ? '0 4px 6px -1px rgba(0, 0, 0, 0.15)' : '0 2px 4px -1px rgba(0, 0, 0, 0.1)',
-          borderBottom: `1px solid ${colors.borderColor}`,
-          paddingTop: scrolled ? '0.75rem' : '1rem',
-          paddingBottom: scrolled ? '0.75rem' : '1rem'
-        }}
-      >
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center">
-            <Link to="/" className="flex items-center">
-              <div className="w-16 h-16 mr-3 flex items-center justify-center">
-                <img 
-                  src="/blue_bird_clean_transparent.png" 
-                  alt="Blue Bird Logo" 
-                  className="max-w-16 max-h-16 object-contain opacity-90"
-                  style={{filter: 'drop-shadow(0 1px 2px rgba(0,0,0,0.1))'}}
-                />
-              </div>
-              <span className="text-5xl font-bold font-script" style={{
-                color: colors.textPrimary,
-                textShadow: '1px 1px 3px rgba(0,0,0,0.15)',
-                letterSpacing: '0.05em',
-                lineHeight: '1',
-                transform: 'translateY(2px)'
-              }}>Blue Bird</span>
-            </Link>
+    <header 
+      className="fixed w-full z-50 transition-all duration-300"
+      style={{
+        backgroundColor: colors.navbarBg,
+        backdropFilter: 'blur(10px)',
+        boxShadow: scrolled ? '0 4px 6px -1px rgba(0, 0, 0, 0.15)' : '0 2px 4px -1px rgba(0, 0, 0, 0.1)',
+        borderBottom: `1px solid ${colors.borderColor}`,
+        paddingTop: scrolled ? '0.75rem' : '1rem',
+        paddingBottom: scrolled ? '0.75rem' : '1rem'
+      }}
+    >
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center">
+          <Link to="/" className="flex items-start">
+            <div className="w-24 h-24 mr-3 flex items-start justify-start">
+              <img 
+                src="/blue_bird_clean_transparent.png" 
+                alt="Blue Bird Logo" 
+                className="max-w-24 max-h-24 object-contain opacity-90"
+                style={{filter: 'drop-shadow(0 1px 2px rgba(0,0,0,0.1))'}}
+              />
+            </div>
+            <span className="text-5xl font-bold font-script self-start" style={{
+              color: colors.textPrimary,
+              textShadow: '1px 1px 3px rgba(0,0,0,0.15)',
+              letterSpacing: '0.05em',
+              lineHeight: '1',
+              transform: 'translateY(2px)'
+            }}>Blue Bird</span>
+          </Link>
 
-            {/* Desktop Navigation */}
-            <nav className="hidden md:flex space-x-8">
-              <NavLink to="/" label="Start" currentPath={location.pathname} colors={colors} />
-              <TeaserLink currentPath={location.pathname} colors={colors} />
-              <NavLink to="/menu" label="Menü" currentPath={location.pathname} colors={colors} />
-              <NavLink to="/about" label="Über uns" currentPath={location.pathname} colors={colors} />
-              <NavLink to="/gallery" label="Galerie" currentPath={location.pathname} colors={colors} />
-              <NavLink to="/contact" label="Kontakt" currentPath={location.pathname} colors={colors} />
-            </nav>
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex space-x-8">
+            <NavLink to="/" label="Start" currentPath={location.pathname} colors={colors} />
+            <TeaserLink currentPath={location.pathname} colors={colors} />
+            <NavLink to="/menu" label="Menü" currentPath={location.pathname} colors={colors} />
+            <NavLink to="/about" label="Über uns" currentPath={location.pathname} colors={colors} />
+            <NavLink to="/gallery" label="Galerie" currentPath={location.pathname} colors={colors} />
+            <NavLink to="/contact" label="Kontakt" currentPath={location.pathname} colors={colors} />
+          </nav>
 
-            {/* Mobile Navigation Button */}
-            <button 
-              className="md:hidden transition-colors"
-              style={{color: colors.textSecondary}}
-              onMouseEnter={(e) => (e.target as HTMLButtonElement).style.color = colors.textPrimary}
-              onMouseLeave={(e) => (e.target as HTMLButtonElement).style.color = colors.textSecondary}
-              onClick={() => setIsOpen(!isOpen)}
-            >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
-          </div>
+          {/* Mobile Navigation Button */}
+          <button 
+            className="md:hidden transition-colors"
+            style={{color: colors.textSecondary}}
+            onMouseEnter={(e) => (e.target as HTMLButtonElement).style.color = colors.textPrimary}
+            onMouseLeave={(e) => (e.target as HTMLButtonElement).style.color = colors.textSecondary}
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
         </div>
+      </div>
 
-        {/* Mobile Navigation Menu */}
-        {isOpen && (
-          <div className="md:hidden shadow-lg absolute top-full left-0 right-0" style={{backgroundColor: colors.mobileBg}}>
-            <div className="container mx-auto px-4 py-3">
-              <div className="flex flex-col space-y-3">
-                <MobileNavLink to="/" label="Start" colors={colors} />
-                <MobileTeaserLink colors={colors} />
-                <MobileNavLink to="/menu" label="Menü" colors={colors} />
-                <MobileNavLink to="/about" label="Über uns" colors={colors} />
-                <MobileNavLink to="/gallery" label="Galerie" colors={colors} />
-                <MobileNavLink to="/contact" label="Kontakt" colors={colors} />
-              </div>
+      {/* Mobile Navigation Menu */}
+      {isOpen && (
+        <div className="md:hidden shadow-lg absolute top-full left-0 right-0" style={{backgroundColor: colors.mobileBg}}>
+          <div className="container mx-auto px-4 py-3">
+            <div className="flex flex-col space-y-3">
+              <MobileNavLink to="/" label="Start" colors={colors} />
+              <MobileTeaserLink colors={colors} />
+              <MobileNavLink to="/menu" label="Menü" colors={colors} />
+              <MobileNavLink to="/about" label="Über uns" colors={colors} />
+              <MobileNavLink to="/gallery" label="Galerie" colors={colors} />
+              <MobileNavLink to="/contact" label="Kontakt" colors={colors} />
             </div>
           </div>
-        )}
-      </header>
-    </>
+        </div>
+      )}
+    </header>
   );
 };
 
@@ -156,7 +154,7 @@ const TeaserLink: React.FC<TeaserLinkProps> = ({ currentPath, colors }) => {
   return (
     <Link 
       to="/teaser-campaign" 
-      className="flex items-center gap-1 text-base font-medium transition-colors duration-200 relative group"
+      className="flex items-center gap-1 text-base font-medium transition-all duration-200 relative group"
       style={{
         color: isActive ? colors.textPrimary : colors.textSecondary,
         textShadow: '0 1px 2px rgba(0,0,0,0.1)'
@@ -201,7 +199,7 @@ const MobileTeaserLink: React.FC<MobileTeaserLinkProps> = ({ colors }) => {
   return (
     <Link 
       to="/teaser-campaign" 
-      className="flex items-center gap-2 text-base font-medium py-2 block transition-colors"
+      className="flex items-center gap-2 text-base font-medium py-2 transition-colors"
       style={{color: colors.textPrimary}}
       onMouseEnter={(e) => (e.target as HTMLElement).style.color = colors.textSecondary}
       onMouseLeave={(e) => (e.target as HTMLElement).style.color = colors.textPrimary}
