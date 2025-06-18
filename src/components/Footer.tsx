@@ -39,7 +39,13 @@ const Footer: React.FC = () => {
                 alt="Blue Bird Logo" 
                 className="w-8 h-8 object-contain mr-2"
               />
-              <span className="text-xl font-bold" style={{color: colors.textLight}}>Blue Bird</span>
+              <span className="text-5xl font-bold font-script" style={{
+                color: colors.textLight,
+                textShadow: '1px 1px 3px rgba(0,0,0,0.15)',
+                letterSpacing: '0.05em',
+                lineHeight: '1',
+                transform: 'translateY(2px)'
+              }}>Blue Bird</span>
             </Link>
             <p className="mb-4" style={{color: colors.textSubtle}}>
               Ein einzigartiges Café-Erlebnis mit Premium-Kaffee und Spezialitäten in entspannter, einladender Atmosphäre.
@@ -48,10 +54,10 @@ const Footer: React.FC = () => {
               <a href="https://instagram.com/BlueBird_Mannheim" target="_blank" rel="noopener noreferrer" className="transition-colors" style={{color: colors.textSubtle}} onMouseEnter={(e) => e.target.style.color = colors.accentColor} onMouseLeave={(e) => e.target.style.color = colors.textSubtle}>
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="#" className="transition-colors" style={{color: colors.textSubtle}} onMouseEnter={(e) => e.target.style.color = colors.accentColor} onMouseLeave={(e) => e.target.style.color = colors.textSubtle}>
+              <a href="https://facebook.com/BlueBirdMannheim" target="_blank" rel="noopener noreferrer" className="transition-colors" style={{color: colors.textSubtle}} onMouseEnter={(e) => e.target.style.color = colors.accentColor} onMouseLeave={(e) => e.target.style.color = colors.textSubtle}>
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="transition-colors" style={{color: colors.textSubtle}} onMouseEnter={(e) => e.target.style.color = colors.accentColor} onMouseLeave={(e) => e.target.style.color = colors.textSubtle}>
+              <a href="https://twitter.com/BlueBirdMannheim" target="_blank" rel="noopener noreferrer" className="transition-colors" style={{color: colors.textSubtle}} onMouseEnter={(e) => e.target.style.color = colors.accentColor} onMouseLeave={(e) => e.target.style.color = colors.textSubtle}>
                 <Twitter className="h-5 w-5" />
               </a>
             </div>
@@ -121,7 +127,7 @@ const Footer: React.FC = () => {
               </li>
               <li className="flex items-center">
                 <Mail className="h-5 w-5 mr-2 flex-shrink-0" style={{color: colors.accentColor}} />
-                <p>info@bluebird-mannheim.de</p>
+                <p>BlueBirdMannheim@gmail.com</p>
               </li>
             </ul>
           </div>

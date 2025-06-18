@@ -19,6 +19,10 @@ const AboutPage = lazy(() => import('./pages/AboutPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
 const GalleryPage = lazy(() => import('./pages/GalleryPage'));
 const ColorSchemePage = lazy(() => import('./pages/ColorSchemePage'));
+const AnalyticsDashboardPage = lazy(() => import('./pages/AnalyticsDashboardPage'));
+const PrivacyPolicyPage = lazy(() => import('./pages/PrivacyPolicyPage'));
+const TermsOfServicePage = lazy(() => import('./pages/TermsOfServicePage'));
+const LoyaltyCardsPage = lazy(() => import('./pages/LoyaltyCardsPage'));
 
 function App() {
   useEffect(() => {
@@ -95,6 +99,10 @@ function App() {
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="/gallery" element={<GalleryPage />} />
                 <Route path="/colors" element={<ColorSchemePage />} />
+                <Route path="/analytics" element={<AnalyticsDashboardPage />} />
+                <Route path="/privacy" element={<PrivacyPolicyPage />} />
+                <Route path="/terms" element={<TermsOfServicePage />} />
+                <Route path="/loyalty-cards" element={<LoyaltyCardsPage />} />
               </Routes>
             </Suspense>
           </main>
