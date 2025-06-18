@@ -58,11 +58,11 @@ const Navbar: React.FC = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center">
-            <div className="w-12 h-12 mr-3 flex items-center justify-center">
+            <div className="w-16 h-16 mr-3 flex items-center justify-center">
               <img 
                 src="/blue_bird_clean_transparent.png" 
                 alt="Blue Bird Logo" 
-                className="max-w-12 max-h-12 object-contain"
+                className="max-w-16 max-h-16 object-contain opacity-90"
                 style={{filter: 'drop-shadow(0 1px 2px rgba(0,0,0,0.1))'}}
               />
             </div>

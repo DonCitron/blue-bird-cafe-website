@@ -23,6 +23,7 @@ const AnalyticsDashboardPage = lazy(() => import('./pages/AnalyticsDashboardPage
 const PrivacyPolicyPage = lazy(() => import('./pages/PrivacyPolicyPage'));
 const TermsOfServicePage = lazy(() => import('./pages/TermsOfServicePage'));
 const LoyaltyCardsPage = lazy(() => import('./pages/LoyaltyCardsPage'));
+const TeaserCampaignPage = lazy(() => import('./pages/TeaserCampaignPage'));
 
 function App() {
   useEffect(() => {
@@ -103,6 +104,7 @@ function App() {
                 <Route path="/privacy" element={<PrivacyPolicyPage />} />
                 <Route path="/terms" element={<TermsOfServicePage />} />
                 <Route path="/loyalty-cards" element={<LoyaltyCardsPage />} />
+                <Route path="/teaser-campaign" element={<TeaserCampaignPage />} />
               </Routes>
             </Suspense>
           </main>
