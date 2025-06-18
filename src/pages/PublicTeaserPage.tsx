@@ -64,15 +64,15 @@ const PublicTeaserPage: React.FC = () => {
         {/* Prominent Central Logo Animation */}
         <div className="relative z-10 flex flex-col items-center justify-center px-4 w-full">
           
-          {/* Dominant Logo Display */}
+          {/* Dominant Logo Display - Bird Only */}
           <div className={`mb-12 md:mb-16 lg:mb-20 transition-all duration-2000 ${isLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-75'}`}>
             <div className="relative flex flex-col items-center">
               
-              {/* Main Logo with Dynamic Animation */}
+              {/* Main Logo with Dynamic Animation - Only Bird Image */}
               <div className="relative mb-8">
                 <img 
                   src="/blue_bird_clean_transparent.png" 
-                  alt="Blue Bird Café" 
+                  alt="Blue Bird" 
                   className={`w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 xl:w-[28rem] xl:h-[28rem] object-contain transition-all duration-1000 ${
                     logoPhase === 0 ? 'animate-pulse' :
                     logoPhase === 1 ? 'animate-bounce' :
@@ -106,22 +106,8 @@ const PublicTeaserPage: React.FC = () => {
                 />
               </div>
 
-              {/* German Brand Text with Dynamic Typography */}
-              <div className="text-center space-y-4">
-                <h1 
-                  className={`text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[10rem] font-script font-bold transition-all duration-1000 ${
-                    isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                  }`}
-                  style={{
-                    color: '#c5ae91',
-                    textShadow: '0 0 40px rgba(197, 174, 145, 0.8), 0 0 80px rgba(197, 174, 145, 0.4), 0 0 120px rgba(197, 174, 145, 0.2)',
-                    letterSpacing: '0.05em',
-                    lineHeight: '0.9'
-                  }}
-                >
-                  Blue Bird
-                </h1>
-                
+              {/* German Brand Text Below Logo */}
+              <div className="text-center space-y-6">
                 <div 
                   className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-wider transition-all duration-1000 delay-300 ${
                     isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
