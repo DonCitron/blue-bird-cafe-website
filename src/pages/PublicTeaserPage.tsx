@@ -581,7 +581,7 @@ const PublicTeaserPage: React.FC = () => {
         )}
       </div>
 
-      {/* Enhanced Logo with Multiple Glow Effects */}
+      {/* Enhanced Logo with Multiple Glow Effects - 20% BIGGER */}
       <div className="mb-16 relative z-20">
         <div className="relative">
           {/* Multiple glow layers for cinematic depth */}
@@ -616,11 +616,11 @@ const PublicTeaserPage: React.FC = () => {
             </>
           )}
           
-          {/* Main logo with enhanced effects */}
+          {/* Main logo with enhanced effects - INCREASED SIZE BY 20% */}
           <img 
             src="/blue_bird_clean_transparent.png" 
             alt="Blue Bird" 
-            className="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 xl:w-80 xl:h-80 object-contain relative z-10"
+            className="w-58 h-58 sm:w-67 sm:h-67 md:w-77 md:h-77 lg:w-86 lg:h-86 xl:w-96 xl:h-96 object-contain relative z-10"
             style={{
               filter: effects.logoGlow 
                 ? 'drop-shadow(0 15px 50px rgba(197, 174, 145, 0.8)) drop-shadow(0 0 100px rgba(197, 174, 145, 0.4)) drop-shadow(0 0 150px rgba(197, 174, 145, 0.2))'
