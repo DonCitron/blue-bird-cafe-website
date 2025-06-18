@@ -1,0 +1,29 @@
+{
+  "name": "Blue Bird Café",
+  "short_name": "Blue Bird",
+  "description": "Premium Kaffee und Spezialitäten in gemütlicher, einladender Atmosphäre",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#c5ae91",
+  "theme_color": "#3d3629",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/blue_bird_clean_transparent.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/blue_bird_clean_transparent.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["food", "lifestyle", "business"],
+  "lang": "de",
+  "dir": "ltr",
+  "scope": "/",
+  "prefer_related_applications": false
+}
