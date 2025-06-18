@@ -109,15 +109,170 @@ const PublicTeaserPage: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden" style={{backgroundColor: '#1a1611'}}>
-      {/* Enhanced animated background */}
+      {/* Jungle/Woody Background Elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Large Tree Trunks */}
+        <div 
+          className="absolute left-0 top-0 w-32 h-full opacity-20"
+          style={{
+            background: 'linear-gradient(90deg, #8B4513 0%, #A0522D 30%, #8B4513 60%, transparent 100%)',
+            clipPath: 'polygon(0 0, 80% 0, 60% 100%, 0 100%)'
+          }}
+        />
+        <div 
+          className="absolute right-0 top-0 w-24 h-full opacity-15"
+          style={{
+            background: 'linear-gradient(270deg, #654321 0%, #8B4513 40%, transparent 100%)',
+            clipPath: 'polygon(20% 0, 100% 0, 100% 100%, 40% 100%)'
+          }}
+        />
+
+        {/* Hanging Vines */}
+        {[...Array(8)].map((_, i) => (
+          <div
+            key={`vine-${i}`}
+            className="absolute opacity-25"
+            style={{
+              left: `${10 + i * 12}%`,
+              top: '0',
+              width: '2px',
+              height: `${60 + Math.random() * 40}%`,
+              background: 'linear-gradient(180deg, #228B22 0%, #32CD32 50%, #228B22 100%)',
+              transform: `rotate(${-5 + Math.random() * 10}deg)`,
+              animation: `sway ${4 + Math.random() * 2}s ease-in-out infinite`,
+              animationDelay: `${Math.random() * 2}s`
+            }}
+          >
+            {/* Vine leaves */}
+            <div
+              className="absolute w-3 h-2 rounded-full opacity-80"
+              style={{
+                backgroundColor: '#32CD32',
+                top: '20%',
+                left: '-6px',
+                transform: 'rotate(45deg)'
+              }}
+            />
+            <div
+              className="absolute w-2 h-3 rounded-full opacity-70"
+              style={{
+                backgroundColor: '#228B22',
+                top: '60%',
+                right: '-5px',
+                transform: 'rotate(-30deg)'
+              }}
+            />
+          </div>
+        ))}
+
+        {/* Large Tropical Leaves */}
+        {[...Array(12)].map((_, i) => (
+          <div
+            key={`leaf-${i}`}
+            className="absolute opacity-30"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              width: `${20 + Math.random() * 30}px`,
+              height: `${30 + Math.random() * 40}px`,
+              background: `linear-gradient(45deg, #228B22 0%, #32CD32 50%, #228B22 100%)`,
+              clipPath: 'ellipse(50% 80% at 50% 20%)',
+              transform: `rotate(${Math.random() * 360}deg)`,
+              animation: `float ${6 + Math.random() * 4}s ease-in-out infinite`,
+              animationDelay: `${Math.random() * 4}s`
+            }}
+          />
+        ))}
+
+        {/* Fern Fronds */}
+        {[...Array(6)].map((_, i) => (
+          <div
+            key={`fern-${i}`}
+            className="absolute opacity-25"
+            style={{
+              left: `${5 + i * 15}%`,
+              bottom: '0',
+              width: '60px',
+              height: '120px',
+              background: `
+                radial-gradient(ellipse 2px 8px at 10px 20px, #228B22 0%, transparent 50%),
+                radial-gradient(ellipse 2px 8px at 20px 40px, #32CD32 0%, transparent 50%),
+                radial-gradient(ellipse 2px 8px at 15px 60px, #228B22 0%, transparent 50%),
+                radial-gradient(ellipse 2px 8px at 25px 80px, #32CD32 0%, transparent 50%),
+                radial-gradient(ellipse 2px 8px at 18px 100px, #228B22 0%, transparent 50%),
+                linear-gradient(180deg, transparent 0%, #228B22 20%, #228B22 80%, transparent 100%)
+              `,
+              backgroundSize: '100% 100%',
+              transform: `rotate(${-10 + Math.random() * 20}deg)`,
+              animation: `sway ${5 + Math.random() * 3}s ease-in-out infinite`,
+              animationDelay: `${Math.random() * 3}s`
+            }}
+          />
+        ))}
+
+        {/* Wooden Branches */}
+        {[...Array(4)].map((_, i) => (
+          <div
+            key={`branch-${i}`}
+            className="absolute opacity-20"
+            style={{
+              left: `${20 + i * 20}%`,
+              top: `${10 + i * 20}%`,
+              width: `${80 + Math.random() * 60}px`,
+              height: '6px',
+              background: 'linear-gradient(90deg, #8B4513 0%, #A0522D 50%, #8B4513 100%)',
+              borderRadius: '3px',
+              transform: `rotate(${-30 + Math.random() * 60}deg)`,
+              boxShadow: '0 2px 4px rgba(0,0,0,0.3)'
+            }}
+          >
+            {/* Small twigs */}
+            <div
+              className="absolute w-4 h-1 bg-gradient-to-r from-transparent to-amber-800 rounded-full"
+              style={{
+                top: '-2px',
+                left: '30%',
+                transform: 'rotate(45deg)'
+              }}
+            />
+            <div
+              className="absolute w-3 h-1 bg-gradient-to-r from-transparent to-amber-700 rounded-full"
+              style={{
+                bottom: '-2px',
+                right: '40%',
+                transform: 'rotate(-30deg)'
+              }}
+            />
+          </div>
+        ))}
+
+        {/* Moss Patches */}
+        {[...Array(8)].map((_, i) => (
+          <div
+            key={`moss-${i}`}
+            className="absolute opacity-15"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              width: `${15 + Math.random() * 25}px`,
+              height: `${10 + Math.random() * 15}px`,
+              background: 'radial-gradient(ellipse, #228B22 0%, #32CD32 40%, transparent 70%)',
+              borderRadius: '50%',
+              filter: 'blur(1px)'
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Enhanced atmospheric background */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full opacity-10 animate-pulse" style={{backgroundColor: '#c5ae91', filter: 'blur(100px)', animationDuration: '4s'}}></div>
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full opacity-8 animate-pulse" style={{backgroundColor: '#EDC9AF', filter: 'blur(120px)', animationDuration: '6s', animationDelay: '2s'}}></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[32rem] h-[32rem] rounded-full opacity-5 animate-pulse" style={{backgroundColor: '#b09e7e', filter: 'blur(150px)', animationDuration: '8s', animationDelay: '1s'}}></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full opacity-8 animate-pulse" style={{backgroundColor: '#c5ae91', filter: 'blur(100px)', animationDuration: '4s'}}></div>
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full opacity-6 animate-pulse" style={{backgroundColor: '#EDC9AF', filter: 'blur(120px)', animationDuration: '6s', animationDelay: '2s'}}></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[32rem] h-[32rem] rounded-full opacity-4 animate-pulse" style={{backgroundColor: '#b09e7e', filter: 'blur(150px)', animationDuration: '8s', animationDelay: '1s'}}></div>
       </div>
 
       {/* Much Bigger Logo with Enhanced Effects */}
-      <div className="mb-16 relative">
+      <div className="mb-16 relative z-20">
         <div className="relative">
           {/* Glow effect behind logo */}
           <div 
@@ -139,28 +294,11 @@ const PublicTeaserPage: React.FC = () => {
               animationDuration: '4s'
             }}
           />
-          
-          {/* Floating particles around logo */}
-          <div className="absolute inset-0 pointer-events-none">
-            {[...Array(12)].map((_, i) => (
-              <div
-                key={i}
-                className="absolute w-2 h-2 rounded-full opacity-40"
-                style={{
-                  backgroundColor: '#c5ae91',
-                  left: `${20 + Math.random() * 60}%`,
-                  top: `${20 + Math.random() * 60}%`,
-                  animation: `float ${4 + Math.random() * 3}s ease-in-out infinite`,
-                  animationDelay: `${Math.random() * 3}s`
-                }}
-              />
-            ))}
-          </div>
         </div>
       </div>
 
       {/* Enhanced Timer Display */}
-      <div className="grid grid-cols-4 gap-6 sm:gap-8 md:gap-10 lg:gap-12 relative z-10">
+      <div className="grid grid-cols-4 gap-6 sm:gap-8 md:gap-10 lg:gap-12 relative z-20">
         <NumberDisplay 
           value={countdown.days} 
           previousValue={previousCountdown.days}
@@ -183,32 +321,24 @@ const PublicTeaserPage: React.FC = () => {
         />
       </div>
 
-      {/* Floating particles for atmosphere */}
-      <div className="absolute inset-0 pointer-events-none">
-        {[...Array(30)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute w-1 h-1 rounded-full opacity-20"
-            style={{
-              backgroundColor: '#c5ae91',
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animation: `float ${6 + Math.random() * 4}s ease-in-out infinite`,
-              animationDelay: `${Math.random() * 4}s`
-            }}
-          />
-        ))}
-      </div>
-
       <style jsx>{`
         @keyframes float {
           0%, 100% { 
             transform: translateY(0px) rotate(0deg); 
-            opacity: 0.2; 
+            opacity: 0.3; 
           }
           50% { 
-            transform: translateY(-60px) rotate(180deg); 
-            opacity: 0.4; 
+            transform: translateY(-20px) rotate(5deg); 
+            opacity: 0.5; 
+          }
+        }
+        
+        @keyframes sway {
+          0%, 100% { 
+            transform: rotate(-2deg); 
+          }
+          50% { 
+            transform: rotate(2deg); 
           }
         }
         
