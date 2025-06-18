@@ -9,11 +9,11 @@ const Footer: React.FC = () => {
   const getThemeColors = () => {
     if (theme === 'sage') {
       return {
-        footerBg: '#5a8a47',
-        textLight: '#e8f5e8',
-        textSubtle: '#f5faf5',
-        accentColor: '#a8d5a0',
-        borderColor: '#6b9c5b'
+        footerBg: '#22c55e',
+        textLight: '#f0fdf4',
+        textSubtle: '#ecfdf5',
+        accentColor: '#86efac',
+        borderColor: '#16a34a'
       };
     }
     return {

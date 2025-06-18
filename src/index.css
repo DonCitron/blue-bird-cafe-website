@@ -17,18 +17,18 @@
   --vanilla-cream: #f8f5eb;
 }
 
-/* Fresh Green Theme Variables */
+/* Fresh Green Theme Variables - Saftigeres, frischeres Grün */
 .sage-theme {
-  --bg-primary: #7fb069;
-  --bg-secondary: #a8d5a0;
-  --bg-tertiary: #e8f5e8;
-  --bg-accent: #5a8a47;
-  --text-primary: #2d4a22;
-  --text-secondary: #3d5a32;
-  --text-light: #e8f5e8;
-  --border-color: #6b9c5b;
-  --vanilla-white: #f0f8f0;
-  --vanilla-cream: #f5faf5;
+  --bg-primary: #4ade80;
+  --bg-secondary: #86efac;
+  --bg-tertiary: #f0fdf4;
+  --bg-accent: #22c55e;
+  --text-primary: #14532d;
+  --text-secondary: #166534;
+  --text-light: #f0fdf4;
+  --border-color: #16a34a;
+  --vanilla-white: #f7fee7;
+  --vanilla-cream: #ecfdf5;
 }
 
 body {
@@ -312,37 +312,71 @@ select:focus {
 
 @keyframes fresh-green-pulse-glow {
   0%, 100% {
-    box-shadow: 0 0 5px rgba(90, 138, 71, 0.4);
+    box-shadow: 0 0 5px rgba(34, 197, 94, 0.4);
   }
   50% {
-    box-shadow: 0 0 20px rgba(90, 138, 71, 0.7);
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.7);
   }
 }
 
-/* Fresh Green theme wood texture effect */
+/* Fresh Green theme wood texture effect - Saftigeres Grün */
 .sage-theme {
   background-image: 
-    radial-gradient(circle at 20% 80%, rgba(168, 213, 160, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(90, 138, 71, 0.1) 0%, transparent 50%);
+    radial-gradient(circle at 20% 80%, rgba(134, 239, 172, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(34, 197, 94, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(74, 222, 128, 0.1) 0%, transparent 70%);
 }
 
-/* Enhanced green button styles */
+/* Enhanced fresh green button styles */
 .sage-theme .bg-emerald-600 {
-  background-color: #22c55e !important;
+  background-color: #10b981 !important;
+  background-image: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3) !important;
 }
 
 .sage-theme .hover\:bg-emerald-700:hover {
-  background-color: #16a34a !important;
+  background-color: #047857 !important;
+  background-image: linear-gradient(135deg, #047857 0%, #065f46 100%) !important;
+  box-shadow: 0 6px 20px rgba(4, 120, 87, 0.4) !important;
+  transform: translateY(-2px) !important;
 }
 
 .sage-theme .border-emerald-600 {
-  border-color: #22c55e !important;
+  border-color: #10b981 !important;
 }
 
 .sage-theme .text-emerald-600 {
-  color: #22c55e !important;
+  color: #10b981 !important;
 }
 
 .sage-theme .hover\:bg-emerald-600:hover {
-  background-color: #22c55e !important;
+  background-color: #10b981 !important;
+  background-image: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+}
+
+/* Spezielle Button-Effekte für das Fresh Green Theme */
+.sage-theme button {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.sage-theme button:hover {
+  transform: translateY(-2px) scale(1.02) !important;
+}
+
+/* Verbesserte Schatten für das Fresh Green Theme */
+.sage-theme .shadow-lg {
+  box-shadow: 0 10px 25px rgba(34, 197, 94, 0.15), 0 4px 10px rgba(0, 0, 0, 0.1) !important;
+}
+
+.sage-theme .shadow-xl {
+  box-shadow: 0 20px 40px rgba(34, 197, 94, 0.2), 0 8px 16px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Frische Grün-Akzente für Cards und Bereiche */
+.sage-theme .rounded-lg {
+  border: 1px solid rgba(34, 197, 94, 0.1);
+}
+
+.sage-theme .rounded-2xl {
+  border: 1px solid rgba(34, 197, 94, 0.15);
 }

@@ -16,15 +16,15 @@ const HomePage: React.FC = () => {
   const getThemeColors = () => {
     if (theme === 'sage') {
       return {
-        primary: '#7fb069',
-        secondary: '#a8d5a0', 
-        tertiary: '#e8f5e8',
-        accent: '#5a8a47',
-        textPrimary: '#2d4a22',
-        textSecondary: '#3d5a32',
-        textLight: '#e8f5e8',
-        textSubtle: '#f5faf5',
-        border: '#6b9c5b'
+        primary: '#4ade80',
+        secondary: '#86efac', 
+        tertiary: '#f0fdf4',
+        accent: '#22c55e',
+        textPrimary: '#14532d',
+        textSecondary: '#166534',
+        textLight: '#f0fdf4',
+        textSubtle: '#ecfdf5',
+        border: '#16a34a'
       };
     }
     return {
@@ -65,7 +65,7 @@ const HomePage: React.FC = () => {
               to="/menu" 
               className="font-medium py-3 px-8 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg"
               style={{backgroundColor: colors.textPrimary, color: colors.textLight}}
-              onMouseEnter={(e) => (e.target as HTMLAnchorElement).style.backgroundColor = theme === 'sage' ? '#1d3317' : '#2d251b'}
+              onMouseEnter={(e) => (e.target as HTMLAnchorElement).style.backgroundColor = theme === 'sage' ? '#0f3f26' : '#2d251b'}
               onMouseLeave={(e) => (e.target as HTMLAnchorElement).style.backgroundColor = colors.textPrimary}
             >
               Menü entdecken
@@ -257,8 +257,8 @@ const HomePage: React.FC = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Event 1 */}
-            <div className="rounded-lg p-6 transition-all duration-300 hover:scale-105 hover:shadow-xl" style={{backgroundColor: `rgba(${theme === 'sage' ? '90, 138, 71' : '176, 158, 126'}, 0.8)`}}>
-              <div className="font-bold text-center py-2 px-4 rounded mb-4" style={{backgroundColor: `rgba(${theme === 'sage' ? '45, 74, 34' : '61, 54, 41'}, 0.3)`, color: colors.textLight}}>
+            <div className="rounded-lg p-6 transition-all duration-300 hover:scale-105 hover:shadow-xl" style={{backgroundColor: `rgba(${theme === 'sage' ? '34, 197, 94' : '176, 158, 126'}, 0.8)`}}>
+              <div className="font-bold text-center py-2 px-4 rounded mb-4" style={{backgroundColor: `rgba(${theme === 'sage' ? '20, 83, 45' : '61, 54, 41'}, 0.3)`, color: colors.textLight}}>
                 <span className="block text-2xl">15</span>
                 <span>June</span>
               </div>
@@ -277,8 +277,8 @@ const HomePage: React.FC = () => {
             </div>
 
             {/* Event 2 */}
-            <div className="rounded-lg p-6 transition-all duration-300 hover:scale-105 hover:shadow-xl" style={{backgroundColor: `rgba(${theme === 'sage' ? '90, 138, 71' : '176, 158, 126'}, 0.8)`}}>
-              <div className="font-bold text-center py-2 px-4 rounded mb-4" style={{backgroundColor: `rgba(${theme === 'sage' ? '45, 74, 34' : '61, 54, 41'}, 0.3)`, color: colors.textLight}}>
+            <div className="rounded-lg p-6 transition-all duration-300 hover:scale-105 hover:shadow-xl" style={{backgroundColor: `rgba(${theme === 'sage' ? '34, 197, 94' : '176, 158, 126'}, 0.8)`}}>
+              <div className="font-bold text-center py-2 px-4 rounded mb-4" style={{backgroundColor: `rgba(${theme === 'sage' ? '20, 83, 45' : '61, 54, 41'}, 0.3)`, color: colors.textLight}}>
                 <span className="block text-2xl">22</span>
                 <span>June</span>
               </div>
@@ -297,8 +297,8 @@ const HomePage: React.FC = () => {
             </div>
 
             {/* Event 3 */}
-            <div className="rounded-lg p-6 transition-all duration-300 hover:scale-105 hover:shadow-xl" style={{backgroundColor: `rgba(${theme === 'sage' ? '90, 138, 71' : '176, 158, 126'}, 0.8)`}}>
-              <div className="font-bold text-center py-2 px-4 rounded mb-4" style={{backgroundColor: `rgba(${theme === 'sage' ? '45, 74, 34' : '61, 54, 41'}, 0.3)`, color: colors.textLight}}>
+            <div className="rounded-lg p-6 transition-all duration-300 hover:scale-105 hover:shadow-xl" style={{backgroundColor: `rgba(${theme === 'sage' ? '34, 197, 94' : '176, 158, 126'}, 0.8)`}}>
+              <div className="font-bold text-center py-2 px-4 rounded mb-4" style={{backgroundColor: `rgba(${theme === 'sage' ? '20, 83, 45' : '61, 54, 41'}, 0.3)`, color: colors.textLight}}>
                 <span className="block text-2xl">29</span>
                 <span>June</span>
               </div>
@@ -434,7 +434,7 @@ const HomePage: React.FC = () => {
                 className="aspect-square rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 group hover:scale-105"
                 style={{
                   background: theme === 'sage' 
-                    ? 'linear-gradient(135deg, #a8d5a0 0%, #5a8a47 100%)'
+                    ? 'linear-gradient(135deg, #86efac 0%, #22c55e 100%)'
                     : 'linear-gradient(135deg, #d4c1a6 0%, #b09e7e 100%)'
                 }}
               >
@@ -462,7 +462,7 @@ const HomePage: React.FC = () => {
                   className="w-20 h-20 rounded-2xl flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300"
                   style={{
                     background: theme === 'sage' 
-                      ? 'linear-gradient(135deg, #22c55e, #16a34a)' 
+                      ? 'linear-gradient(135deg, #10b981, #047857)' 
                       : 'linear-gradient(135deg, #059669, #047857)'
                   }}
                 >
@@ -487,7 +487,7 @@ const HomePage: React.FC = () => {
                   >
                     <svg 
                       className="w-8 h-8" 
-                      style={{color: theme === 'sage' ? '#16a34a' : '#059669'}}
+                      style={{color: theme === 'sage' ? '#10b981' : '#059669'}}
                       fill="none" 
                       stroke="currentColor" 
                       viewBox="0 0 24 24"
@@ -506,7 +506,7 @@ const HomePage: React.FC = () => {
                   >
                     <svg 
                       className="w-8 h-8" 
-                      style={{color: theme === 'sage' ? '#16a34a' : '#059669'}}
+                      style={{color: theme === 'sage' ? '#10b981' : '#059669'}}
                       fill="none" 
                       stroke="currentColor" 
                       viewBox="0 0 24 24"
@@ -525,7 +525,7 @@ const HomePage: React.FC = () => {
                   >
                     <Heart 
                       className="w-8 h-8" 
-                      style={{color: theme === 'sage' ? '#16a34a' : '#059669'}}
+                      style={{color: theme === 'sage' ? '#10b981' : '#059669'}}
                     />
                   </div>
                   <h3 className="text-lg font-semibold mb-2" style={{color: colors.textPrimary}}>Geburtstagstorte</h3>
@@ -546,13 +546,23 @@ const HomePage: React.FC = () => {
                 <button 
                   className="bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-3 px-8 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg"
                   style={{
-                    backgroundColor: theme === 'sage' ? '#22c55e' : '#059669'
+                    backgroundColor: theme === 'sage' ? '#10b981' : '#059669',
+                    backgroundImage: theme === 'sage' ? 'linear-gradient(135deg, #10b981 0%, #047857 100%)' : 'linear-gradient(135deg, #059669 0%, #047857 100%)',
+                    boxShadow: theme === 'sage' ? '0 4px 15px rgba(16, 185, 129, 0.3)' : '0 4px 15px rgba(5, 150, 105, 0.3)'
                   }}
                   onMouseEnter={(e) => {
-                    (e.target as HTMLButtonElement).style.backgroundColor = theme === 'sage' ? '#16a34a' : '#047857';
+                    const target = e.target as HTMLButtonElement;
+                    target.style.backgroundColor = theme === 'sage' ? '#047857' : '#047857';
+                    target.style.backgroundImage = theme === 'sage' ? 'linear-gradient(135deg, #047857 0%, #065f46 100%)' : 'linear-gradient(135deg, #047857 0%, #065f46 100%)';
+                    target.style.boxShadow = theme === 'sage' ? '0 6px 20px rgba(4, 120, 87, 0.4)' : '0 6px 20px rgba(4, 120, 87, 0.4)';
+                    target.style.transform = 'translateY(-2px) scale(1.02)';
                   }}
                   onMouseLeave={(e) => {
-                    (e.target as HTMLButtonElement).style.backgroundColor = theme === 'sage' ? '#22c55e' : '#059669';
+                    const target = e.target as HTMLButtonElement;
+                    target.style.backgroundColor = theme === 'sage' ? '#10b981' : '#059669';
+                    target.style.backgroundImage = theme === 'sage' ? 'linear-gradient(135deg, #10b981 0%, #047857 100%)' : 'linear-gradient(135deg, #059669 0%, #047857 100%)';
+                    target.style.boxShadow = theme === 'sage' ? '0 4px 15px rgba(16, 185, 129, 0.3)' : '0 4px 15px rgba(5, 150, 105, 0.3)';
+                    target.style.transform = 'translateY(0) scale(1)';
                   }}
                 >
                   Jetzt anmelden
@@ -560,18 +570,22 @@ const HomePage: React.FC = () => {
                 <button 
                   className="bg-transparent border-2 font-medium py-3 px-8 rounded-full transition-all duration-300 hover:scale-105"
                   style={{
-                    borderColor: theme === 'sage' ? '#22c55e' : '#059669',
-                    color: theme === 'sage' ? '#22c55e' : '#059669'
+                    borderColor: theme === 'sage' ? '#10b981' : '#059669',
+                    color: theme === 'sage' ? '#10b981' : '#059669'
                   }}
                   onMouseEnter={(e) => {
                     const target = e.target as HTMLButtonElement;
-                    target.style.backgroundColor = theme === 'sage' ? '#22c55e' : '#059669';
+                    target.style.backgroundColor = theme === 'sage' ? '#10b981' : '#059669';
+                    target.style.backgroundImage = theme === 'sage' ? 'linear-gradient(135deg, #10b981 0%, #047857 100%)' : 'linear-gradient(135deg, #059669 0%, #047857 100%)';
                     target.style.color = 'white';
+                    target.style.transform = 'translateY(-2px) scale(1.02)';
                   }}
                   onMouseLeave={(e) => {
                     const target = e.target as HTMLButtonElement;
                     target.style.backgroundColor = 'transparent';
-                    target.style.color = theme === 'sage' ? '#22c55e' : '#059669';
+                    target.style.backgroundImage = 'none';
+                    target.style.color = theme === 'sage' ? '#10b981' : '#059669';
+                    target.style.transform = 'translateY(0) scale(1)';
                   }}
                 >
                   Mehr erfahren
@@ -597,7 +611,7 @@ const HomePage: React.FC = () => {
               to="/contact" 
               className="font-medium py-3 px-8 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg"
               style={{backgroundColor: colors.textPrimary, color: colors.textLight}}
-              onMouseEnter={(e) => (e.target as HTMLAnchorElement).style.backgroundColor = theme === 'sage' ? '#1d3317' : '#2d251b'}
+              onMouseEnter={(e) => (e.target as HTMLAnchorElement).style.backgroundColor = theme === 'sage' ? '#0f3f26' : '#2d251b'}
               onMouseLeave={(e) => (e.target as HTMLAnchorElement).style.backgroundColor = colors.textPrimary}
             >
               Unseren Standort finden

@@ -26,13 +26,13 @@ const NewsletterSignup: React.FC = () => {
   const getThemeColors = () => {
     if (theme === 'sage') {
       return {
-        sectionBg: '#5a8a47',
-        textLight: '#e8f5e8',
-        textSubtle: '#f5faf5',
-        buttonBg: '#2d4a22',
-        buttonHover: '#1d3317',
-        inputBg: '#e8f5e8',
-        inputText: '#2d4a22'
+        sectionBg: '#22c55e',
+        textLight: '#f0fdf4',
+        textSubtle: '#ecfdf5',
+        buttonBg: '#14532d',
+        buttonHover: '#0f3f26',
+        inputBg: '#f0fdf4',
+        inputText: '#14532d'
       };
     }
     return {
@@ -85,9 +85,34 @@ const NewsletterSignup: React.FC = () => {
                 type="submit"
                 disabled={isLoading}
                 className="px-6 py-3 rounded-lg font-medium transition-all duration-300 disabled:opacity-50"
-                style={{backgroundColor: colors.buttonBg, color: colors.textLight}}
-                onMouseEnter={(e) => !isLoading && ((e.target as HTMLButtonElement).style.backgroundColor = colors.buttonHover)}
-                onMouseLeave={(e) => !isLoading && ((e.target as HTMLButtonElement).style.backgroundColor = colors.buttonBg)}
+                style={{
+                  backgroundColor: colors.buttonBg, 
+                  color: colors.textLight,
+                  backgroundImage: theme === 'sage' ? 'linear-gradient(135deg, #14532d 0%, #0f3f26 100%)' : 'none',
+                  boxShadow: theme === 'sage' ? '0 4px 15px rgba(20, 83, 45, 0.3)' : 'none'
+                }}
+                onMouseEnter={(e) => {
+                  if (!isLoading) {
+                    const target = e.target as HTMLButtonElement;
+                    target.style.backgroundColor = colors.buttonHover;
+                    if (theme === 'sage') {
+                      target.style.backgroundImage = 'linear-gradient(135deg, #0f3f26 0%, #0a2e1a 100%)';
+                      target.style.boxShadow = '0 6px 20px rgba(15, 63, 38, 0.4)';
+                      target.style.transform = 'translateY(-2px) scale(1.02)';
+                    }
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (!isLoading) {
+                    const target = e.target as HTMLButtonElement;
+                    target.style.backgroundColor = colors.buttonBg;
+                    if (theme === 'sage') {
+                      target.style.backgroundImage = 'linear-gradient(135deg, #14532d 0%, #0f3f26 100%)';
+                      target.style.boxShadow = '0 4px 15px rgba(20, 83, 45, 0.3)';
+                      target.style.transform = 'translateY(0) scale(1)';
+                    }
+                  }
+                }}
               >
                 {isLoading ? 'Wird gesendet...' : 'Anmelden'}
               </button>
