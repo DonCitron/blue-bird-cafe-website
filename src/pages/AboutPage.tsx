@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { ArrowRight, Award, Star, Trophy, Certificate, Users, Target } from 'lucide-react';
+import { ArrowRight, Award, Star, Trophy, AlignCenterVertical as Certificate, Users, Target } from 'lucide-react';
 
 const AboutPage: React.FC = () => {
   useEffect(() => {
