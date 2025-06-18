@@ -10,6 +10,7 @@ import ThemeToggle from './components/ThemeToggle';
 import PWAInstallPrompt from './components/PWAInstallPrompt';
 import OfflineIndicator from './components/OfflineIndicator';
 import NotificationPermissionPrompt from './components/NotificationPermissionPrompt';
+import PasswordProtection from './components/PasswordProtection';
 import './index.css';
 
 // Lazy load pages for better performance
@@ -24,6 +25,7 @@ const PrivacyPolicyPage = lazy(() => import('./pages/PrivacyPolicyPage'));
 const TermsOfServicePage = lazy(() => import('./pages/TermsOfServicePage'));
 const LoyaltyCardsPage = lazy(() => import('./pages/LoyaltyCardsPage'));
 const TeaserCampaignPage = lazy(() => import('./pages/TeaserCampaignPage'));
+const PublicTeaserPage = lazy(() => import('./pages/PublicTeaserPage'));
 
 function App() {
   useEffect(() => {
@@ -84,33 +86,47 @@ function App() {
   return (
     <ThemeProvider>
       <Router>
-        <div className="font-sans min-h-screen flex flex-col theme-bg-primary">
-          <ScrollToTop />
-          <Navbar />
-          <ThemeToggle />
-          <OfflineIndicator />
-          <PWAInstallPrompt />
-          <NotificationPermissionPrompt />
-          <main className="flex-grow">
+        <Routes>
+          {/* Public Teaser Page - No Protection */}
+          <Route path="/public-teaser" element={
             <Suspense fallback={<LoadingSpinner />}>
-              <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/menu" element={<MenuPage />} />
-                <Route path="/about" element={<AboutPage />} />
-                <Route path="/contact" element={<ContactPage />} />
-                <Route path="/gallery" element={<GalleryPage />} />
-                <Route path="/colors" element={<ColorSchemePage />} />
-                <Route path="/analytics" element={<AnalyticsDashboardPage />} />
-                <Route path="/privacy" element={<PrivacyPolicyPage />} />
-                <Route path="/terms" element={<TermsOfServicePage />} />
-                <Route path="/loyalty-cards" element={<LoyaltyCardsPage />} />
-                <Route path="/teaser-campaign" element={<TeaserCampaignPage />} />
-              </Routes>
+              <PublicTeaserPage />
             </Suspense>
-          </main>
-          <Footer />
-          <BackToTop />
-        </div>
+          } />
+          
+          {/* Protected Main Website */}
+          <Route path="/*" element={
+            <PasswordProtection>
+              <div className="font-sans min-h-screen flex flex-col theme-bg-primary">
+                <ScrollToTop />
+                <Navbar />
+                <ThemeToggle />
+                <OfflineIndicator />
+                <PWAInstallPrompt />
+                <NotificationPermissionPrompt />
+                <main className="flex-grow">
+                  <Suspense fallback={<LoadingSpinner />}>
+                    <Routes>
+                      <Route path="/" element={<HomePage />} />
+                      <Route path="/menu" element={<MenuPage />} />
+                      <Route path="/about" element={<AboutPage />} />
+                      <Route path="/contact" element={<ContactPage />} />
+                      <Route path="/gallery" element={<GalleryPage />} />
+                      <Route path="/colors" element={<ColorSchemePage />} />
+                      <Route path="/analytics" element={<AnalyticsDashboardPage />} />
+                      <Route path="/privacy" element={<PrivacyPolicyPage />} />
+                      <Route path="/terms" element={<TermsOfServicePage />} />
+                      <Route path="/loyalty-cards" element={<LoyaltyCardsPage />} />
+                      <Route path="/teaser-campaign" element={<TeaserCampaignPage />} />
+                    </Routes>
+                  </Suspense>
+                </main>
+                <Footer />
+                <BackToTop />
+              </div>
+            </PasswordProtection>
+          } />
+        </Routes>
       </Router>
     </ThemeProvider>
   );
