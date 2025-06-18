@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { ArrowRight, Award, Star, Trophy, AlignCenterVertical as Certificate, Users, Target } from 'lucide-react';
+import { ArrowRight, Award, Star, Trophy, AlignCenterVertical as Certificate, Users, Target, Camera, Clock, Coffee, Heart } from 'lucide-react';
 
 const AboutPage: React.FC = () => {
   useEffect(() => {
@@ -204,6 +204,191 @@ const AboutPage: React.FC = () => {
               </div>
             </div>
 
+          </div>
+        </div>
+      </section>
+
+      {/* Behind-the-Scenes Section */}
+      <section className="py-20" style={{backgroundColor: '#f5f2e8'}}>
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <div className="flex justify-center mb-6">
+              <div className="w-16 h-16 rounded-full flex items-center justify-center" style={{backgroundColor: '#b09e7e'}}>
+                <Camera className="h-8 w-8" style={{color: '#f9f7f4'}} />
+              </div>
+            </div>
+            <h2 className="text-3xl font-bold mb-4" style={{color: '#3d3629'}}>Hinter den Kulissen</h2>
+            <p className="text-lg max-w-2xl mx-auto" style={{color: '#5a4f42'}}>
+              Erleben Sie die Leidenschaft und Hingabe unseres Teams bei der täglichen Arbeit im Blue Bird
+            </p>
+          </div>
+
+          {/* Daily Operations Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+            {/* Morning Preparation */}
+            <div className="space-y-6">
+              <div className="rounded-lg overflow-hidden shadow-lg">
+                <img 
+                  src="https://images.pexels.com/photos/2067628/pexels-photo-2067628.jpeg" 
+                  alt="Jose preparing coffee beans in the morning" 
+                  className="w-full h-64 object-cover"
+                />
+                <div className="p-6" style={{backgroundColor: '#e8dbc7'}}>
+                  <div className="flex items-center mb-3">
+                    <Clock className="h-5 w-5 mr-2" style={{color: '#b09e7e'}} />
+                    <span className="font-semibold" style={{color: '#3d3629'}}>6:30 Uhr - Morgenvorbereitung</span>
+                  </div>
+                  <h3 className="text-xl font-bold mb-2" style={{color: '#3d3629'}}>Jose bereitet die Kaffeebohnen vor</h3>
+                  <p style={{color: '#5a4f42'}}>
+                    Jeden Morgen beginnt Jose mit der sorgfältigen Auswahl und Röstung unserer Premium-Kaffeebohnen. 
+                    Seine jahrzehntelange Erfahrung zeigt sich in jedem Detail - von der Temperaturkontrolle bis zur 
+                    perfekten Timing für jede Bohnenart.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Team Collaboration */}
+            <div className="space-y-6">
+              <div className="rounded-lg overflow-hidden shadow-lg">
+                <img 
+                  src="https://images.pexels.com/photos/3020919/pexels-photo-3020919.jpeg" 
+                  alt="Team working together during busy hours" 
+                  className="w-full h-64 object-cover"
+                />
+                <div className="p-6" style={{backgroundColor: '#e8dbc7'}}>
+                  <div className="flex items-center mb-3">
+                    <Users className="h-5 w-5 mr-2" style={{color: '#b09e7e'}} />
+                    <span className="font-semibold" style={{color: '#3d3629'}}>Teamwork in Aktion</span>
+                  </div>
+                  <h3 className="text-xl font-bold mb-2" style={{color: '#3d3629'}}>Perfekte Koordination</h3>
+                  <p style={{color: '#5a4f42'}}>
+                    Unser Team arbeitet wie ein Uhrwerk zusammen. Lars koordiniert den Service, während Jose die 
+                    Qualität jeder Tasse überwacht und Pascal sicherstellt, dass alle technischen Systeme reibungslos laufen.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Process Showcase */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            {/* Coffee Crafting */}
+            <div className="text-center">
+              <div className="rounded-lg overflow-hidden shadow-md mb-4">
+                <img 
+                  src="https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg" 
+                  alt="Barista crafting the perfect latte art" 
+                  className="w-full h-48 object-cover"
+                />
+              </div>
+              <div className="flex justify-center mb-3">
+                <Coffee className="h-8 w-8" style={{color: '#b09e7e'}} />
+              </div>
+              <h3 className="text-lg font-bold mb-2" style={{color: '#3d3629'}}>Kaffee-Kunstwerk</h3>
+              <p style={{color: '#5a4f42'}}>
+                Jede Tasse ist ein Kunstwerk. Unser Team perfektioniert täglich die Latte Art und 
+                experimentiert mit neuen Geschmackskombinationen.
+              </p>
+            </div>
+
+            {/* Quality Control */}
+            <div className="text-center">
+              <div className="rounded-lg overflow-hidden shadow-md mb-4">
+                <img 
+                  src="https://images.pexels.com/photos/4828333/pexels-photo-4828333.jpeg" 
+                  alt="Jose testing matcha quality" 
+                  className="w-full h-48 object-cover"
+                />
+              </div>
+              <div className="flex justify-center mb-3">
+                <Target className="h-8 w-8" style={{color: '#b09e7e'}} />
+              </div>
+              <h3 className="text-lg font-bold mb-2" style={{color: '#3d3629'}}>Qualitätskontrolle</h3>
+              <p style={{color: '#5a4f42'}}>
+                Jose testet persönlich jeden Matcha-Batch und stellt sicher, dass nur die beste 
+                Qualität unsere Gäste erreicht.
+              </p>
+            </div>
+
+            {/* Customer Connection */}
+            <div className="text-center">
+              <div className="rounded-lg overflow-hidden shadow-md mb-4">
+                <img 
+                  src="https://images.pexels.com/photos/5082658/pexels-photo-5082658.jpeg" 
+                  alt="Lars interacting with customers" 
+                  className="w-full h-48 object-cover"
+                />
+              </div>
+              <div className="flex justify-center mb-3">
+                <Heart className="h-8 w-8" style={{color: '#b09e7e'}} />
+              </div>
+              <h3 className="text-lg font-bold mb-2" style={{color: '#3d3629'}}>Gäste-Verbindung</h3>
+              <p style={{color: '#5a4f42'}}>
+                Lars nimmt sich Zeit für jeden Gast, hört zu und sorgt dafür, dass sich jeder 
+                im Blue Bird willkommen und geschätzt fühlt.
+              </p>
+            </div>
+          </div>
+
+          {/* Team Philosophy */}
+          <div className="rounded-lg p-8 shadow-xl" style={{backgroundColor: '#EDC9AF'}}>
+            <div className="text-center mb-8">
+              <h3 className="text-2xl font-bold mb-4" style={{color: '#3d3629'}}>Unsere Arbeitsphilosophie</h3>
+              <p className="text-lg" style={{color: '#5a4f42'}}>
+                "Jeder Tag im Blue Bird ist eine neue Chance, jemandem ein Lächeln zu schenken"
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="text-center p-4">
+                <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <Heart className="h-6 w-6 text-amber-600" />
+                </div>
+                <h4 className="font-bold mb-2" style={{color: '#3d3629'}}>Leidenschaft</h4>
+                <p className="text-sm" style={{color: '#5a4f42'}}>
+                  Wir leben und atmen Kaffeekultur - jede Tasse wird mit Liebe zubereitet
+                </p>
+              </div>
+              
+              <div className="text-center p-4">
+                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <Users className="h-6 w-6 text-blue-600" />
+                </div>
+                <h4 className="font-bold mb-2" style={{color: '#3d3629'}}>Teamgeist</h4>
+                <p className="text-sm" style={{color: '#5a4f42'}}>
+                  Zusammenarbeit und gegenseitiger Respekt sind die Grundlage unseres Erfolgs
+                </p>
+              </div>
+              
+              <div className="text-center p-4">
+                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <Star className="h-6 w-6 text-green-600" />
+                </div>
+                <h4 className="font-bold mb-2" style={{color: '#3d3629'}}>Exzellenz</h4>
+                <p className="text-sm" style={{color: '#5a4f42'}}>
+                  Wir streben täglich nach Perfektion in allem, was wir tun
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Call to Action */}
+          <div className="text-center mt-12">
+            <h3 className="text-2xl font-bold mb-4" style={{color: '#3d3629'}}>Erleben Sie unser Team live</h3>
+            <p className="text-lg mb-6" style={{color: '#5a4f42'}}>
+              Besuchen Sie uns und sehen Sie selbst, wie viel Herzblut in jeder Tasse steckt
+            </p>
+            <a 
+              href="/contact" 
+              className="inline-flex items-center font-medium py-3 px-8 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg"
+              style={{backgroundColor: '#3d3629', color: '#f9f7f4'}}
+              onMouseEnter={(e) => (e.target as HTMLAnchorElement).style.backgroundColor = '#2d251b'}
+              onMouseLeave={(e) => (e.target as HTMLAnchorElement).style.backgroundColor = '#3d3629'}
+            >
+              Uns besuchen
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </a>
           </div>
         </div>
       </section>
