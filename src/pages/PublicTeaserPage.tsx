@@ -41,16 +41,20 @@ const PublicTeaserPage: React.FC = () => {
   });
 
   useEffect(() => {
-    document.title = 'Blue Bird Café';
+    document.title = 'Blue Bird Café - Coming Soon';
     
-    // Countdown to January 8, 2025
-    const targetDate = new Date('2025-01-08T00:00:00').getTime();
+    // Target date: January 8, 2025 at midnight (German time)
+    const targetDate = new Date('2025-01-08T00:00:00+01:00').getTime();
     
     const updateCountdown = () => {
       const now = new Date().getTime();
       const distance = targetDate - now;
       
       if (distance > 0) {
+        // Store previous values for animation detection
+        setPreviousCountdown(countdown);
+        
+        // Calculate new countdown values
         const newCountdown = {
           days: Math.floor(distance / (1000 * 60 * 60 * 24)),
           hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
@@ -58,18 +62,22 @@ const PublicTeaserPage: React.FC = () => {
           seconds: Math.floor((distance % (1000 * 60)) / 1000)
         };
         
-        setPreviousCountdown(countdown);
         setCountdown(newCountdown);
       } else {
+        // Timer finished
         setCountdown({ days: 0, hours: 0, minutes: 0, seconds: 0 });
       }
     };
 
+    // Initial update
     updateCountdown();
+    
+    // Update every second
     const interval = setInterval(updateCountdown, 1000);
     
+    // Cleanup interval on component unmount
     return () => clearInterval(interval);
-  }, [countdown]);
+  }, []); // Remove countdown dependency to prevent infinite re-renders
 
   const toggleEffect = (effectName: keyof typeof effects) => {
     setEffects(prev => ({
@@ -189,6 +197,9 @@ const PublicTeaserPage: React.FC = () => {
     );
   };
 
+  // Check if countdown is finished
+  const isCountdownFinished = countdown.days === 0 && countdown.hours === 0 && countdown.minutes === 0 && countdown.seconds === 0;
+
   return (
     <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden" style={{backgroundColor: '#1a1611'}}>
       {/* Effect Controls Panel */}
@@ -218,6 +229,16 @@ const PublicTeaserPage: React.FC = () => {
             >
               Minimal
             </button>
+          </div>
+
+          {/* Countdown Status */}
+          <div className="mb-4 p-3 bg-blue-900 bg-opacity-50 rounded">
+            <h4 className="text-blue-300 text-sm font-medium mb-2">⏰ Countdown Status</h4>
+            <div className="text-white text-xs">
+              <div>Target: 8. Januar 2025, 00:00</div>
+              <div>Status: {isCountdownFinished ? '🎉 Finished!' : '⏳ Running'}</div>
+              <div>Time left: {countdown.days}d {countdown.hours}h {countdown.minutes}m {countdown.seconds}s</div>
+            </div>
           </div>
 
           {/* Fluid Animation System */}
@@ -654,6 +675,27 @@ const PublicTeaserPage: React.FC = () => {
           label="Sekunden" 
         />
       </div>
+
+      {/* Countdown Finished Message */}
+      {isCountdownFinished && (
+        <div className="absolute inset-0 z-30 flex items-center justify-center bg-black bg-opacity-80">
+          <div className="text-center">
+            <h1 className="text-6xl md:text-8xl font-bold mb-8" style={{color: '#c5ae91', textShadow: '0 0 40px rgba(197, 174, 145, 0.8)'}}>
+              🎉 WIR SIND DA! 🎉
+            </h1>
+            <p className="text-2xl md:text-3xl mb-8" style={{color: '#f4f1ed'}}>
+              Blue Bird Café ist jetzt geöffnet!
+            </p>
+            <a 
+              href="/" 
+              className="inline-block px-8 py-4 rounded-full text-xl font-bold transition-all hover:scale-105"
+              style={{backgroundColor: '#c5ae91', color: '#1a1611'}}
+            >
+              Zur Hauptseite
+            </a>
+          </div>
+        </div>
+      )}
 
       <style jsx>{`
         /* Seamless Fluid Animation Keyframes */
