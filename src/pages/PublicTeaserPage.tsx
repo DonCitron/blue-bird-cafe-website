@@ -51,49 +51,88 @@ const PublicTeaserPage: React.FC = () => {
           <div className="absolute bottom-1/4 right-1/4 w-64 h-64 rounded-full opacity-8 animate-pulse" style={{backgroundColor: '#c5ae91', filter: 'blur(80px)', animationDelay: '1s'}}></div>
         </div>
 
-        {/* Main Content - Logo and Timer Only */}
+        {/* Main Content - Bird and Timer */}
         <div className="relative z-10 flex flex-col items-center justify-center px-4">
-          {/* Logo */}
-          <div className={`mb-16 transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <img 
-              src="/blue_bird_clean_transparent.png" 
-              alt="Blue Bird Café" 
-              className="w-40 h-40 md:w-56 md:h-56 lg:w-72 lg:h-72 mx-auto"
-              style={{
-                filter: 'drop-shadow(0 8px 32px rgba(197, 174, 145, 0.4))',
-                objectFit: 'contain'
-              }}
-            />
-          </div>
-
-          {/* Countdown Timer */}
+          {/* Countdown Timer with Bird */}
           <div className={`transition-all duration-1000 delay-300 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12">
-              {Object.entries(countdown).map(([unit, value], index) => (
-                <div key={unit} className="text-center">
-                  <div 
-                    className="w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 rounded-2xl flex items-center justify-center mb-4 shadow-2xl"
-                    style={{
-                      backgroundColor: 'rgba(197, 174, 145, 0.15)',
-                      border: '2px solid rgba(197, 174, 145, 0.3)',
-                      backdropFilter: 'blur(10px)'
-                    }}
-                  >
-                    <span className="text-3xl md:text-4xl lg:text-5xl font-bold font-mono" style={{
-                      color: '#c5ae91',
-                      textShadow: '0 2px 10px rgba(197, 174, 145, 0.5)'
+            <div className="relative">
+              {/* Countdown Grid */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12">
+                {Object.entries(countdown).map(([unit, value], index) => (
+                  <div key={unit} className="text-center relative">
+                    {/* Bird positioned on the first countdown box (days) */}
+                    {index === 0 && (
+                      <div className="absolute -top-16 md:-top-20 left-1/2 transform -translate-x-1/2 z-20">
+                        <img 
+                          src="/blue_bird_clean_transparent.png" 
+                          alt="Blue Bird" 
+                          className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 object-contain animate-bounce"
+                          style={{
+                            filter: 'drop-shadow(0 4px 16px rgba(197, 174, 145, 0.6))',
+                            animationDuration: '3s'
+                          }}
+                        />
+                      </div>
+                    )}
+                    
+                    <div 
+                      className="w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 rounded-2xl flex items-center justify-center mb-4 shadow-2xl relative"
+                      style={{
+                        backgroundColor: 'rgba(197, 174, 145, 0.15)',
+                        border: '2px solid rgba(197, 174, 145, 0.3)',
+                        backdropFilter: 'blur(10px)'
+                      }}
+                    >
+                      {/* Wood texture effect for the bird to "sit" on */}
+                      {index === 0 && (
+                        <div 
+                          className="absolute -top-1 left-0 right-0 h-2 rounded-t-2xl"
+                          style={{
+                            backgroundColor: '#8B4513',
+                            background: 'linear-gradient(90deg, #8B4513 0%, #A0522D 50%, #8B4513 100%)',
+                            boxShadow: 'inset 0 1px 2px rgba(0,0,0,0.3)'
+                          }}
+                        />
+                      )}
+                      
+                      <span className="text-3xl md:text-4xl lg:text-5xl font-bold font-mono" style={{
+                        color: '#c5ae91',
+                        textShadow: '0 2px 10px rgba(197, 174, 145, 0.5)'
+                      }}>
+                        {value.toString().padStart(2, '0')}
+                      </span>
+                    </div>
+                    <span className="text-lg md:text-xl lg:text-2xl font-medium capitalize" style={{
+                      color: '#f4f1ed',
+                      textShadow: '0 1px 5px rgba(0, 0, 0, 0.5)'
                     }}>
-                      {value.toString().padStart(2, '0')}
+                      {unit === 'days' ? 'Tage' : unit === 'hours' ? 'Stunden' : unit === 'minutes' ? 'Minuten' : 'Sekunden'}
                     </span>
                   </div>
-                  <span className="text-lg md:text-xl lg:text-2xl font-medium capitalize" style={{
-                    color: '#f4f1ed',
-                    textShadow: '0 1px 5px rgba(0, 0, 0, 0.5)'
-                  }}>
-                    {unit === 'days' ? 'Tage' : unit === 'hours' ? 'Stunden' : unit === 'minutes' ? 'Minuten' : 'Sekunden'}
-                  </span>
-                </div>
-              ))}
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Subtle Blue Bird text below */}
+          <div className={`mt-16 transition-all duration-1000 delay-500 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <div className="text-center">
+              <div 
+                className="text-3xl md:text-4xl lg:text-5xl font-script font-bold mb-2 opacity-60"
+                style={{
+                  color: '#c5ae91',
+                  textShadow: '0 2px 20px rgba(197, 174, 145, 0.4)',
+                  letterSpacing: '0.05em'
+                }}
+              >
+                Blue Bird
+              </div>
+              <div 
+                className="text-sm md:text-base lg:text-lg opacity-40 tracking-wider"
+                style={{color: '#f4f1ed'}}
+              >
+                COMING SOON
+              </div>
             </div>
           </div>
         </div>
