@@ -17,9 +17,24 @@
   --vanilla-cream: #f8f5eb;
 }
 
+/* Sage Green Theme Variables */
+.sage-theme {
+  --bg-primary: #a8b5a0;
+  --bg-secondary: #c4d1bc;
+  --bg-tertiary: #e8f0e6;
+  --bg-accent: #8b9077;
+  --text-primary: #2d3629;
+  --text-secondary: #4a5442;
+  --text-light: #5a6552;
+  --border-color: #7a8570;
+  --vanilla-white: #e8f0e6;
+  --vanilla-cream: #eef5ec;
+}
+
 body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Custom animations */
@@ -251,5 +266,55 @@ select:focus {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+/* Theme-aware component styles */
+.theme-bg-primary {
+  background-color: var(--bg-primary);
+  transition: background-color 0.3s ease;
+}
+
+.theme-bg-secondary {
+  background-color: var(--bg-secondary);
+  transition: background-color 0.3s ease;
+}
+
+.theme-bg-tertiary {
+  background-color: var(--bg-tertiary);
+  transition: background-color 0.3s ease;
+}
+
+.theme-bg-accent {
+  background-color: var(--bg-accent);
+  transition: background-color 0.3s ease;
+}
+
+.theme-text-primary {
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+.theme-text-secondary {
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+}
+
+.theme-border {
+  border-color: var(--border-color);
+  transition: border-color 0.3s ease;
+}
+
+/* Sage theme specific adjustments */
+.sage-theme .animate-pulse-glow {
+  animation: sage-pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes sage-pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(139, 144, 119, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(139, 144, 119, 0.6);
   }
 }
