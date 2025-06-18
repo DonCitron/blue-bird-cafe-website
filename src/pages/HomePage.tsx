@@ -116,11 +116,11 @@ const HomePage: React.FC = () => {
   };
 
   return (
-    <>
+    <div className="w-full">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden" style={{backgroundColor: colors.tertiary}}>
+      <section className="relative w-full h-screen flex items-center justify-center overflow-hidden" style={{backgroundColor: colors.tertiary}}>
         
-        <div className="container mx-auto px-4 z-10 text-center">
+        <div className="w-full max-w-7xl mx-auto px-4 z-10 text-center">
           <div className="flex flex-col items-center mb-6">
             <div className="flex items-center justify-center h-80 md:h-96 mb-2">
               <ImageWithFallback
@@ -165,8 +165,8 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16" style={{backgroundColor: colors.secondary}}>
-        <div className="container mx-auto px-4">
+      <section className="w-full py-16" style={{backgroundColor: colors.secondary}}>
+        <div className="w-full max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div className="p-6">
               <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{backgroundColor: colors.accent}}>
@@ -202,8 +202,8 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* About Preview Section */}
-      <section className="py-20" style={{backgroundColor: colors.tertiary}}>
-        <div className="container mx-auto px-4">
+      <section className="w-full py-20" style={{backgroundColor: colors.tertiary}}>
+        <div className="w-full max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="order-2 md:order-1">
               <h2 className="text-3xl font-bold mb-6" style={{color: colors.textPrimary}}>Willkommen im BlueBird Café</h2>
@@ -233,8 +233,8 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* Menu Preview */}
-      <section className="py-20" style={{backgroundColor: colors.secondary}}>
-        <div className="container mx-auto px-4">
+      <section className="w-full py-20" style={{backgroundColor: colors.secondary}}>
+        <div className="w-full max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold mb-4" style={{color: colors.textPrimary}}>Unsere Menü-Highlights</h2>
             <p className="text-lg max-w-2xl mx-auto" style={{color: colors.textSecondary}}>
@@ -319,8 +319,8 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* Upcoming Events */}
-      <section className="py-20" style={{backgroundColor: colors.accent, color: colors.textLight}}>
-        <div className="container mx-auto px-4">
+      <section className="w-full py-20" style={{backgroundColor: colors.accent, color: colors.textLight}}>
+        <div className="w-full max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold mb-4" style={{color: colors.textLight}}>Kommende Veranstaltungen</h2>
             <p className="text-lg max-w-2xl mx-auto" style={{color: colors.textSubtle}}>
@@ -393,8 +393,8 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20" style={{backgroundColor: colors.tertiary}}>
-        <div className="container mx-auto px-4">
+      <section className="w-full py-20" style={{backgroundColor: colors.tertiary}}>
+        <div className="w-full max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold mb-4" style={{color: colors.textPrimary}}>Was unsere Kunden sagen</h2>
             <p className="text-lg max-w-2xl mx-auto" style={{color: colors.textSecondary}}>
@@ -473,8 +473,8 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* Instagram Feed */}
-      <section className="py-20" style={{backgroundColor: colors.tertiary}}>
-        <div className="container mx-auto px-4">
+      <section className="w-full py-20" style={{backgroundColor: colors.tertiary}}>
+        <div className="w-full max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold mb-4" style={{color: colors.textPrimary}}>Folgen Sie uns auf Instagram</h2>
             <p className="text-lg max-w-2xl mx-auto mb-6" style={{color: colors.textSecondary}}>
@@ -524,142 +524,140 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* Blue Bird Card Loyalty Program */}
-      <section className="py-20" style={{backgroundColor: colors.secondary}}>
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="rounded-2xl shadow-xl p-8 md:p-12 transition-all duration-300 hover:shadow-2xl" style={{backgroundColor: colors.tertiary}}>
-              <div className="flex justify-center mb-6">
+      <section className="w-full py-20" style={{backgroundColor: colors.secondary}}>
+        <div className="w-full max-w-4xl mx-auto px-4 text-center">
+          <div className="rounded-2xl shadow-xl p-8 md:p-12 transition-all duration-300 hover:shadow-2xl" style={{backgroundColor: colors.tertiary}}>
+            <div className="flex justify-center mb-6">
+              <div 
+                className="w-20 h-20 rounded-2xl flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300"
+                style={{
+                  background: getLoyaltyCardGradient()
+                }}
+              >
+                <img 
+                  src="/blue_bird_clean_transparent.png" 
+                  alt="Blue Bird Logo" 
+                  className="w-12 h-12 object-contain"
+                />
+              </div>
+            </div>
+            
+            <h2 className="text-3xl font-bold mb-4" style={{color: colors.textPrimary}}>Blue Bird Card</h2>
+            <p className="text-xl mb-8" style={{color: colors.textSecondary}}>
+              Unser Treueprogramm belohnt Ihre Treue mit besonderen Vorteilen
+            </p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              <div className="text-center group">
                 <div 
-                  className="w-20 h-20 rounded-2xl flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300"
-                  style={{
-                    background: getLoyaltyCardGradient()
-                  }}
+                  className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300"
+                  style={{backgroundColor: getLoyaltyIconBg()}}
                 >
-                  <img 
-                    src="/blue_bird_clean_transparent.png" 
-                    alt="Blue Bird Logo" 
-                    className="w-12 h-12 object-contain"
+                  <svg 
+                    className="w-8 h-8" 
+                    style={{color: getLoyaltyIconColor()}}
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-semibold mb-2" style={{color: colors.textPrimary}}>Punkte sammeln</h3>
+                <p style={{color: colors.textSecondary}}>1€ = 1 Punkt bei jedem Einkauf</p>
+              </div>
+              
+              <div className="text-center group">
+                <div 
+                  className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300"
+                  style={{backgroundColor: getLoyaltyIconBg()}}
+                >
+                  <svg 
+                    className="w-8 h-8" 
+                    style={{color: getLoyaltyIconColor()}}
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-semibold mb-2" style={{color: colors.textPrimary}}>Exklusive Angebote</h3>
+                <p style={{color: colors.textSecondary}}>Spezielle Rabatte nur für Mitglieder</p>
+              </div>
+              
+              <div className="text-center group">
+                <div 
+                  className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300"
+                  style={{backgroundColor: getLoyaltyIconBg()}}
+                >
+                  <Heart 
+                    className="w-8 h-8" 
+                    style={{color: getLoyaltyIconColor()}}
                   />
                 </div>
+                <h3 className="text-lg font-semibold mb-2" style={{color: colors.textPrimary}}>Geburtstagstorte</h3>
+                <p style={{color: colors.textSecondary}}>Kostenloser Kaffee an Ihrem Geburtstag</p>
               </div>
-              
-              <h2 className="text-3xl font-bold mb-4" style={{color: colors.textPrimary}}>Blue Bird Card</h2>
-              <p className="text-xl mb-8" style={{color: colors.textSecondary}}>
-                Unser Treueprogramm belohnt Ihre Treue mit besonderen Vorteilen
-              </p>
-              
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                <div className="text-center group">
-                  <div 
-                    className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300"
-                    style={{backgroundColor: getLoyaltyIconBg()}}
-                  >
-                    <svg 
-                      className="w-8 h-8" 
-                      style={{color: getLoyaltyIconColor()}}
-                      fill="none" 
-                      stroke="currentColor" 
-                      viewBox="0 0 24 24"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
-                    </svg>
-                  </div>
-                  <h3 className="text-lg font-semibold mb-2" style={{color: colors.textPrimary}}>Punkte sammeln</h3>
-                  <p style={{color: colors.textSecondary}}>1€ = 1 Punkt bei jedem Einkauf</p>
-                </div>
-                
-                <div className="text-center group">
-                  <div 
-                    className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300"
-                    style={{backgroundColor: getLoyaltyIconBg()}}
-                  >
-                    <svg 
-                      className="w-8 h-8" 
-                      style={{color: getLoyaltyIconColor()}}
-                      fill="none" 
-                      stroke="currentColor" 
-                      viewBox="0 0 24 24"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                    </svg>
-                  </div>
-                  <h3 className="text-lg font-semibold mb-2" style={{color: colors.textPrimary}}>Exklusive Angebote</h3>
-                  <p style={{color: colors.textSecondary}}>Spezielle Rabatte nur für Mitglieder</p>
-                </div>
-                
-                <div className="text-center group">
-                  <div 
-                    className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300"
-                    style={{backgroundColor: getLoyaltyIconBg()}}
-                  >
-                    <Heart 
-                      className="w-8 h-8" 
-                      style={{color: getLoyaltyIconColor()}}
-                    />
-                  </div>
-                  <h3 className="text-lg font-semibold mb-2" style={{color: colors.textPrimary}}>Geburtstagstorte</h3>
-                  <p style={{color: colors.textSecondary}}>Kostenloser Kaffee an Ihrem Geburtstag</p>
-                </div>
+            </div>
+            
+            <div className="rounded-xl p-6 mb-8" style={{backgroundColor: colors.secondary}}>
+              <h3 className="text-lg font-semibold mb-2" style={{color: colors.textPrimary}}>Belohnungsstufen</h3>
+              <div className="flex flex-wrap justify-center gap-4">
+                <span className="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium">Bronze: 0-99 Punkte</span>
+                <span className="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium">Silber: 100-299 Punkte</span>
+                <span className="bg-yellow-200 text-yellow-900 px-3 py-1 rounded-full text-sm font-medium">Gold: 300+ Punkte</span>
               </div>
-              
-              <div className="rounded-xl p-6 mb-8" style={{backgroundColor: colors.secondary}}>
-                <h3 className="text-lg font-semibold mb-2" style={{color: colors.textPrimary}}>Belohnungsstufen</h3>
-                <div className="flex flex-wrap justify-center gap-4">
-                  <span className="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium">Bronze: 0-99 Punkte</span>
-                  <span className="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium">Silber: 100-299 Punkte</span>
-                  <span className="bg-yellow-200 text-yellow-900 px-3 py-1 rounded-full text-sm font-medium">Gold: 300+ Punkte</span>
-                </div>
-              </div>
-              
-              <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <button 
-                  className="bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-3 px-8 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg"
-                  style={{
-                    backgroundColor: colors.accent,
-                    backgroundImage: getLoyaltyCardGradient(),
-                    boxShadow: `0 4px 15px ${colors.accent}30`
-                  }}
-                  onMouseEnter={(e) => {
-                    const target = e.target as HTMLButtonElement;
-                    target.style.backgroundColor = colors.textPrimary;
-                    target.style.backgroundImage = `linear-gradient(135deg, ${colors.textPrimary} 0%, ${getHoverColor()} 100%)`;
-                    target.style.boxShadow = `0 6px 20px ${colors.textPrimary}40`;
-                    target.style.transform = 'translateY(-2px) scale(1.02)';
-                  }}
-                  onMouseLeave={(e) => {
-                    const target = e.target as HTMLButtonElement;
-                    target.style.backgroundColor = colors.accent;
-                    target.style.backgroundImage = getLoyaltyCardGradient();
-                    target.style.boxShadow = `0 4px 15px ${colors.accent}30`;
-                    target.style.transform = 'translateY(0) scale(1)';
-                  }}
-                >
-                  Jetzt anmelden
-                </button>
-                <button 
-                  className="bg-transparent border-2 font-medium py-3 px-8 rounded-full transition-all duration-300 hover:scale-105"
-                  style={{
-                    borderColor: colors.accent,
-                    color: colors.accent
-                  }}
-                  onMouseEnter={(e) => {
-                    const target = e.target as HTMLButtonElement;
-                    target.style.backgroundColor = colors.accent;
-                    target.style.backgroundImage = getLoyaltyCardGradient();
-                    target.style.color = 'white';
-                    target.style.transform = 'translateY(-2px) scale(1.02)';
-                  }}
-                  onMouseLeave={(e) => {
-                    const target = e.target as HTMLButtonElement;
-                    target.style.backgroundColor = 'transparent';
-                    target.style.backgroundImage = 'none';
-                    target.style.color = colors.accent;
-                    target.style.transform = 'translateY(0) scale(1)';
-                  }}
-                >
-                  Mehr erfahren
-                </button>
-              </div>
+            </div>
+            
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <button 
+                className="bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-3 px-8 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                style={{
+                  backgroundColor: colors.accent,
+                  backgroundImage: getLoyaltyCardGradient(),
+                  boxShadow: `0 4px 15px ${colors.accent}30`
+                }}
+                onMouseEnter={(e) => {
+                  const target = e.target as HTMLButtonElement;
+                  target.style.backgroundColor = colors.textPrimary;
+                  target.style.backgroundImage = `linear-gradient(135deg, ${colors.textPrimary} 0%, ${getHoverColor()} 100%)`;
+                  target.style.boxShadow = `0 6px 20px ${colors.textPrimary}40`;
+                  target.style.transform = 'translateY(-2px) scale(1.02)';
+                }}
+                onMouseLeave={(e) => {
+                  const target = e.target as HTMLButtonElement;
+                  target.style.backgroundColor = colors.accent;
+                  target.style.backgroundImage = getLoyaltyCardGradient();
+                  target.style.boxShadow = `0 4px 15px ${colors.accent}30`;
+                  target.style.transform = 'translateY(0) scale(1)';
+                }}
+              >
+                Jetzt anmelden
+              </button>
+              <button 
+                className="bg-transparent border-2 font-medium py-3 px-8 rounded-full transition-all duration-300 hover:scale-105"
+                style={{
+                  borderColor: colors.accent,
+                  color: colors.accent
+                }}
+                onMouseEnter={(e) => {
+                  const target = e.target as HTMLButtonElement;
+                  target.style.backgroundColor = colors.accent;
+                  target.style.backgroundImage = getLoyaltyCardGradient();
+                  target.style.color = 'white';
+                  target.style.transform = 'translateY(-2px) scale(1.02)';
+                }}
+                onMouseLeave={(e) => {
+                  const target = e.target as HTMLButtonElement;
+                  target.style.backgroundColor = 'transparent';
+                  target.style.backgroundImage = 'none';
+                  target.style.color = colors.accent;
+                  target.style.transform = 'translateY(0) scale(1)';
+                }}
+              >
+                Mehr erfahren
+              </button>
             </div>
           </div>
         </div>
@@ -669,8 +667,8 @@ const HomePage: React.FC = () => {
       <NewsletterSignup />
 
       {/* CTA Section */}
-      <section className="py-20" style={{backgroundColor: colors.accent}}>
-        <div className="container mx-auto px-4 text-center">
+      <section className="w-full py-20" style={{backgroundColor: colors.accent}}>
+        <div className="w-full max-w-7xl mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6" style={{color: colors.textLight}}>Bereit für einen Besuch?</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto" style={{color: colors.textSubtle}}>
             Erleben Sie die einladende Atmosphäre des Blue Bird. Wir freuen uns darauf, Sie zu begrüßen!
@@ -705,7 +703,7 @@ const HomePage: React.FC = () => {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 };
 

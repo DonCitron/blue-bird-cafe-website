@@ -97,14 +97,14 @@ function App() {
           {/* Protected Main Website */}
           <Route path="/*" element={
             <PasswordProtection>
-              <div className="font-sans min-h-screen flex flex-col theme-bg-primary">
+              <div className="font-sans full-screen flex flex-col theme-bg-primary">
                 <ScrollToTop />
                 <Navbar />
                 <ThemeToggle />
                 <OfflineIndicator />
                 <PWAInstallPrompt />
                 <NotificationPermissionPrompt />
-                <main className="flex-grow">
+                <main className="flex-grow w-full">
                   <Suspense fallback={<LoadingSpinner />}>
                     <Routes>
                       <Route path="/" element={<HomePage />} />

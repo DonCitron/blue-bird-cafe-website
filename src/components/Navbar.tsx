@@ -51,22 +51,22 @@ const Navbar: React.FC = () => {
         backdropFilter: 'blur(10px)',
         boxShadow: scrolled ? '0 4px 6px -1px rgba(0, 0, 0, 0.15)' : '0 2px 4px -1px rgba(0, 0, 0, 0.1)',
         borderBottom: `1px solid ${colors.borderColor}`,
-        paddingTop: scrolled ? '0.75rem' : '1rem',
-        paddingBottom: scrolled ? '0.75rem' : '1rem'
+        paddingTop: scrolled ? '0.5rem' : '0.75rem',
+        paddingBottom: scrolled ? '0.5rem' : '0.75rem'
       }}
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          <Link to="/" className="flex items-start">
-            <div className="w-24 h-24 mr-3 flex items-start justify-start">
+          <Link to="/" className="flex items-center">
+            <div className="w-16 h-16 mr-3 flex items-center justify-center">
               <img 
                 src="/blue_bird_clean_transparent.png" 
                 alt="Blue Bird Logo" 
-                className="max-w-24 max-h-24 object-contain opacity-90"
+                className="max-w-16 max-h-16 object-contain opacity-90"
                 style={{filter: 'drop-shadow(0 1px 2px rgba(0,0,0,0.1))'}}
               />
             </div>
-            <span className="text-5xl font-bold font-script self-start" style={{
+            <span className="text-4xl font-bold font-script" style={{
               color: colors.textPrimary,
               textShadow: '1px 1px 3px rgba(0,0,0,0.15)',
               letterSpacing: '0.05em',
@@ -101,7 +101,7 @@ const Navbar: React.FC = () => {
       {/* Mobile Navigation Menu */}
       {isOpen && (
         <div className="md:hidden shadow-lg absolute top-full left-0 right-0" style={{backgroundColor: colors.mobileBg}}>
-          <div className="container mx-auto px-4 py-3">
+          <div className="w-full max-w-7xl mx-auto px-4 py-3">
             <div className="flex flex-col space-y-3">
               <MobileNavLink to="/" label="Start" colors={colors} />
               <MobileTeaserLink colors={colors} />
@@ -154,7 +154,7 @@ const TeaserLink: React.FC<TeaserLinkProps> = ({ currentPath, colors }) => {
   return (
     <Link 
       to="/teaser-campaign" 
-      className="flex items-center gap-1 text-base font-medium transition-all duration-200 relative group"
+      className="flex items-center gap-1 text-base font-medium transition-colors duration-200 relative group"
       style={{
         color: isActive ? colors.textPrimary : colors.textSecondary,
         textShadow: '0 1px 2px rgba(0,0,0,0.1)'
@@ -199,7 +199,7 @@ const MobileTeaserLink: React.FC<MobileTeaserLinkProps> = ({ colors }) => {
   return (
     <Link 
       to="/teaser-campaign" 
-      className="flex items-center gap-2 text-base font-medium py-2 transition-colors"
+      className="flex items-center gap-2 text-base font-medium py-2 block transition-colors"
       style={{color: colors.textPrimary}}
       onMouseEnter={(e) => (e.target as HTMLElement).style.color = colors.textSecondary}
       onMouseLeave={(e) => (e.target as HTMLElement).style.color = colors.textPrimary}

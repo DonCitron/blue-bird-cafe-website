@@ -4,6 +4,28 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Remove default margins and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
 :root {
   --bg-primary: #c5ae91;
   --bg-secondary: #EDC9AF;
@@ -77,6 +99,10 @@ body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
   transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
 }
 
 /* Custom animations */
@@ -577,4 +603,17 @@ select:focus {
 
 .sage-theme .rounded-2xl {
   border: 1px solid rgba(34, 197, 94, 0.15);
+}
+
+/* Full screen utilities */
+.full-screen {
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.full-width {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
 }
