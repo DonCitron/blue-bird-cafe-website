@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Zap } from 'lucide-react';
+import { Menu, X, Zap, MapPin } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
 
 const Navbar: React.FC = () => {
@@ -83,6 +83,7 @@ const Navbar: React.FC = () => {
             <NavLink to="/about" label="Über uns" currentPath={location.pathname} colors={colors} />
             <NavLink to="/gallery" label="Galerie" currentPath={location.pathname} colors={colors} />
             <NavLink to="/contact" label="Kontakt" currentPath={location.pathname} colors={colors} />
+            <SitemapLink currentPath={location.pathname} colors={colors} />
           </nav>
 
           {/* Mobile Navigation Button */}
@@ -109,6 +110,7 @@ const Navbar: React.FC = () => {
               <MobileNavLink to="/about" label="Über uns" colors={colors} />
               <MobileNavLink to="/gallery" label="Galerie" colors={colors} />
               <MobileNavLink to="/contact" label="Kontakt" colors={colors} />
+              <MobileSitemapLink colors={colors} />
             </div>
           </div>
         </div>
@@ -171,6 +173,31 @@ const TeaserLink: React.FC<TeaserLinkProps> = ({ currentPath, colors }) => {
   );
 };
 
+interface SitemapLinkProps {
+  currentPath: string;
+  colors: any;
+}
+
+const SitemapLink: React.FC<SitemapLinkProps> = ({ currentPath, colors }) => {
+  const isActive = currentPath === '/sitemap';
+  
+  return (
+    <Link 
+      to="/sitemap" 
+      className="flex items-center gap-1 text-base font-medium transition-colors duration-200"
+      style={{
+        color: isActive ? colors.textPrimary : colors.textSecondary,
+        textShadow: '0 1px 2px rgba(0,0,0,0.1)'
+      }}
+      onMouseEnter={(e) => (e.target as HTMLElement).style.color = colors.textPrimary}
+      onMouseLeave={(e) => (e.target as HTMLElement).style.color = isActive ? colors.textPrimary : colors.textSecondary}
+    >
+      <MapPin className="h-4 w-4" />
+      <span>Sitemap</span>
+    </Link>
+  );
+};
+
 interface MobileNavLinkProps {
   to: string;
   label: string;
@@ -209,6 +236,25 @@ const MobileTeaserLink: React.FC<MobileTeaserLinkProps> = ({ colors }) => {
         Teaser Preview
         <span className="absolute -top-1 -right-2 w-2 h-2 bg-blue-500 rounded-full animate-pulse"></span>
       </span>
+    </Link>
+  );
+};
+
+interface MobileSitemapLinkProps {
+  colors: any;
+}
+
+const MobileSitemapLink: React.FC<MobileSitemapLinkProps> = ({ colors }) => {
+  return (
+    <Link 
+      to="/sitemap" 
+      className="flex items-center gap-2 text-base font-medium py-2 block transition-colors"
+      style={{color: colors.textPrimary}}
+      onMouseEnter={(e) => (e.target as HTMLElement).style.color = colors.textSecondary}
+      onMouseLeave={(e) => (e.target as HTMLElement).style.color = colors.textPrimary}
+    >
+      <MapPin className="h-4 w-4" />
+      <span>Sitemap</span>
     </Link>
   );
 };
