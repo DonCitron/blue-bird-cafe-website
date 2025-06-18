@@ -57,8 +57,8 @@ const Navbar: React.FC = () => {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          <Link to="/" className="flex items-center">
-            <div className="w-24 h-24 mr-3 flex items-center justify-center">
+          <Link to="/" className="flex items-start">
+            <div className="w-24 h-24 mr-3 flex items-start justify-start">
               <img 
                 src="/blue_bird_clean_transparent.png" 
                 alt="Blue Bird Logo" 
@@ -66,7 +66,7 @@ const Navbar: React.FC = () => {
                 style={{filter: 'drop-shadow(0 1px 2px rgba(0,0,0,0.1))'}}
               />
             </div>
-            <span className="text-5xl font-bold font-script" style={{
+            <span className="text-5xl font-bold font-script self-start" style={{
               color: colors.textPrimary,
               textShadow: '1px 1px 3px rgba(0,0,0,0.15)',
               letterSpacing: '0.05em',
