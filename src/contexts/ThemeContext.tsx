@@ -16,12 +16,15 @@ export const useTheme = () => {
 };
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [theme, setTheme] = useState<'default' | 'sage' | 'peridot' | 'ocean'>('default');
+  const [theme, setTheme] = useState<'default' | 'sage' | 'peridot' | 'ocean'>('ocean');
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('bluebird-theme') as 'default' | 'sage' | 'peridot' | 'ocean' | null;
     if (savedTheme) {
       setTheme(savedTheme);
+    } else {
+      // Default to ocean theme
+      setTheme('ocean');
     }
   }, []);
 

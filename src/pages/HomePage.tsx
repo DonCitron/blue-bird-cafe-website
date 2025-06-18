@@ -26,6 +26,30 @@ const HomePage: React.FC = () => {
         textSubtle: '#ecfdf5',
         border: '#16a34a'
       };
+    } else if (theme === 'peridot') {
+      return {
+        primary: '#D8C4A0',
+        secondary: '#A8D98B',
+        tertiary: '#f8f6f0',
+        accent: '#6E9E4B',
+        textPrimary: '#2A3B1D',
+        textSecondary: '#4D843D',
+        textLight: '#f8f6f0',
+        textSubtle: '#f8f6f0',
+        border: '#6E9E4B'
+      };
+    } else if (theme === 'ocean') {
+      return {
+        primary: '#E1D6F5',
+        secondary: '#A6C6ED',
+        tertiary: '#f8f7fc',
+        accent: '#6FB4E2',
+        textPrimary: '#1E6FA9',
+        textSecondary: '#3E8ECC',
+        textLight: '#f8f7fc',
+        textSubtle: '#f8f7fc',
+        border: '#6FB4E2'
+      };
     }
     return {
       primary: '#c5ae91',
@@ -41,6 +65,55 @@ const HomePage: React.FC = () => {
   };
 
   const colors = getThemeColors();
+
+  const getHoverColor = () => {
+    if (theme === 'sage') return '#0f3f26';
+    if (theme === 'peridot') return '#1a2e14';
+    if (theme === 'ocean') return '#0f4a73';
+    return '#2d251b';
+  };
+
+  const getEventBgColor = () => {
+    if (theme === 'sage') return '34, 197, 94';
+    if (theme === 'peridot') return '110, 158, 75';
+    if (theme === 'ocean') return '111, 180, 226';
+    return '176, 158, 126';
+  };
+
+  const getEventTextBgColor = () => {
+    if (theme === 'sage') return '20, 83, 45';
+    if (theme === 'peridot') return '42, 59, 29';
+    if (theme === 'ocean') return '30, 111, 169';
+    return '61, 54, 41';
+  };
+
+  const getInstagramGradient = () => {
+    if (theme === 'sage') return 'linear-gradient(135deg, #86efac 0%, #22c55e 100%)';
+    if (theme === 'peridot') return 'linear-gradient(135deg, #A8D98B 0%, #6E9E4B 100%)';
+    if (theme === 'ocean') return 'linear-gradient(135deg, #A6C6ED 0%, #6FB4E2 100%)';
+    return 'linear-gradient(135deg, #d4c1a6 0%, #b09e7e 100%)';
+  };
+
+  const getLoyaltyCardGradient = () => {
+    if (theme === 'sage') return 'linear-gradient(135deg, #10b981, #047857)';
+    if (theme === 'peridot') return 'linear-gradient(135deg, #6E9E4B, #4D843D)';
+    if (theme === 'ocean') return 'linear-gradient(135deg, #6FB4E2, #3E8ECC)';
+    return 'linear-gradient(135deg, #059669, #047857)';
+  };
+
+  const getLoyaltyIconBg = () => {
+    if (theme === 'sage') return '#dcfce7';
+    if (theme === 'peridot') return '#f0f8e8';
+    if (theme === 'ocean') return '#e6f3ff';
+    return '#d1fae5';
+  };
+
+  const getLoyaltyIconColor = () => {
+    if (theme === 'sage') return '#10b981';
+    if (theme === 'peridot') return '#6E9E4B';
+    if (theme === 'ocean') return '#6FB4E2';
+    return '#059669';
+  };
 
   return (
     <>
@@ -65,7 +138,7 @@ const HomePage: React.FC = () => {
               to="/menu" 
               className="font-medium py-3 px-8 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg"
               style={{backgroundColor: colors.textPrimary, color: colors.textLight}}
-              onMouseEnter={(e) => (e.target as HTMLAnchorElement).style.backgroundColor = theme === 'sage' ? '#0f3f26' : '#2d251b'}
+              onMouseEnter={(e) => (e.target as HTMLAnchorElement).style.backgroundColor = getHoverColor()}
               onMouseLeave={(e) => (e.target as HTMLAnchorElement).style.backgroundColor = colors.textPrimary}
             >
               Menü entdecken
@@ -257,8 +330,8 @@ const HomePage: React.FC = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Event 1 */}
-            <div className="rounded-lg p-6 transition-all duration-300 hover:scale-105 hover:shadow-xl" style={{backgroundColor: `rgba(${theme === 'sage' ? '34, 197, 94' : '176, 158, 126'}, 0.8)`}}>
-              <div className="font-bold text-center py-2 px-4 rounded mb-4" style={{backgroundColor: `rgba(${theme === 'sage' ? '20, 83, 45' : '61, 54, 41'}, 0.3)`, color: colors.textLight}}>
+            <div className="rounded-lg p-6 transition-all duration-300 hover:scale-105 hover:shadow-xl" style={{backgroundColor: `rgba(${getEventBgColor()}, 0.8)`}}>
+              <div className="font-bold text-center py-2 px-4 rounded mb-4" style={{backgroundColor: `rgba(${getEventTextBgColor()}, 0.3)`, color: colors.textLight}}>
                 <span className="block text-2xl">15</span>
                 <span>June</span>
               </div>
@@ -277,8 +350,8 @@ const HomePage: React.FC = () => {
             </div>
 
             {/* Event 2 */}
-            <div className="rounded-lg p-6 transition-all duration-300 hover:scale-105 hover:shadow-xl" style={{backgroundColor: `rgba(${theme === 'sage' ? '34, 197, 94' : '176, 158, 126'}, 0.8)`}}>
-              <div className="font-bold text-center py-2 px-4 rounded mb-4" style={{backgroundColor: `rgba(${theme === 'sage' ? '20, 83, 45' : '61, 54, 41'}, 0.3)`, color: colors.textLight}}>
+            <div className="rounded-lg p-6 transition-all duration-300 hover:scale-105 hover:shadow-xl" style={{backgroundColor: `rgba(${getEventBgColor()}, 0.8)`}}>
+              <div className="font-bold text-center py-2 px-4 rounded mb-4" style={{backgroundColor: `rgba(${getEventTextBgColor()}, 0.3)`, color: colors.textLight}}>
                 <span className="block text-2xl">22</span>
                 <span>June</span>
               </div>
@@ -297,8 +370,8 @@ const HomePage: React.FC = () => {
             </div>
 
             {/* Event 3 */}
-            <div className="rounded-lg p-6 transition-all duration-300 hover:scale-105 hover:shadow-xl" style={{backgroundColor: `rgba(${theme === 'sage' ? '34, 197, 94' : '176, 158, 126'}, 0.8)`}}>
-              <div className="font-bold text-center py-2 px-4 rounded mb-4" style={{backgroundColor: `rgba(${theme === 'sage' ? '20, 83, 45' : '61, 54, 41'}, 0.3)`, color: colors.textLight}}>
+            <div className="rounded-lg p-6 transition-all duration-300 hover:scale-105 hover:shadow-xl" style={{backgroundColor: `rgba(${getEventBgColor()}, 0.8)`}}>
+              <div className="font-bold text-center py-2 px-4 rounded mb-4" style={{backgroundColor: `rgba(${getEventTextBgColor()}, 0.3)`, color: colors.textLight}}>
                 <span className="block text-2xl">29</span>
                 <span>June</span>
               </div>
@@ -433,9 +506,7 @@ const HomePage: React.FC = () => {
                 rel="noopener noreferrer"
                 className="aspect-square rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 group hover:scale-105"
                 style={{
-                  background: theme === 'sage' 
-                    ? 'linear-gradient(135deg, #86efac 0%, #22c55e 100%)'
-                    : 'linear-gradient(135deg, #d4c1a6 0%, #b09e7e 100%)'
+                  background: getInstagramGradient()
                 }}
               >
                 <div className="w-full h-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300" style={{color: colors.textPrimary}}>
@@ -461,9 +532,7 @@ const HomePage: React.FC = () => {
                 <div 
                   className="w-20 h-20 rounded-2xl flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300"
                   style={{
-                    background: theme === 'sage' 
-                      ? 'linear-gradient(135deg, #10b981, #047857)' 
-                      : 'linear-gradient(135deg, #059669, #047857)'
+                    background: getLoyaltyCardGradient()
                   }}
                 >
                   <img 
@@ -483,11 +552,11 @@ const HomePage: React.FC = () => {
                 <div className="text-center group">
                   <div 
                     className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300"
-                    style={{backgroundColor: theme === 'sage' ? '#dcfce7' : '#d1fae5'}}
+                    style={{backgroundColor: getLoyaltyIconBg()}}
                   >
                     <svg 
                       className="w-8 h-8" 
-                      style={{color: theme === 'sage' ? '#10b981' : '#059669'}}
+                      style={{color: getLoyaltyIconColor()}}
                       fill="none" 
                       stroke="currentColor" 
                       viewBox="0 0 24 24"
@@ -502,11 +571,11 @@ const HomePage: React.FC = () => {
                 <div className="text-center group">
                   <div 
                     className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300"
-                    style={{backgroundColor: theme === 'sage' ? '#dcfce7' : '#d1fae5'}}
+                    style={{backgroundColor: getLoyaltyIconBg()}}
                   >
                     <svg 
                       className="w-8 h-8" 
-                      style={{color: theme === 'sage' ? '#10b981' : '#059669'}}
+                      style={{color: getLoyaltyIconColor()}}
                       fill="none" 
                       stroke="currentColor" 
                       viewBox="0 0 24 24"
@@ -521,11 +590,11 @@ const HomePage: React.FC = () => {
                 <div className="text-center group">
                   <div 
                     className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300"
-                    style={{backgroundColor: theme === 'sage' ? '#dcfce7' : '#d1fae5'}}
+                    style={{backgroundColor: getLoyaltyIconBg()}}
                   >
                     <Heart 
                       className="w-8 h-8" 
-                      style={{color: theme === 'sage' ? '#10b981' : '#059669'}}
+                      style={{color: getLoyaltyIconColor()}}
                     />
                   </div>
                   <h3 className="text-lg font-semibold mb-2" style={{color: colors.textPrimary}}>Geburtstagstorte</h3>
@@ -546,22 +615,22 @@ const HomePage: React.FC = () => {
                 <button 
                   className="bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-3 px-8 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg"
                   style={{
-                    backgroundColor: theme === 'sage' ? '#10b981' : '#059669',
-                    backgroundImage: theme === 'sage' ? 'linear-gradient(135deg, #10b981 0%, #047857 100%)' : 'linear-gradient(135deg, #059669 0%, #047857 100%)',
-                    boxShadow: theme === 'sage' ? '0 4px 15px rgba(16, 185, 129, 0.3)' : '0 4px 15px rgba(5, 150, 105, 0.3)'
+                    backgroundColor: colors.accent,
+                    backgroundImage: getLoyaltyCardGradient(),
+                    boxShadow: `0 4px 15px ${colors.accent}30`
                   }}
                   onMouseEnter={(e) => {
                     const target = e.target as HTMLButtonElement;
-                    target.style.backgroundColor = theme === 'sage' ? '#047857' : '#047857';
-                    target.style.backgroundImage = theme === 'sage' ? 'linear-gradient(135deg, #047857 0%, #065f46 100%)' : 'linear-gradient(135deg, #047857 0%, #065f46 100%)';
-                    target.style.boxShadow = theme === 'sage' ? '0 6px 20px rgba(4, 120, 87, 0.4)' : '0 6px 20px rgba(4, 120, 87, 0.4)';
+                    target.style.backgroundColor = colors.textPrimary;
+                    target.style.backgroundImage = `linear-gradient(135deg, ${colors.textPrimary} 0%, ${getHoverColor()} 100%)`;
+                    target.style.boxShadow = `0 6px 20px ${colors.textPrimary}40`;
                     target.style.transform = 'translateY(-2px) scale(1.02)';
                   }}
                   onMouseLeave={(e) => {
                     const target = e.target as HTMLButtonElement;
-                    target.style.backgroundColor = theme === 'sage' ? '#10b981' : '#059669';
-                    target.style.backgroundImage = theme === 'sage' ? 'linear-gradient(135deg, #10b981 0%, #047857 100%)' : 'linear-gradient(135deg, #059669 0%, #047857 100%)';
-                    target.style.boxShadow = theme === 'sage' ? '0 4px 15px rgba(16, 185, 129, 0.3)' : '0 4px 15px rgba(5, 150, 105, 0.3)';
+                    target.style.backgroundColor = colors.accent;
+                    target.style.backgroundImage = getLoyaltyCardGradient();
+                    target.style.boxShadow = `0 4px 15px ${colors.accent}30`;
                     target.style.transform = 'translateY(0) scale(1)';
                   }}
                 >
@@ -570,13 +639,13 @@ const HomePage: React.FC = () => {
                 <button 
                   className="bg-transparent border-2 font-medium py-3 px-8 rounded-full transition-all duration-300 hover:scale-105"
                   style={{
-                    borderColor: theme === 'sage' ? '#10b981' : '#059669',
-                    color: theme === 'sage' ? '#10b981' : '#059669'
+                    borderColor: colors.accent,
+                    color: colors.accent
                   }}
                   onMouseEnter={(e) => {
                     const target = e.target as HTMLButtonElement;
-                    target.style.backgroundColor = theme === 'sage' ? '#10b981' : '#059669';
-                    target.style.backgroundImage = theme === 'sage' ? 'linear-gradient(135deg, #10b981 0%, #047857 100%)' : 'linear-gradient(135deg, #059669 0%, #047857 100%)';
+                    target.style.backgroundColor = colors.accent;
+                    target.style.backgroundImage = getLoyaltyCardGradient();
                     target.style.color = 'white';
                     target.style.transform = 'translateY(-2px) scale(1.02)';
                   }}
@@ -584,7 +653,7 @@ const HomePage: React.FC = () => {
                     const target = e.target as HTMLButtonElement;
                     target.style.backgroundColor = 'transparent';
                     target.style.backgroundImage = 'none';
-                    target.style.color = theme === 'sage' ? '#10b981' : '#059669';
+                    target.style.color = colors.accent;
                     target.style.transform = 'translateY(0) scale(1)';
                   }}
                 >
@@ -611,7 +680,7 @@ const HomePage: React.FC = () => {
               to="/contact" 
               className="font-medium py-3 px-8 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg"
               style={{backgroundColor: colors.textPrimary, color: colors.textLight}}
-              onMouseEnter={(e) => (e.target as HTMLAnchorElement).style.backgroundColor = theme === 'sage' ? '#0f3f26' : '#2d251b'}
+              onMouseEnter={(e) => (e.target as HTMLAnchorElement).style.backgroundColor = getHoverColor()}
               onMouseLeave={(e) => (e.target as HTMLAnchorElement).style.backgroundColor = colors.textPrimary}
             >
               Unseren Standort finden
