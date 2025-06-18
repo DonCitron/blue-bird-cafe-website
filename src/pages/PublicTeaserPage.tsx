@@ -109,130 +109,168 @@ const PublicTeaserPage: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden" style={{backgroundColor: '#1a1611'}}>
-      {/* GIF Background Layer */}
+      {/* Your Custom GIF Background */}
       <div className="absolute inset-0 z-0">
-        {/* You can replace this URL with your actual GIF */}
+        {/* Primary GIF Background - Your uploaded file */}
         <div 
-          className="absolute inset-0 opacity-30"
+          className="absolute inset-0 opacity-40"
           style={{
-            backgroundImage: 'url("https://media.giphy.com/media/3o7TKtnuHOHHUjR38Y/giphy.gif")', // Coffee steam GIF
+            backgroundImage: 'url("/Download-ezgif.com-crop.gif")',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
-            filter: 'sepia(100%) hue-rotate(25deg) saturate(0.8) brightness(0.6)'
+            filter: 'sepia(80%) hue-rotate(25deg) saturate(1.2) brightness(0.7) contrast(1.1)'
           }}
         />
         
-        {/* Multiple GIF layers for depth */}
+        {/* Layered GIF effect for depth */}
         <div 
-          className="absolute inset-0 opacity-20"
+          className="absolute inset-0 opacity-25"
           style={{
-            backgroundImage: 'url("https://media.giphy.com/media/l0HlBO7eyXzSZkJri/giphy.gif")', // Floating particles
-            backgroundSize: '150%',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-            filter: 'sepia(100%) hue-rotate(30deg) saturate(0.6) brightness(0.4)',
-            animation: 'slowFloat 20s ease-in-out infinite'
-          }}
-        />
-        
-        {/* Overlay GIF for atmospheric effect */}
-        <div 
-          className="absolute inset-0 opacity-15"
-          style={{
-            backgroundImage: 'url("https://media.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif")', // Smoke/mist effect
+            backgroundImage: 'url("/Download-ezgif.com-crop.gif")',
             backgroundSize: '120%',
             backgroundPosition: 'center bottom',
             backgroundRepeat: 'no-repeat',
-            filter: 'sepia(100%) hue-rotate(20deg) saturate(0.7) brightness(0.5)',
-            animation: 'drift 15s linear infinite'
+            filter: 'sepia(100%) hue-rotate(30deg) saturate(0.8) brightness(0.5) blur(2px)',
+            animation: 'slowDrift 25s ease-in-out infinite'
+          }}
+        />
+        
+        {/* Third layer for atmospheric depth */}
+        <div 
+          className="absolute inset-0 opacity-15"
+          style={{
+            backgroundImage: 'url("/Download-ezgif.com-crop.gif")',
+            backgroundSize: '150%',
+            backgroundPosition: 'center top',
+            backgroundRepeat: 'no-repeat',
+            filter: 'sepia(100%) hue-rotate(20deg) saturate(0.6) brightness(0.4) blur(4px)',
+            animation: 'slowFloat 30s ease-in-out infinite reverse'
           }}
         />
       </div>
 
-      {/* CSS-Generated Animated Background (fallback/enhancement) */}
+      {/* Enhanced CSS Overlay Effects */}
       <div className="absolute inset-0 z-1 pointer-events-none">
-        {/* Moving Clouds/Mist Effect */}
+        {/* Floating Coffee Particles */}
         <div className="absolute inset-0">
-          {[...Array(6)].map((_, i) => (
+          {[...Array(20)].map((_, i) => (
             <div
-              key={`cloud-${i}`}
-              className="absolute opacity-10"
-              style={{
-                left: `${-20 + i * 25}%`,
-                top: `${10 + i * 15}%`,
-                width: `${200 + Math.random() * 300}px`,
-                height: `${100 + Math.random() * 150}px`,
-                background: 'radial-gradient(ellipse, rgba(197, 174, 145, 0.3) 0%, transparent 70%)',
-                borderRadius: '50%',
-                filter: 'blur(40px)',
-                animation: `drift ${20 + Math.random() * 10}s linear infinite`,
-                animationDelay: `${Math.random() * 10}s`
-              }}
-            />
-          ))}
-        </div>
-
-        {/* Floating Coffee Steam */}
-        <div className="absolute inset-0">
-          {[...Array(12)].map((_, i) => (
-            <div
-              key={`steam-${i}`}
+              key={`particle-${i}`}
               className="absolute opacity-20"
               style={{
                 left: `${Math.random() * 100}%`,
-                bottom: `${Math.random() * 30}%`,
-                width: `${8 + Math.random() * 12}px`,
-                height: `${40 + Math.random() * 60}px`,
-                background: 'linear-gradient(180deg, transparent 0%, rgba(197, 174, 145, 0.4) 50%, transparent 100%)',
+                top: `${Math.random() * 100}%`,
+                width: `${4 + Math.random() * 8}px`,
+                height: `${4 + Math.random() * 8}px`,
+                background: 'radial-gradient(circle, rgba(197, 174, 145, 0.8) 0%, transparent 70%)',
                 borderRadius: '50%',
-                filter: 'blur(3px)',
-                animation: `steam ${6 + Math.random() * 4}s ease-in-out infinite`,
-                animationDelay: `${Math.random() * 6}s`
+                filter: 'blur(1px)',
+                animation: `float ${8 + Math.random() * 6}s ease-in-out infinite`,
+                animationDelay: `${Math.random() * 8}s`
               }}
             />
           ))}
         </div>
 
-        {/* Cinematic Vignette */}
+        {/* Steam Rising Effect */}
+        <div className="absolute inset-0">
+          {[...Array(15)].map((_, i) => (
+            <div
+              key={`steam-${i}`}
+              className="absolute opacity-25"
+              style={{
+                left: `${20 + Math.random() * 60}%`,
+                bottom: `${Math.random() * 40}%`,
+                width: `${6 + Math.random() * 10}px`,
+                height: `${30 + Math.random() * 50}px`,
+                background: 'linear-gradient(180deg, transparent 0%, rgba(197, 174, 145, 0.6) 40%, rgba(197, 174, 145, 0.3) 70%, transparent 100%)',
+                borderRadius: '50%',
+                filter: 'blur(2px)',
+                animation: `steam ${5 + Math.random() * 3}s ease-in-out infinite`,
+                animationDelay: `${Math.random() * 5}s`
+              }}
+            />
+          ))}
+        </div>
+
+        {/* Atmospheric Mist Layers */}
+        <div className="absolute inset-0">
+          {[...Array(8)].map((_, i) => (
+            <div
+              key={`mist-${i}`}
+              className="absolute opacity-10"
+              style={{
+                left: `${-10 + i * 15}%`,
+                top: `${5 + i * 12}%`,
+                width: `${150 + Math.random() * 200}px`,
+                height: `${80 + Math.random() * 120}px`,
+                background: 'radial-gradient(ellipse, rgba(197, 174, 145, 0.4) 0%, rgba(197, 174, 145, 0.2) 50%, transparent 80%)',
+                borderRadius: '50%',
+                filter: 'blur(25px)',
+                animation: `drift ${15 + Math.random() * 10}s linear infinite`,
+                animationDelay: `${Math.random() * 15}s`
+              }}
+            />
+          ))}
+        </div>
+
+        {/* Cinematic Vignette with Coffee Theme */}
         <div 
           className="absolute inset-0 pointer-events-none"
           style={{
-            background: 'radial-gradient(ellipse at center, transparent 30%, rgba(26, 22, 17, 0.3) 70%, rgba(26, 22, 17, 0.8) 100%)'
+            background: 'radial-gradient(ellipse at center, transparent 20%, rgba(26, 22, 17, 0.2) 60%, rgba(26, 22, 17, 0.6) 90%, rgba(26, 22, 17, 0.9) 100%)'
+          }}
+        />
+        
+        {/* Subtle Color Overlay to Enhance Coffee Tones */}
+        <div 
+          className="absolute inset-0 pointer-events-none opacity-20"
+          style={{
+            background: 'linear-gradient(45deg, rgba(197, 174, 145, 0.1) 0%, transparent 50%, rgba(237, 201, 175, 0.1) 100%)'
           }}
         />
       </div>
 
-      {/* Much Bigger Logo with Enhanced Effects */}
+      {/* Enhanced Logo with Multiple Glow Effects */}
       <div className="mb-16 relative z-20">
         <div className="relative">
-          {/* Multiple glow layers for depth */}
+          {/* Multiple glow layers for cinematic depth */}
           <div 
             className="absolute inset-0 animate-pulse"
             style={{
-              background: 'radial-gradient(circle, rgba(197, 174, 145, 0.4) 0%, rgba(197, 174, 145, 0.2) 40%, transparent 70%)',
-              filter: 'blur(30px)',
+              background: 'radial-gradient(circle, rgba(197, 174, 145, 0.5) 0%, rgba(197, 174, 145, 0.3) 30%, rgba(197, 174, 145, 0.1) 60%, transparent 80%)',
+              filter: 'blur(40px)',
               animationDuration: '4s'
             }}
           />
           <div 
             className="absolute inset-0 animate-pulse"
             style={{
-              background: 'radial-gradient(circle, rgba(237, 201, 175, 0.3) 0%, transparent 50%)',
-              filter: 'blur(20px)',
+              background: 'radial-gradient(circle, rgba(237, 201, 175, 0.4) 0%, rgba(237, 201, 175, 0.2) 40%, transparent 70%)',
+              filter: 'blur(25px)',
               animationDuration: '3s',
               animationDelay: '1s'
             }}
           />
+          <div 
+            className="absolute inset-0 animate-pulse"
+            style={{
+              background: 'radial-gradient(circle, rgba(176, 158, 126, 0.3) 0%, transparent 50%)',
+              filter: 'blur(15px)',
+              animationDuration: '5s',
+              animationDelay: '2s'
+            }}
+          />
           
-          {/* Main logo */}
+          {/* Main logo with enhanced effects */}
           <img 
             src="/blue_bird_clean_transparent.png" 
             alt="Blue Bird" 
             className="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 xl:w-80 xl:h-80 object-contain relative z-10"
             style={{
-              filter: 'drop-shadow(0 12px 40px rgba(197, 174, 145, 0.6)) drop-shadow(0 0 80px rgba(197, 174, 145, 0.3)) drop-shadow(0 0 120px rgba(197, 174, 145, 0.1))',
-              animation: 'logoGlow 5s ease-in-out infinite'
+              filter: 'drop-shadow(0 15px 50px rgba(197, 174, 145, 0.8)) drop-shadow(0 0 100px rgba(197, 174, 145, 0.4)) drop-shadow(0 0 150px rgba(197, 174, 145, 0.2))',
+              animation: 'logoGlow 6s ease-in-out infinite'
             }}
           />
         </div>
@@ -265,10 +303,19 @@ const PublicTeaserPage: React.FC = () => {
       <style jsx>{`
         @keyframes drift {
           0% {
-            transform: translateX(-100px) translateY(0px);
+            transform: translateX(-50px) translateY(0px);
           }
           100% {
-            transform: translateX(calc(100vw + 100px)) translateY(-20px);
+            transform: translateX(calc(100vw + 50px)) translateY(-30px);
+          }
+        }
+        
+        @keyframes slowDrift {
+          0%, 100% {
+            transform: translateX(0px) translateY(0px) scale(1);
+          }
+          50% {
+            transform: translateX(20px) translateY(-15px) scale(1.02);
           }
         }
         
@@ -277,31 +324,42 @@ const PublicTeaserPage: React.FC = () => {
             transform: translateY(0px) scale(1);
           }
           50% {
-            transform: translateY(-30px) scale(1.05);
+            transform: translateY(-25px) scale(1.03);
+          }
+        }
+        
+        @keyframes float {
+          0%, 100% {
+            transform: translateY(0px) rotate(0deg);
+            opacity: 0.2;
+          }
+          50% {
+            transform: translateY(-40px) rotate(180deg);
+            opacity: 0.4;
           }
         }
         
         @keyframes steam {
           0% {
             transform: translateY(0px) scale(1);
-            opacity: 0.2;
+            opacity: 0.25;
           }
           50% {
-            transform: translateY(-30px) scale(1.2);
-            opacity: 0.4;
+            transform: translateY(-40px) scale(1.3);
+            opacity: 0.5;
           }
           100% {
-            transform: translateY(-60px) scale(0.8);
+            transform: translateY(-80px) scale(0.7);
             opacity: 0;
           }
         }
         
         @keyframes logoGlow {
           0%, 100% {
-            filter: drop-shadow(0 12px 40px rgba(197, 174, 145, 0.6)) drop-shadow(0 0 80px rgba(197, 174, 145, 0.3)) drop-shadow(0 0 120px rgba(197, 174, 145, 0.1));
+            filter: drop-shadow(0 15px 50px rgba(197, 174, 145, 0.8)) drop-shadow(0 0 100px rgba(197, 174, 145, 0.4)) drop-shadow(0 0 150px rgba(197, 174, 145, 0.2));
           }
           50% {
-            filter: drop-shadow(0 12px 40px rgba(197, 174, 145, 0.8)) drop-shadow(0 0 80px rgba(197, 174, 145, 0.5)) drop-shadow(0 0 120px rgba(197, 174, 145, 0.2));
+            filter: drop-shadow(0 15px 50px rgba(197, 174, 145, 1)) drop-shadow(0 0 100px rgba(197, 174, 145, 0.6)) drop-shadow(0 0 150px rgba(197, 174, 145, 0.3));
           }
         }
         
