@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Coffee, Clock, MapPin, ArrowRight } from 'lucide-react';
+import { Coffee, Clock, MapPin, ArrowRight, Users, Award, Heart } from 'lucide-react';
+import NewsletterSignup from '../components/NewsletterSignup';
+import AnimatedCounter from '../components/AnimatedCounter';
+import ImageWithFallback from '../components/ImageWithFallback';
 
 const HomePage: React.FC = () => {
   useEffect(() => {
@@ -15,20 +18,20 @@ const HomePage: React.FC = () => {
         <div className="container mx-auto px-4 z-10 text-center">
           <div className="flex flex-col items-center mb-6">
             <div className="flex items-center justify-center h-80 md:h-96 mb-2">
-              <img 
+              <ImageWithFallback
                 src="/blue_bird_clean_transparent.png" 
                 alt="Blue Bird Logo" 
-                className="max-w-96 max-h-80 md:max-w-[30rem] md:max-h-96 object-contain"
+                className="max-w-96 max-h-80 md:max-w-[30rem] md:max-h-96 object-contain animate-fade-in"
               />
             </div>
-            <p className="text-xl md:text-2xl max-w-2xl mx-auto" style={{color: '#3d3629'}}>
+            <p className="text-xl md:text-2xl max-w-2xl mx-auto animate-slide-up" style={{color: '#3d3629'}}>
               Premium Kaffee und Spezialitäten in gemütlicher, einladender Atmosphäre.
             </p>
           </div>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
+          <div className="flex flex-col sm:flex-row justify-center gap-4 animate-slide-up">
             <Link 
               to="/menu" 
-              className="font-medium py-3 px-8 rounded-full transition-colors duration-300"
+              className="font-medium py-3 px-8 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg"
               style={{backgroundColor: '#3d3629', color: '#f9f7f4'}}
               onMouseEnter={(e) => e.target.style.backgroundColor = '#2d251b'}
               onMouseLeave={(e) => e.target.style.backgroundColor = '#3d3629'}
@@ -37,7 +40,7 @@ const HomePage: React.FC = () => {
             </Link>
             <Link 
               to="/contact" 
-              className="border-2 font-medium py-3 px-8 rounded-full transition-colors duration-300"
+              className="border-2 font-medium py-3 px-8 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg"
               style={{backgroundColor: 'transparent', borderColor: '#3d3629', color: '#3d3629'}}
               onMouseEnter={(e) => {e.target.style.backgroundColor = '#3d3629'; e.target.style.color = '#f9f7f4'}}
               onMouseLeave={(e) => {e.target.style.backgroundColor = 'transparent'; e.target.style.color = '#3d3629'}}
@@ -48,11 +51,48 @@ const HomePage: React.FC = () => {
         </div>
       </section>
 
+      {/* Stats Section */}
+      <section className="py-16" style={{backgroundColor: '#EDC9AF'}}>
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div className="p-6">
+              <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{backgroundColor: '#b09e7e'}}>
+                <Coffee className="h-8 w-8" style={{color: '#f9f7f4'}} />
+              </div>
+              <div className="text-3xl font-bold mb-2" style={{color: '#3d3629'}}>
+                <AnimatedCounter end={50} suffix="+" />
+              </div>
+              <p style={{color: '#5a4f42'}}>Verschiedene Kaffeesorten</p>
+            </div>
+            
+            <div className="p-6">
+              <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{backgroundColor: '#b09e7e'}}>
+                <Users className="h-8 w-8" style={{color: '#f9f7f4'}} />
+              </div>
+              <div className="text-3xl font-bold mb-2" style={{color: '#3d3629'}}>
+                <AnimatedCounter end={1000} suffix="+" />
+              </div>
+              <p style={{color: '#5a4f42'}}>Zufriedene Kunden</p>
+            </div>
+            
+            <div className="p-6">
+              <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{backgroundColor: '#b09e7e'}}>
+                <Award className="h-8 w-8" style={{color: '#f9f7f4'}} />
+              </div>
+              <div className="text-3xl font-bold mb-2" style={{color: '#3d3629'}}>
+                <AnimatedCounter end={3} />
+              </div>
+              <p style={{color: '#5a4f42'}}>Jahre Erfahrung</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* About Preview Section */}
       <section className="py-20" style={{backgroundColor: '#f5f2e8'}}>
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
+            <div className="order-2 md:order-1">
               <h2 className="text-3xl font-bold mb-6" style={{color: '#3d3629'}}>Willkommen im BlueBird Café</h2>
               <p className="text-xl font-medium mb-6" style={{color: '#4a4238'}}>
                 Dein Wohlfühlort für Kaffee, Genuss & Community – mit einem Hauch Freiheit.
@@ -62,17 +102,17 @@ const HomePage: React.FC = () => {
               </p>
               <Link 
                 to="/about" 
-                className="inline-flex items-center text-blue-600 font-medium hover:text-blue-800 transition-colors"
+                className="inline-flex items-center text-blue-600 font-medium hover:text-blue-800 transition-colors group"
               >
                 Mehr über uns erfahren
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
-            <div className="rounded-lg overflow-hidden shadow-xl">
-              <img 
+            <div className="order-1 md:order-2 rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300">
+              <ImageWithFallback
                 src="https://images.pexels.com/photos/1581554/pexels-photo-1581554.jpeg" 
                 alt="Coffee shop interior" 
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
               />
             </div>
           </div>
@@ -91,12 +131,12 @@ const HomePage: React.FC = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Coffee */}
-            <div className="rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105" style={{backgroundColor: '#f5f2e8'}}>
+            <div className="rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-xl group" style={{backgroundColor: '#f5f2e8'}}>
               <div className="h-48 overflow-hidden">
-                <img 
+                <ImageWithFallback
                   src="https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg" 
                   alt="Coffee selection" 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
               </div>
               <div className="p-6">
@@ -106,21 +146,21 @@ const HomePage: React.FC = () => {
                 </p>
                 <Link 
                   to="/menu" 
-                  className="inline-flex items-center text-blue-600 font-medium hover:text-blue-800 transition-colors"
+                  className="inline-flex items-center text-blue-600 font-medium hover:text-blue-800 transition-colors group"
                 >
                   Kaffee-Menü ansehen
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
             </div>
 
             {/* Matcha & Specials */}
-            <div className="rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105" style={{backgroundColor: '#f5f2e8'}}>
+            <div className="rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-xl group" style={{backgroundColor: '#f5f2e8'}}>
               <div className="h-48 overflow-hidden">
-                <img 
+                <ImageWithFallback
                   src="https://images.pexels.com/photos/4828333/pexels-photo-4828333.jpeg" 
                   alt="Matcha drinks" 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
               </div>
               <div className="p-6">
@@ -130,21 +170,21 @@ const HomePage: React.FC = () => {
                 </p>
                 <Link 
                   to="/menu" 
-                  className="inline-flex items-center text-blue-600 font-medium hover:text-blue-800 transition-colors"
+                  className="inline-flex items-center text-blue-600 font-medium hover:text-blue-800 transition-colors group"
                 >
                   Spezialitäten-Menü ansehen
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
             </div>
 
             {/* Food */}
-            <div className="rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105" style={{backgroundColor: '#f5f2e8'}}>
+            <div className="rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-xl group" style={{backgroundColor: '#f5f2e8'}}>
               <div className="h-48 overflow-hidden">
-                <img 
+                <ImageWithFallback
                   src="https://images.pexels.com/photos/2267538/pexels-photo-2267538.jpeg" 
                   alt="Food options" 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
               </div>
               <div className="p-6">
@@ -154,10 +194,10 @@ const HomePage: React.FC = () => {
                 </p>
                 <Link 
                   to="/menu" 
-                  className="inline-flex items-center text-blue-600 font-medium hover:text-blue-800 transition-colors"
+                  className="inline-flex items-center text-blue-600 font-medium hover:text-blue-800 transition-colors group"
                 >
                   Speise-Menü ansehen
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
             </div>
@@ -177,8 +217,8 @@ const HomePage: React.FC = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Event 1 */}
-            <div className="rounded-lg p-6 transition-transform hover:scale-105" style={{backgroundColor: '#b09e7e'}}>
-              <div className="font-bold text-center py-2 px-4 rounded mb-4" style={{backgroundColor: '#b09e7e', color: '#f9f7f4'}}>
+            <div className="rounded-lg p-6 transition-all duration-300 hover:scale-105 hover:shadow-xl" style={{backgroundColor: 'rgba(176, 158, 126, 0.8)'}}>
+              <div className="font-bold text-center py-2 px-4 rounded mb-4" style={{backgroundColor: 'rgba(61, 54, 41, 0.2)', color: '#f9f7f4'}}>
                 <span className="block text-2xl">15</span>
                 <span>June</span>
               </div>
@@ -197,8 +237,8 @@ const HomePage: React.FC = () => {
             </div>
 
             {/* Event 2 */}
-            <div className="rounded-lg p-6 transition-transform hover:scale-105" style={{backgroundColor: '#b09e7e'}}>
-              <div className="font-bold text-center py-2 px-4 rounded mb-4" style={{backgroundColor: '#b09e7e', color: '#f9f7f4'}}>
+            <div className="rounded-lg p-6 transition-all duration-300 hover:scale-105 hover:shadow-xl" style={{backgroundColor: 'rgba(176, 158, 126, 0.8)'}}>
+              <div className="font-bold text-center py-2 px-4 rounded mb-4" style={{backgroundColor: 'rgba(61, 54, 41, 0.2)', color: '#f9f7f4'}}>
                 <span className="block text-2xl">22</span>
                 <span>June</span>
               </div>
@@ -217,8 +257,8 @@ const HomePage: React.FC = () => {
             </div>
 
             {/* Event 3 */}
-            <div className="rounded-lg p-6 transition-transform hover:scale-105" style={{backgroundColor: '#b09e7e'}}>
-              <div className="font-bold text-center py-2 px-4 rounded mb-4" style={{backgroundColor: '#b09e7e', color: '#f9f7f4'}}>
+            <div className="rounded-lg p-6 transition-all duration-300 hover:scale-105 hover:shadow-xl" style={{backgroundColor: 'rgba(176, 158, 126, 0.8)'}}>
+              <div className="font-bold text-center py-2 px-4 rounded mb-4" style={{backgroundColor: 'rgba(61, 54, 41, 0.2)', color: '#f9f7f4'}}>
                 <span className="block text-2xl">29</span>
                 <span>June</span>
               </div>
@@ -251,7 +291,7 @@ const HomePage: React.FC = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Testimonial 1 */}
-            <div className="rounded-lg p-6 shadow-sm border" style={{backgroundColor: '#e8dbc7', borderColor: '#a89180'}}>
+            <div className="rounded-lg p-6 shadow-sm border transition-all duration-300 hover:shadow-lg hover:scale-105" style={{backgroundColor: '#e8dbc7', borderColor: '#a89180'}}>
               <div className="flex items-center mb-4">
                 <div className="h-12 w-12 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-700 font-bold text-xl">
                   JD
@@ -273,7 +313,7 @@ const HomePage: React.FC = () => {
             </div>
 
             {/* Testimonial 2 */}
-            <div className="rounded-lg p-6 shadow-sm border" style={{backgroundColor: '#e8dbc7', borderColor: '#a89180'}}>
+            <div className="rounded-lg p-6 shadow-sm border transition-all duration-300 hover:shadow-lg hover:scale-105" style={{backgroundColor: '#e8dbc7', borderColor: '#a89180'}}>
               <div className="flex items-center mb-4">
                 <div className="h-12 w-12 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-700 font-bold text-xl">
                   SP
@@ -295,7 +335,7 @@ const HomePage: React.FC = () => {
             </div>
 
             {/* Testimonial 3 */}
-            <div className="rounded-lg p-6 shadow-sm border" style={{backgroundColor: '#e8dbc7', borderColor: '#a89180'}}>
+            <div className="rounded-lg p-6 shadow-sm border transition-all duration-300 hover:shadow-lg hover:scale-105" style={{backgroundColor: '#e8dbc7', borderColor: '#a89180'}}>
               <div className="flex items-center mb-4">
                 <div className="h-12 w-12 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-700 font-bold text-xl">
                   MK
@@ -331,7 +371,7 @@ const HomePage: React.FC = () => {
               href="https://instagram.com/BlueBird_Mannheim" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center font-medium transition-colors"
+              className="inline-flex items-center font-medium transition-all duration-300 hover:scale-105"
               style={{color: '#3d3629'}}
               onMouseEnter={(e) => e.target.style.color = '#5a4f42'}
               onMouseLeave={(e) => e.target.style.color = '#3d3629'}
@@ -351,7 +391,7 @@ const HomePage: React.FC = () => {
                 href="https://instagram.com/BlueBird_Mannheim" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="aspect-square rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 group"
+                className="aspect-square rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 group hover:scale-105"
                 style={{
                   background: 'linear-gradient(135deg, #d4c1a6 0%, #b09e7e 100%)'
                 }}
@@ -374,9 +414,9 @@ const HomePage: React.FC = () => {
       <section className="py-20" style={{backgroundColor: '#EDC9AF'}}>
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="rounded-2xl shadow-xl p-8 md:p-12" style={{backgroundColor: '#f5f2e8'}}>
+            <div className="rounded-2xl shadow-xl p-8 md:p-12 transition-all duration-300 hover:shadow-2xl" style={{backgroundColor: '#f5f2e8'}}>
               <div className="flex justify-center mb-6">
-                <div className="w-20 h-20 bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl flex items-center justify-center shadow-lg">
+                <div className="w-20 h-20 bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300">
                   <img 
                     src="/blue_bird_clean_transparent.png" 
                     alt="Blue Bird Logo" 
@@ -391,8 +431,8 @@ const HomePage: React.FC = () => {
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="text-center group">
+                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                     <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
                     </svg>
@@ -401,8 +441,8 @@ const HomePage: React.FC = () => {
                   <p style={{color: '#5a4f42'}}>1€ = 1 Punkt bei jedem Einkauf</p>
                 </div>
                 
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="text-center group">
+                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                     <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                     </svg>
@@ -411,11 +451,9 @@ const HomePage: React.FC = () => {
                   <p style={{color: '#5a4f42'}}>Spezielle Rabatte nur für Mitglieder</p>
                 </div>
                 
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-1.5-.454M9 6v2m3-2v2m3-2v2M9 3h.01M12 3h.01M15 3h.01M21 21v-7a2 2 0 00-2-2H5a2 2 0 00-2 2v7h18zM3 9a2 2 0 012-2h14a2 2 0 012 2v1a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
-                    </svg>
+                <div className="text-center group">
+                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <Heart className="w-8 h-8 text-blue-600" />
                   </div>
                   <h3 className="text-lg font-semibold mb-2" style={{color: '#3d3629'}}>Geburtstagstorte</h3>
                   <p style={{color: '#5a4f42'}}>Kostenloser Kaffee an Ihrem Geburtstag</p>
@@ -432,10 +470,10 @@ const HomePage: React.FC = () => {
               </div>
               
               <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <button className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-8 rounded-full transition-colors duration-300">
+                <button className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-8 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg">
                   Jetzt anmelden
                 </button>
-                <button className="bg-transparent border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white font-medium py-3 px-8 rounded-full transition-colors duration-300">
+                <button className="bg-transparent border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white font-medium py-3 px-8 rounded-full transition-all duration-300 hover:scale-105">
                   Mehr erfahren
                 </button>
               </div>
@@ -443,6 +481,9 @@ const HomePage: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Newsletter Signup */}
+      <NewsletterSignup />
 
       {/* CTA Section */}
       <section className="py-20" style={{backgroundColor: '#b09e7e'}}>
@@ -454,7 +495,7 @@ const HomePage: React.FC = () => {
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link 
               to="/contact" 
-              className="font-medium py-3 px-8 rounded-full transition-colors duration-300"
+              className="font-medium py-3 px-8 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg"
               style={{backgroundColor: '#3d3629', color: '#f9f7f4'}}
               onMouseEnter={(e) => e.target.style.backgroundColor = '#2d251b'}
               onMouseLeave={(e) => e.target.style.backgroundColor = '#3d3629'}
@@ -463,7 +504,7 @@ const HomePage: React.FC = () => {
             </Link>
             <Link 
               to="/menu" 
-              className="border-2 font-medium py-3 px-8 rounded-full transition-colors duration-300"
+              className="border-2 font-medium py-3 px-8 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg"
               style={{backgroundColor: 'transparent', borderColor: '#3d3629', color: '#3d3629'}}
               onMouseEnter={(e) => {e.target.style.backgroundColor = '#3d3629'; e.target.style.color = '#f9f7f4'}}
               onMouseLeave={(e) => {e.target.style.backgroundColor = 'transparent'; e.target.style.color = '#3d3629'}}
