@@ -109,8 +109,49 @@ const PublicTeaserPage: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden" style={{backgroundColor: '#1a1611'}}>
-      {/* Cinematic Video-Like Background */}
-      <div className="absolute inset-0 pointer-events-none">
+      {/* GIF Background Layer */}
+      <div className="absolute inset-0 z-0">
+        {/* You can replace this URL with your actual GIF */}
+        <div 
+          className="absolute inset-0 opacity-30"
+          style={{
+            backgroundImage: 'url("https://media.giphy.com/media/3o7TKtnuHOHHUjR38Y/giphy.gif")', // Coffee steam GIF
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            filter: 'sepia(100%) hue-rotate(25deg) saturate(0.8) brightness(0.6)'
+          }}
+        />
+        
+        {/* Multiple GIF layers for depth */}
+        <div 
+          className="absolute inset-0 opacity-20"
+          style={{
+            backgroundImage: 'url("https://media.giphy.com/media/l0HlBO7eyXzSZkJri/giphy.gif")', // Floating particles
+            backgroundSize: '150%',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            filter: 'sepia(100%) hue-rotate(30deg) saturate(0.6) brightness(0.4)',
+            animation: 'slowFloat 20s ease-in-out infinite'
+          }}
+        />
+        
+        {/* Overlay GIF for atmospheric effect */}
+        <div 
+          className="absolute inset-0 opacity-15"
+          style={{
+            backgroundImage: 'url("https://media.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif")', // Smoke/mist effect
+            backgroundSize: '120%',
+            backgroundPosition: 'center bottom',
+            backgroundRepeat: 'no-repeat',
+            filter: 'sepia(100%) hue-rotate(20deg) saturate(0.7) brightness(0.5)',
+            animation: 'drift 15s linear infinite'
+          }}
+        />
+      </div>
+
+      {/* CSS-Generated Animated Background (fallback/enhancement) */}
+      <div className="absolute inset-0 z-1 pointer-events-none">
         {/* Moving Clouds/Mist Effect */}
         <div className="absolute inset-0">
           {[...Array(6)].map((_, i) => (
@@ -127,26 +168,6 @@ const PublicTeaserPage: React.FC = () => {
                 filter: 'blur(40px)',
                 animation: `drift ${20 + Math.random() * 10}s linear infinite`,
                 animationDelay: `${Math.random() * 10}s`
-              }}
-            />
-          ))}
-        </div>
-
-        {/* Cinematic Light Rays */}
-        <div className="absolute inset-0">
-          {[...Array(8)].map((_, i) => (
-            <div
-              key={`ray-${i}`}
-              className="absolute opacity-5"
-              style={{
-                left: `${10 + i * 12}%`,
-                top: '-10%',
-                width: '2px',
-                height: '120%',
-                background: 'linear-gradient(180deg, transparent 0%, rgba(197, 174, 145, 0.6) 30%, rgba(197, 174, 145, 0.3) 70%, transparent 100%)',
-                transform: `rotate(${-15 + Math.random() * 30}deg)`,
-                animation: `lightRay ${8 + Math.random() * 4}s ease-in-out infinite`,
-                animationDelay: `${Math.random() * 4}s`
               }}
             />
           ))}
@@ -171,66 +192,6 @@ const PublicTeaserPage: React.FC = () => {
               }}
             />
           ))}
-        </div>
-
-        {/* Organic Coffee Bean Shapes */}
-        <div className="absolute inset-0">
-          {[...Array(15)].map((_, i) => (
-            <div
-              key={`bean-${i}`}
-              className="absolute opacity-15"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                width: `${6 + Math.random() * 8}px`,
-                height: `${10 + Math.random() * 12}px`,
-                background: 'radial-gradient(ellipse, #8B4513 0%, #A0522D 50%, transparent 80%)',
-                borderRadius: '50% 50% 50% 50% / 60% 60% 40% 40%',
-                transform: `rotate(${Math.random() * 360}deg)`,
-                animation: `float ${8 + Math.random() * 6}s ease-in-out infinite`,
-                animationDelay: `${Math.random() * 8}s`
-              }}
-            >
-              {/* Coffee bean crack */}
-              <div
-                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-1 h-3/4 opacity-60"
-                style={{
-                  background: 'linear-gradient(180deg, transparent 0%, #654321 50%, transparent 100%)',
-                  borderRadius: '1px'
-                }}
-              />
-            </div>
-          ))}
-        </div>
-
-        {/* Atmospheric Depth Layers */}
-        <div className="absolute inset-0">
-          {/* Far background layer */}
-          <div 
-            className="absolute inset-0 opacity-5"
-            style={{
-              background: 'radial-gradient(circle at 30% 40%, rgba(197, 174, 145, 0.3) 0%, transparent 50%), radial-gradient(circle at 70% 60%, rgba(237, 201, 175, 0.2) 0%, transparent 50%)',
-              animation: 'breathe 12s ease-in-out infinite'
-            }}
-          />
-          
-          {/* Mid layer */}
-          <div 
-            className="absolute inset-0 opacity-8"
-            style={{
-              background: 'radial-gradient(ellipse at 50% 80%, rgba(176, 158, 126, 0.2) 0%, transparent 60%)',
-              animation: 'breathe 8s ease-in-out infinite reverse'
-            }}
-          />
-          
-          {/* Near layer */}
-          <div 
-            className="absolute inset-0 opacity-12"
-            style={{
-              background: 'radial-gradient(circle at 50% 20%, rgba(197, 174, 145, 0.15) 0%, transparent 40%)',
-              animation: 'breathe 6s ease-in-out infinite'
-            }}
-          />
         </div>
 
         {/* Cinematic Vignette */}
@@ -311,14 +272,12 @@ const PublicTeaserPage: React.FC = () => {
           }
         }
         
-        @keyframes lightRay {
+        @keyframes slowFloat {
           0%, 100% {
-            opacity: 0.05;
-            transform: rotate(-15deg) scaleY(0.8);
+            transform: translateY(0px) scale(1);
           }
           50% {
-            opacity: 0.15;
-            transform: rotate(-10deg) scaleY(1.2);
+            transform: translateY(-30px) scale(1.05);
           }
         }
         
@@ -334,28 +293,6 @@ const PublicTeaserPage: React.FC = () => {
           100% {
             transform: translateY(-60px) scale(0.8);
             opacity: 0;
-          }
-        }
-        
-        @keyframes float {
-          0%, 100% { 
-            transform: translateY(0px) rotate(0deg); 
-            opacity: 0.15; 
-          }
-          50% { 
-            transform: translateY(-20px) rotate(180deg); 
-            opacity: 0.25; 
-          }
-        }
-        
-        @keyframes breathe {
-          0%, 100% {
-            transform: scale(1);
-            opacity: 0.05;
-          }
-          50% {
-            transform: scale(1.1);
-            opacity: 0.15;
           }
         }
         
